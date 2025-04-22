@@ -19,28 +19,26 @@ class WelcomeViwe extends GetView<WelcomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: PrimaryAppbar(
-          onTap: () {},
-          backgroundColor: AppColors.almostBlack,
-          child: PrimaryIconButton(
-            onTap: () {
-              appTools.showCustomBottomSheet(
-                context,
-                const ChangeLanguage(),
-                true,
-              );
-            },
-            icon: Icons.language,
-            color: AppColors.white,
-            iconSize: 32,
-          )),
+        onTap: () {},
+        backgroundColor: AppColors.almostBlack,
+        child: PrimaryIconButton(
+          onTap: () {
+            appTools.showCustomBottomSheet(
+              context,
+              const ChangeLanguage(),
+              true,
+            );
+          },
+          icon: Icons.language,
+          color: AppColors.white,
+          iconSize: 32,
+        ),
+      ),
       backgroundColor: AppColors.almostBlack,
       body: Column(
         children: [
-          Expanded(
-            child: Image.asset(ImagesAssets.logo),
-          ),
+          Expanded(child: Image.asset(ImagesAssets.darkModeLogo)),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -62,36 +60,28 @@ class WelcomeViwe extends GetView<WelcomeController> {
                     fontSize: Get.locale!.languageCode == 'ar' ? 20 : 18,
                     fontWeight: FontWeight.bold,
                   ),
-                  SizedBox(
-                    height: 12,
-                  ),
+                  SizedBox(height: 12),
                   BodyText2(
                     title: TranslationData.welcomeExplanation.tr,
                     maxLines: 2,
                     color: AppColors.darkGrey,
                     fontSize: Get.locale!.languageCode == 'ar' ? 16 : 14,
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
+                  SizedBox(height: 30),
                   PrimaryButton(
                     onTap: () {
                       Get.toNamed(RoutesString.login);
                     },
                     title: TranslationData.loginViaEmail.tr,
                   ),
-                  SizedBox(
-                    height: 24,
-                  ),
+                  SizedBox(height: 24),
                   PrimaryButton(
                     onTap: () {
                       Get.toNamed(RoutesString.signUpUser);
                     },
                     title: TranslationData.iDontHaveAnAccount.tr,
                   ),
-                  SizedBox(
-                    height: 24,
-                  ),
+                  SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -99,9 +89,7 @@ class WelcomeViwe extends GetView<WelcomeController> {
                         title: TranslationData.areYouACraftsman.tr,
                         color: AppColors.lightGrey,
                       ),
-                      SizedBox(
-                        width: 4,
-                      ),
+                      SizedBox(width: 4),
                       InkWell(
                         onTap: () {
                           Get.toNamed(RoutesString.signUpCraftman);
@@ -111,13 +99,13 @@ class WelcomeViwe extends GetView<WelcomeController> {
                           color: AppColors.textButton,
                           fontSize: 14,
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

@@ -1,11 +1,11 @@
 class TranslationData {
-  static String signIn = 'signIn';
-  static String signUp = 'signUp';
+  
+  
   static String changeLanguage = 'changeLanguage';
   static String haveAnAccount = 'haveAnAccount';
   static String createYourAccount = 'createYourAccount';
   static String fullName = 'fullName';
-  static String phoneNumber = 'phoneNumber';
+
   static String signInYourAccount = "signInYourAccount";
   static String forgotPassword = "forgotPassword";
   static String dontHaveAccount = 'dontHaveAccount';
@@ -30,4 +30,20 @@ class TranslationData {
   static String welcome = 'welcome';
   static String welcomeExplanation =
       'If you are alrady have account,enter your email below.';
+  //End Onboarding
+
+  //Auth
+  static String createAccount = "createAccount";
+  static String weAreHereToHelpYou = "weAreHereToHelpYou";
+  static String yourName = "yourName";
+  static String yourEmail = "yourEmail";
+  static String phoneNumber = 'phoneNumber';
+  static String password = "password";
+  static String iAgreeWith = "iAgreeWith";
+  static String termsCondition = "termsCondition";
+  static String or = "or";
+  static String doYouHaveAnAccount = "doYouHaveAnAccount";
+  static String signIn = 'signIn';
+  static String signUp = 'signUp';
+  //End Auth
 }

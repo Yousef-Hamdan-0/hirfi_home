@@ -59,8 +59,6 @@ class MainTextField extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Subtitle1(title: title, color: AppColors.almostBlack),
-      SizedBox(height: 12),
       TextFormField(
         scrollPadding: EdgeInsets.only(
           bottom: MediaQuery.of(context).viewInsets.bottom + 300,
@@ -127,10 +125,16 @@ class MainTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0),
           ),
           filled: true,
-          prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 18, right: 12),
-            child: prefixIcon,
-          ),
+          prefixIcon:
+              Get.locale!.languageCode == "ar"
+                  ? Padding(
+                    padding: const EdgeInsets.only(left: 8, right: 16),
+                    child: prefixIcon,
+                  )
+                  : Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 8),
+                    child: prefixIcon,
+                  ),
           prefixIconConstraints: const BoxConstraints(minWidth: 10),
           fillColor: backgrgroundColor ?? Color(0xffF5F5F5),
           hintText: hint,
