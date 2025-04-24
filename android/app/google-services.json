@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "831594090007",
+    "project_id": "hirfi-home",
+    "storage_bucket": "hirfi-home.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831594090007:android:542aed87cf1249f6581652",
+        "android_client_info": {
+          "package_name": "com.example.hirfi_home"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNoHQdk1kV2dTtPRc_So3Jd3x-oM_BKLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
