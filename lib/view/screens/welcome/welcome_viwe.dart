@@ -20,6 +20,7 @@ class WelcomeViwe extends GetView<WelcomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PrimaryAppbar(
+<<<<<<< HEAD
           onTap: () {},
           backgroundColor: AppColors.almostBlack,
           child: PrimaryIconButton(
@@ -40,6 +41,27 @@ class WelcomeViwe extends GetView<WelcomeController> {
           Expanded(
             child: Image.asset(ImagesAssets.darkModeLogo),
           ),
+=======
+        onTap: () {},
+        backgroundColor: AppColors.almostBlack,
+        child: PrimaryIconButton(
+          onTap: () {
+            appTools.showCustomBottomSheet(
+              context,
+              const ChangeLanguage(),
+              true,
+            );
+          },
+          icon: Icons.language,
+          color: AppColors.white,
+          iconSize: 32,
+        ),
+      ),
+      backgroundColor: AppColors.almostBlack,
+      body: Column(
+        children: [
+          Expanded(child: Image.asset(ImagesAssets.darkModeLogo)),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -61,36 +83,52 @@ class WelcomeViwe extends GetView<WelcomeController> {
                     fontSize: Get.locale!.languageCode == 'ar' ? 20 : 18,
                     fontWeight: FontWeight.bold,
                   ),
+<<<<<<< HEAD
                   SizedBox(
                     height: 12,
                   ),
+=======
+                  SizedBox(height: 12),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
                   BodyText2(
                     title: TranslationData.welcomeExplanation.tr,
                     maxLines: 2,
                     color: AppColors.darkGrey,
                     fontSize: Get.locale!.languageCode == 'ar' ? 16 : 14,
                   ),
+<<<<<<< HEAD
                   SizedBox(
                     height: 30,
                   ),
+=======
+                  SizedBox(height: 30),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
                   PrimaryButton(
                     onTap: () {
                       Get.toNamed(RoutesString.login);
                     },
                     title: TranslationData.loginViaEmail.tr,
                   ),
+<<<<<<< HEAD
                   SizedBox(
                     height: 24,
                   ),
+=======
+                  SizedBox(height: 24),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
                   PrimaryButton(
                     onTap: () {
                       Get.toNamed(RoutesString.signUpUser);
                     },
                     title: TranslationData.iDontHaveAnAccount.tr,
                   ),
+<<<<<<< HEAD
                   SizedBox(
                     height: 24,
                   ),
+=======
+                  SizedBox(height: 24),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -98,9 +136,13 @@ class WelcomeViwe extends GetView<WelcomeController> {
                         title: TranslationData.areYouACraftsman.tr,
                         color: AppColors.lightGrey,
                       ),
+<<<<<<< HEAD
                       SizedBox(
                         width: 4,
                       ),
+=======
+                      SizedBox(width: 4),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
                       InkWell(
                         onTap: () {
                           Get.toNamed(RoutesString.signUpCraftman);
@@ -110,6 +152,7 @@ class WelcomeViwe extends GetView<WelcomeController> {
                           color: AppColors.textButton,
                           fontSize: 14,
                         ),
+<<<<<<< HEAD
                       )
                     ],
                   )
@@ -117,6 +160,15 @@ class WelcomeViwe extends GetView<WelcomeController> {
               ),
             ),
           )
+=======
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
         ],
       ),
     );

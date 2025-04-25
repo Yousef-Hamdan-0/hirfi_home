@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
@@ -15,12 +16,16 @@ import 'package:hirfi_home/view/widget/social_auth_buttons.dart';
 import 'package:hirfi_home/view/widget/text/body_text2.dart';
 import 'package:hirfi_home/view/widget/text/headline4.dart';
 import 'package:hirfi_home/view/widget/text_field.dart';
+=======
+import 'package:hirfi_home/view/screens/auth/login/login_controller.dart';
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
 
 class LoginViwe extends GetView<LoginController> {
   const LoginViwe({super.key});
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       appBar: PrimaryAppbar(
         onTap: () {
@@ -113,5 +118,8 @@ class LoginViwe extends GetView<LoginController> {
         ),
       ),
     );
+=======
+    return const Scaffold();
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
   }
 }

@@ -1,10 +1,22 @@
 class TranslationData {
+<<<<<<< HEAD
   static String changeLanguage = 'changeLanguage';
 
   static String createYourAccount = 'createYourAccount';
 
   static String signInYourAccount = "signInYourAccount";
   static String send = "send";
+=======
+  
+  
+  static String changeLanguage = 'changeLanguage';
+  static String haveAnAccount = 'haveAnAccount';
+  static String createYourAccount = 'createYourAccount';
+  static String fullName = 'fullName';
+
+  static String signInYourAccount = "signInYourAccount";
+  static String forgotPassword = "forgotPassword";
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
   static String dontHaveAccount = 'dontHaveAccount';
   static String next = 'next';
   static String skip = 'skip';
@@ -27,23 +39,38 @@ class TranslationData {
   static String welcome = 'welcome';
   static String welcomeExplanation =
       'If you are alrady have account,enter your email below.';
+<<<<<<< HEAD
 
   //auth
+=======
+  //End Onboarding
+
+  //Auth
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
   static String createAccount = "createAccount";
   static String weAreHereToHelpYou = "weAreHereToHelpYou";
   static String yourName = "yourName";
   static String yourEmail = "yourEmail";
+<<<<<<< HEAD
   static String phoneNumber = "phoneNumber";
+=======
+  static String phoneNumber = 'phoneNumber';
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
   static String password = "password";
   static String iAgreeWith = "iAgreeWith";
   static String termsCondition = "termsCondition";
   static String or = "or";
   static String doYouHaveAnAccount = "doYouHaveAnAccount";
   static String signIn = 'signIn';
+<<<<<<< HEAD
   static String forgotPassword = "forgotPassword";
   static String signUp = 'signUp';
   static String hiWelcomeBack = "hiWelcomeBack";
   static String hopeYouAreDoingFine = "hopeYouAreDoingFine";
   static String doNotHaveAnAccountYet = "doNotHaveAnAccountYet";
   //End auth
+=======
+  static String signUp = 'signUp';
+  //End Auth
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
 }

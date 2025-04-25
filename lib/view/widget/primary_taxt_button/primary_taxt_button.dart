@@ -28,7 +28,11 @@ class PrimaryTaxtButton extends StatelessWidget {
           BodyText2(
             title: title,
             style: TextThemeStyle().bodyText2.copyWith(
+<<<<<<< HEAD
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+=======
+                  fontSize: fontSize ?? 13,
+>>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
                   fontWeight: fontWeight ?? FontWeight.w400,
                   color: color ?? AppColors.textButton,
                   fontFamily: Get.locale!.languageCode == 'ar'
