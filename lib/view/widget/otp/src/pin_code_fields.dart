@@ -5,7 +5,7 @@ part of pin_code_fields;
 /// Pin code text fields which automatically changes focus and validates
 class PinCodeTextField extends StatefulWidget {
   PinCodeTextField({
-    super.key,
+    Key? key,
     required this.appContext,
     required this.length,
     this.controller,
@@ -69,7 +69,8 @@ class PinCodeTextField extends StatefulWidget {
     this.useExternalAutoFillGroup = false,
     this.scrollPadding = const EdgeInsets.all(20),
     this.separatorBuilder,
-  })  : assert(obscuringCharacter.isNotEmpty);
+  })  : assert(obscuringCharacter.isNotEmpty),
+        super(key: key);
 
   /// The [BuildContext] of the application
   final BuildContext appContext;

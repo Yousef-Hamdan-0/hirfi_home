@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import 'package:get/get.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:http/http.dart' as http;
-=======
-import 'dart:io';
-import 'package:get/get.dart';
-import 'package:hirfi_home/util/routes/routes_string.dart';
->>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SplashController extends GetxController {
@@ -56,7 +50,6 @@ class SplashController extends GetxController {
 
   Future<bool> checkConnection() async {
     try {
-<<<<<<< HEAD
       final response = await http
           .get(Uri.parse('https://jsonplaceholder.typicode.com/posts/1'))
           .timeout(Duration(seconds: 5));
@@ -70,18 +63,6 @@ class SplashController extends GetxController {
       }
     } catch (e) {
       print('No real internet (exception): $e');
-=======
-      final result = await InternetAddress.lookup('example.com');
-      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        print('Real internet available');
-        return true;
-      } else {
-        print('No real internet (empty result)');
-        return false;
-      }
-    } on SocketException catch (_) {
-      print('No real internet (socket exception)');
->>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
       return false;
     }
   }

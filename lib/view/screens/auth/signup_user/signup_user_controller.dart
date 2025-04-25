@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-<<<<<<< HEAD
 import 'package:hirfi_home/helper/src/supabase.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
@@ -9,15 +8,10 @@ import 'package:hirfi_home/view/widget/my_country_code/country_code_method.dart'
 
 class SignupUserController extends GetxController {
   final GlobalKey<FormState> signUpForm = GlobalKey<FormState>();
-=======
-
-class SignupUserController extends GetxController{
->>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-<<<<<<< HEAD
 
   RxBool isChecked = false.obs;
 
@@ -105,6 +99,3 @@ class SignupUserController extends GetxController{
     Get.back();
   }
 }
-=======
-}
->>>>>>> f804626c1a0da5cfccb909dc35e6c76c18ebb8a1
