@@ -54,6 +54,18 @@ class AppTranslation extends Translations {
               "يجب ألا تقل كلمة المرور عن 8 أحرف.",
           TranslationData.passwordPattern:
               "أدخل كلمة مرور فيها 8 خانات على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص.",
+          TranslationData.theEmailAddressYouEnteredIsInvalid:
+              "البريد الإلكتروني الذي أدخلته غير صحيح.",
+          TranslationData.phoneNumberPattern:
+              "رقم الهاتف الذي أدخلته غير صالح. يرجى التأكد من إدخاله بشكل صحيح.",
+          TranslationData.phoneNumberLength:
+              "يجب ألا يقل رقم الهاتف عن 9 أرقام.",
+          //Otp
+          TranslationData.verifyCode: "تأكيد الرمز",
+          TranslationData.enterTheCode:
+              "أدخل الرمز الذي أرسلناه للتو إلى رقم هاتفك المسجل",
+          TranslationData.verify: "تحقق",
+          //End Otp
           //End Auth
         },
         "en": {
@@ -105,7 +117,19 @@ class AppTranslation extends Translations {
           TranslationData.thePasswordMustNotBeLessThan8Characters:
               "The password must not be less than 8 characters.",
           TranslationData.passwordPattern:
-              "Enter a password with at least 8 characters, a capital letter, a small letter, a number, and a special sign."
+              "Enter a password with at least 8 characters, a capital letter, a small letter, a number, and a special sign.",
+          TranslationData.theEmailAddressYouEnteredIsInvalid:
+              "The email address you entered is invalid.",
+          TranslationData.phoneNumberPattern:
+              "The phone number you entered is invalid. Please make sure it is correct.",
+          TranslationData.phoneNumberLength:
+              "The phone number must not be less than 9 digits.",
+          //Otp
+          TranslationData.verifyCode: "Verify Code",
+          TranslationData.enterTheCode:
+              "Enter the the code we just sent you on your registered Phone Number",
+          TranslationData.verify: "Verify",
+          //End Otp
           //End Auth
         }
       };

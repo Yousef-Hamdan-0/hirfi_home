@@ -20,8 +20,8 @@ import 'package:hirfi_home/view/screens/welcome/welcome_viwe.dart';
 List<GetPage<dynamic>>? getPage = [
   GetPage(
       name: RoutesString.splash,
-      page: () => const SplashViwe(),
-      binding: SplashBinding()),
+      page: () => const OtpView(),
+      binding: OtpBinding()),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingViwe(),

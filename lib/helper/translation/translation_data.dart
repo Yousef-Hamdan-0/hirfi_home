@@ -52,5 +52,16 @@ class TranslationData {
   static String thePasswordMustNotBeLessThan8Characters =
       "thePasswordMustNotBeLessThan8Characters";
   static String passwordPattern = "passwordPattern";
+  static String theEmailAddressYouEnteredIsInvalid =
+      "theEmailAddressYouEnteredIsInvalid";
+  static String phoneNumberPattern =
+      "the_phone_number_you_entered_is_invalid_please_make_sure_it_is_correct";
+  static String phoneNumberLength =
+      "the_phone_number_must_not_be_less_than_9_digits";
+  //Otp
+  static String verifyCode = "verifyCode";
+  static String enterTheCode = "enterTheCode";
+  static String verify = "verify";
+  //End Otp
   //End auth
 }

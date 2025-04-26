@@ -5,13 +5,17 @@ import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/theme/text_themes.dart';
 import 'package:hirfi_home/util/exptions.dart';
+import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/auth/otp/otp_controller.dart';
 import 'package:hirfi_home/view/widget/otp/pin_code_fields.dart';
 
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
+import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/progress_button/progress_button.dart';
+import 'package:hirfi_home/view/widget/text/body_text2.dart';
 import 'package:hirfi_home/view/widget/text/headline1.dart';
+import 'package:hirfi_home/view/widget/text/headline4.dart';
 import 'package:hirfi_home/view/widget/text/headline5.dart';
 
 class OtpView extends GetView<OtpController> {
@@ -23,7 +27,9 @@ class OtpView extends GetView<OtpController> {
       onTap: () => appTools.unFocusKeyboard(context),
       child: Scaffold(
         appBar: PrimaryAppbar(
-          onTap: (){},
+          onTap: () {
+            Get.back();
+          },
         ),
         body: Form(
           key: controller.otpForm,
@@ -34,30 +40,35 @@ class OtpView extends GetView<OtpController> {
                 child: Column(
                   children: [
                     const SizedBox(
-                      height: 120,
+                      height: 8,
                     ),
                     Center(
-                      child: Headline1(
-                        title: 'Helmet',
-                        style: TextThemeStyle().headline1.copyWith(
-                              color: AppColors.primary,
-                              fontSize: 60,
-                            ),
-                      ),
+                      child: Image.asset(ImagesAssets.lightModeLogo),
                     ),
                     const SizedBox(
-                      height: 24,
+                      height: 8,
                     ),
                     Center(
-                      child: Headline5(
-                        title: 'Create your account',
-                        style: TextThemeStyle().headline5.copyWith(
-                              color: const Color.fromARGB(255, 118, 118, 120),
-                            ),
-                      ),
-                    ),
+                        child: Column(
+                      children: [
+                        Headline4(
+                          title: TranslationData.verifyCode.tr,
+                          fontSize: Get.locale!.countryCode == "ar" ? 22 : 20,
+                          color: AppColors.almostBlack,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        BodyText2(
+                          title: TranslationData.enterTheCode.tr,
+                          fontSize: Get.locale!.countryCode == "ar" ? 16 : 14,
+                          maxLines: 2,
+                          color: AppColors.lightGrey,
+                        )
+                      ],
+                    )),
                     const SizedBox(
-                      height: 24,
+                      height: 32,
                     ),
                     PinCodeTextField(
                       length: 6,
@@ -67,8 +78,8 @@ class OtpView extends GetView<OtpController> {
                       animationType: AnimationType.scale,
                       pinTheme: PinTheme(
                         shape: PinCodeFieldShape.box,
-                        fieldHeight: 45,
-                        fieldWidth: 45,
+                        fieldHeight: 50,
+                        fieldWidth: 50,
                         borderWidth: 1.5,
                         borderRadius: BorderRadius.circular(16),
                         selectedColor: Colors.red.withOpacity(0),
@@ -90,19 +101,14 @@ class OtpView extends GetView<OtpController> {
                       beforeTextPaste: (String? text) => true,
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 32,
                     ),
-                    ProgressButton(
-                      borderRadius: BorderRadius.circular(16),
-                      title: TranslationData.send.tr,
-                      color: AppColors.primary,
-                      onPressed:
-                          (AnimationController animationController) async {
-                        animationController.forward();
-                        await Future.delayed(const Duration(seconds: 3));
-                        animationController.reverse();
-                      },
-                    ),
+                    PrimaryButton(
+                        onTap: () {
+                          
+                          
+                        },
+                        title: TranslationData.verify.tr),
                     const SizedBox(
                       height: 26,
                     ),

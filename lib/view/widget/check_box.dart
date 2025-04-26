@@ -11,6 +11,7 @@ class PrimaryCheckBox extends StatelessWidget {
       required this.onChanged,
       this.onTap,
       this.activeColor,
+      this.fillColor,
       required this.label_1,
       this.label_2,
       this.borderRadius});
@@ -21,21 +22,23 @@ class PrimaryCheckBox extends StatelessWidget {
   final String? label_2;
   final Color? activeColor;
   final double? borderRadius;
+  final Color? fillColor;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Checkbox(
           value: value,
-          fillColor:
-              WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
-            if (states.contains(WidgetState.disabled)) {
-              return Colors.grey;
-            }
-            return AppColors.buttonsBackground;
-          }),
+
+          // fillColor:
+          //     WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+          //   if (states.contains(WidgetState.disabled)) {
+          //     return Colors.grey;
+          //   }
+          //   return AppColors.buttonsBackground;
+          // }),
           onChanged: onChanged,
-          activeColor: activeColor,
+          activeColor: activeColor ?? AppColors.buttonsBackground,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
           ),

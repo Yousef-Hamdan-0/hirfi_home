@@ -85,7 +85,7 @@ class SignupUserViwe extends GetView<SignupUserController> {
                       hint: TranslationData.phoneNumber.tr,
                       textInputType: TextInputType.phone,
                       textInputAction: TextInputAction.next,
-                      validator: (value) => AppTools().phoneNumberValidate(
+                      validator: (value) => AppTools().phoneNumberValidate2(
                         controller.phoneNumberController,
                       ),
                       title: "",
@@ -128,8 +128,13 @@ class SignupUserViwe extends GetView<SignupUserController> {
                       children: [
                         Obx(
                           () => PrimaryCheckBox(
-                            value: controller.isChecked.value,
-                            onChanged: (value) => controller.onChecked(),
+                            value: controller.isAccepted.value,
+                            activeColor: !controller.termsError.value
+                                ? AppColors.buttonsBackground
+                                : AppColors.red,
+                            onChanged: (value) {
+                              controller.toggleAccepted(value!);
+                            },
                             label_1: TranslationData.iAgreeWith.tr,
                             label_2: TranslationData.termsCondition.tr,
                             onTap: () {},
@@ -145,6 +150,10 @@ class SignupUserViwe extends GetView<SignupUserController> {
                         bool validateIsFalse =
                             !controller.signUpForm.currentState!.validate();
                         if (validateIsFalse) {
+                          return;
+                        }
+                        if (!controller.isAccepted.value) {
+                          controller.termsError.value = true;
                           return;
                         }
                         controller.sendOtp();

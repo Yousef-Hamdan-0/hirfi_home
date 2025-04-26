@@ -125,9 +125,9 @@ class AppTools {
   String? emailValidate(TextEditingController controller) {
     RegExp regExp = RegExp(RegExption.email);
     if (controller.text.isEmpty) {
-      return 'this_field_is_required'.tr;
+      return TranslationData.pleaseEnterYourEmail.tr;
     } else if (!regExp.hasMatch(controller.text)) {
-      return 'enter_a_valid_email_address'.tr;
+      return TranslationData.theEmailAddressYouEnteredIsInvalid.tr;
     }
     return null;
   }
@@ -152,7 +152,7 @@ class AppTools {
 
   String? nameValidate(TextEditingController controller) {
     if (controller.text.isEmpty) {
-      return 'this_field_is_required'.tr;
+      return TranslationData.pleaseEnterYourName.tr;
     }
     return null;
   }
@@ -163,6 +163,20 @@ class AppTools {
     }
     if (controller.text.length < 7) {
       return 'phoneNumberMustatLeast'.tr;
+    }
+
+    return null;
+  }
+
+  String? phoneNumberValidate2(TextEditingController controller) {
+    RegExp regExp = RegExp(RegExption.phoneVal);
+    if (controller.text.isEmpty) {
+      return TranslationData.phoneNumberCannotBeEmpty.tr;
+    } else if (!regExp.hasMatch(controller.text)) {
+      return TranslationData.phoneNumberPattern.tr;
+    }
+    if (controller.text.length < 9) {
+      return TranslationData.phoneNumberLength.tr;
     }
 
     return null;

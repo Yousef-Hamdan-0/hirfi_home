@@ -15,14 +15,24 @@ class SignupUserController extends GetxController {
   RxBool visibility = true.obs;
   RxBool isChecked = false.obs;
 
+  RxBool isAccepted = false.obs;
+  RxBool termsError = false.obs;
+
   void onOffVisibility() {
     visibility.value = !visibility.value;
     update();
   }
 
+  void toggleAccepted(bool value) {
+    isChecked.value = !isChecked.value;
+    isAccepted.value = value;
+    termsError.value = false;
+  }
+
   void onChecked() {
     isChecked.value = !isChecked.value;
-    // update();
+
+    update();
   }
 
   Future<void> signUpWithProfile({
