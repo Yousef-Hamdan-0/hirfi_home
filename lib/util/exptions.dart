@@ -4,7 +4,7 @@ class RegExption {
   static const String onlyNumber = '[0-9]';
   static const String phoneVal = r'^(?:[+0]9)?[0-9]{10}$';
   static const String passwordPattern =
-      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\_&*~]).{8,}$';
   static const String email =
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
 

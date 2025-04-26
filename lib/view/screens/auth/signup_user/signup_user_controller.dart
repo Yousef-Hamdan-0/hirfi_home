@@ -12,8 +12,13 @@ class SignupUserController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  RxBool visibility = true.obs;
   RxBool isChecked = false.obs;
+
+  void onOffVisibility() {
+    visibility.value = !visibility.value;
+    update();
+  }
 
   void onChecked() {
     isChecked.value = !isChecked.value;

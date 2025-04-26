@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/theme/text_themes.dart';
 import 'package:hirfi_home/util/exptions.dart';
@@ -21,7 +22,7 @@ class AppTools {
     // String pattern = RegExption.passwordPattern;
     // RegExp regExp = new RegExp(pattern);
     if (controller.text.isEmpty) {
-      return 'this_field_is_required'.tr;
+      return TranslationData.passwordIsRequired.tr;
     } else if (controller.text.length < 8) {
       return 'passwordNumberMustatLeast'.tr;
     }
@@ -35,11 +36,11 @@ class AppTools {
     String pattern = RegExption.passwordPattern;
     RegExp regExp = RegExp(pattern);
     if (controller.text.isEmpty) {
-      return '';
+      return TranslationData.passwordIsRequired.tr;
     } else if (controller.text.length < 8) {
-      return '';
+      return TranslationData.thePasswordMustNotBeLessThan8Characters.tr;
     } else if (regExp.hasMatch(controller.text) == false) {
-      return '';
+      return TranslationData.passwordPattern.tr;
     }
     return null;
   }

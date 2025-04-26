@@ -45,6 +45,15 @@ class AppTranslation extends Translations {
           TranslationData.hiWelcomeBack: "مرحبًا، أهلاً بعودتك!",
           TranslationData.hopeYouAreDoingFine: "أتمنى أن تكون بخير.",
           TranslationData.doNotHaveAnAccountYet: "ليس لديك حساب بعد؟",
+          TranslationData.pleaseEnterYourName: "يرجى إدخال الإسم.",
+          TranslationData.pleaseEnterYourEmail: "يرجى إدخال البريد الإلكتروني.",
+          TranslationData.phoneNumberCannotBeEmpty:
+              "رقم الهاتف لا يمكن أن يكون فارغًا.",
+          TranslationData.passwordIsRequired: "كلمة المرور مطلوبة.",
+          TranslationData.thePasswordMustNotBeLessThan8Characters:
+              "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+          TranslationData.passwordPattern:
+              "أدخل كلمة مرور فيها 8 خانات على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص.",
           //End Auth
         },
         "en": {
@@ -88,6 +97,15 @@ class AppTranslation extends Translations {
           TranslationData.hiWelcomeBack: "Hi, Welcome Back!",
           TranslationData.hopeYouAreDoingFine: "Hope you’re doing fine.",
           TranslationData.doNotHaveAnAccountYet: "Don’t have an account yet?",
+          TranslationData.pleaseEnterYourName: "Please enter your Name.",
+          TranslationData.pleaseEnterYourEmail: "Please enter your email.",
+          TranslationData.phoneNumberCannotBeEmpty:
+              "Phone number cannot be empty.",
+          TranslationData.passwordIsRequired: "Please enter your email.",
+          TranslationData.thePasswordMustNotBeLessThan8Characters:
+              "The password must not be less than 8 characters.",
+          TranslationData.passwordPattern:
+              "Enter a password with at least 8 characters, a capital letter, a small letter, a number, and a special sign."
           //End Auth
         }
       };

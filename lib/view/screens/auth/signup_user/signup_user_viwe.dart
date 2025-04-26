@@ -93,18 +93,31 @@ class SignupUserViwe extends GetView<SignupUserController> {
                           Icon(Icons.phone_outlined, color: AppColors.hintText),
                     ),
                     SizedBox(height: 20),
-                    MainTextField(
-                      controller: controller.passwordController,
-                      hint: TranslationData.password.tr,
-                      textInputType: TextInputType.visiblePassword,
-                      textInputAction: TextInputAction.done,
-                      validator: (value) => AppTools().passwordValidate(
-                        controller.passwordController,
-                      ),
-                      title: "",
-                      prefixIcon: Icon(
-                        Icons.lock_outline_rounded,
-                        color: AppColors.hintText,
+                    Obx(
+                      () => MainTextField(
+                        controller: controller.passwordController,
+                        hint: TranslationData.password.tr,
+                        textInputType: TextInputType.visiblePassword,
+                        textInputAction: TextInputAction.done,
+                        validator: (value) => AppTools()
+                            .passwordSetValidate(controller.passwordController),
+                        obscureText: controller.visibility.value,
+                        prefixIcon: Icon(
+                          Icons.lock_outline_rounded,
+                          color: AppColors.hintText,
+                        ),
+                        suffixIcon: InkWell(
+                          onTap: () => controller.onOffVisibility(),
+                          child: controller.visibility.value == true
+                              ? Icon(
+                                  Icons.visibility_off,
+                                  color: AppColors.hintText,
+                                )
+                              : Icon(
+                                  Icons.visibility,
+                                  color: AppColors.hintText,
+                                ),
+                        ),
                       ),
                     ),
                     SizedBox(

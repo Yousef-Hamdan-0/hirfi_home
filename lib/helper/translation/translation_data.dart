@@ -45,5 +45,12 @@ class TranslationData {
   static String hiWelcomeBack = "hiWelcomeBack";
   static String hopeYouAreDoingFine = "hopeYouAreDoingFine";
   static String doNotHaveAnAccountYet = "doNotHaveAnAccountYet";
+  static String pleaseEnterYourName = "pleaseEnterYourName";
+  static String pleaseEnterYourEmail = "pleaseEnterYourEmail";
+  static String phoneNumberCannotBeEmpty = "phoneNumberCannotBeEmpty";
+  static String passwordIsRequired = "passwordIsRequired";
+  static String thePasswordMustNotBeLessThan8Characters =
+      "thePasswordMustNotBeLessThan8Characters";
+  static String passwordPattern = "passwordPattern";
   //End auth
 }
