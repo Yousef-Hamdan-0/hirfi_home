@@ -55,6 +55,28 @@ class AppTranslation extends Translations {
           TranslationData.passwordPattern:
               "أدخل كلمة مرور فيها 8 خانات على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص.",
           //End Auth
+
+          //Static Pages
+          TranslationData.termsWelcomeToHirfiHome:
+              "مرحبًا بك في Hirfi Home! قبل استخدام تطبيقنا، يرجى قراءة هذه الشروط والأحكام بعناية. باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط.",
+          TranslationData.definitions: "1. التعاريف",
+          TranslationData.definitionsUser: "-)المستخدم: أي شخص يستخدم التطبيق للبحث عن خدمات المهنيين أو طلبها.",
+          TranslationData.definitionsTradesperson: "-)المهني: أي مقدم خدمة مسجّل يقدم خدمات الصيانة والإصلاح من خلال التطبيق.",
+          TranslationData.definitionsApp: "-)التطبيق: منصة Hirfi Home التي تربط المستخدمين بالمهنيين وتسمح لهم بطلب الخدمات.",
+          TranslationData.termsOfUse: "2. شروط الاستخدام",
+          TranslationData.termsOfUseOlder: "-)يجب أن يكون عمر المستخدمين 18 عامًا أو أكثر أو الحصول على موافقة ولي الأمر لاستخدام التطبيق.",
+          TranslationData.termsOfUseIllegal: "-)لا يجوز استخدام التطبيق لأي أنشطة غير قانونية أو احتيالية.",
+          TranslationData.termsOfUseInformation: "-)يتحمل المستخدمون مسؤولية تقديم معلومات دقيقة عند التسجيل أو التواصل مع المهنيين.",
+          TranslationData.termsOfUseDelete: "-)يحتفظ التطبيق بالحق في تعليق أو حذف أي حساب ينتهك هذه الشروط.",
+          TranslationData.bookingAndPayment: "3. الحجز والدفع",
+          TranslationData.bookingAndPaymentTradesperson: "-)يتيح التطبيق للمستخدمين التواصل مع المهنيين، ولكن يتم الدفع مباشرةً بين المستخدم والمهني حسب الاتفاق.",
+          TranslationData.bookingAndPaymentDisputes: "-)التطبيق غير مسؤول عن أي نزاعات مالية بين المستخدمين والمهنيين.",
+          TranslationData.bookingAndPaymentRecommended: "-)يُنصح بمناقشة أسعار الخدمة مع المهني قبل تأكيد الطلب.",
+          TranslationData.disclaimer: "4. إخلاء المسؤولية",
+          TranslationData.disclaimerMediator: "-)يعمل التطبيق كوسيط بين المستخدمين والمهنيين ولا يضمن جودة الخدمات المقدمة.",
+          TranslationData.disclaimerDamages: "-)التطبيق غير مسؤول عن أي أضرار أو خسائر أو مشكلات ناتجة عن خدمات المهنيين.",
+          TranslationData.disclaimerResponsible: "-)يتحمل المستخدمون مسؤولية اتخاذ قرارات مدروسة عند اختيار المهني بناءً على التقييمات والمعلومات المتاحة.",
+          //End Static Pages
         },
         "en": {
           //Onboarding
@@ -105,8 +127,30 @@ class AppTranslation extends Translations {
           TranslationData.thePasswordMustNotBeLessThan8Characters:
               "The password must not be less than 8 characters.",
           TranslationData.passwordPattern:
-              "Enter a password with at least 8 characters, a capital letter, a small letter, a number, and a special sign."
+              "Enter a password with at least 8 characters, a capital letter, a small letter, a number, and a special sign.",
           //End Auth
+
+          //Static Pages
+          TranslationData.termsWelcomeToHirfiHome:
+              "Welcome to Hirfi home! Before using our app, please read these terms and conditions carefully. By using the app, you agree to comply with these terms.",
+          TranslationData.definitions: "1. Definitions",
+          TranslationData.definitionsUser: "-)User: Any person using the app to search for or request tradesperson services.",
+          TranslationData.definitionsTradesperson: "-)Tradesperson: Any registered service provider offering maintenance and repair services through the app.",
+          TranslationData.definitionsApp: "-)App: The Hirfi home platform that connects users with tradespeople and allows them to request services.",
+          TranslationData.termsOfUse: "2. Terms of Use",
+          TranslationData.termsOfUseOlder: "-)Users must be *18 years or older* or have parental consent to use the app.",
+          TranslationData.termsOfUseIllegal: "-)The app must not be used for illegal or fraudulent activities.",
+          TranslationData.termsOfUseInformation: "-)Users are responsible for providing accurate information when registering or communicating with tradespeople.",
+          TranslationData.termsOfUseDelete: "-)The app reserves the right to suspend or delete any account that violates these terms.",
+          TranslationData.bookingAndPayment: "3. Booking and Payment",
+          TranslationData.bookingAndPaymentTradesperson: "-)The app allows users to connect with tradespeople, but payments are made directly between the user and the tradesperson as agreed.",
+          TranslationData.bookingAndPaymentDisputes: "-)The app is not responsible for any financial disputes between users and tradespeople.",
+          TranslationData.bookingAndPaymentRecommended: "-)It is recommended to discuss service pricing with the tradesperson before confirming a request.",
+          TranslationData.disclaimer: "4. Disclaimer",
+          TranslationData.disclaimerMediator: "-)The app acts as a mediator between users and tradespeople and does not guarantee service quality.",
+          TranslationData.disclaimerDamages: "-)The app is not responsible for any damages, losses, or issues arising from tradesperson services.",
+          TranslationData.disclaimerResponsible: "-)Users are responsible for making informed decisions when selecting a tradesperson based on available ratings and information.",
+          //End Static Pages
         }
       };
 }

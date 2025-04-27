@@ -53,4 +53,25 @@ class TranslationData {
       "thePasswordMustNotBeLessThan8Characters";
   static String passwordPattern = "passwordPattern";
   //End auth
+
+  //Static Pages
+  static String termsWelcomeToHirfiHome = "termsWelcomeToHirfiHome";
+  static String definitions = "definitions";
+  static String definitionsUser = "definitionsUser";
+  static String definitionsTradesperson = "definitionsTradesperson";
+  static String definitionsApp = "definitionsApp";
+  static String termsOfUse = "termsOfUse";
+  static String termsOfUseOlder = "termsOfUseOlder";
+  static String termsOfUseIllegal = "termsOfUseIllegal";
+  static String termsOfUseInformation = "termsOfUseInformation";
+  static String termsOfUseDelete = "termsOfUseDelete";
+  static String bookingAndPayment = "bookingAndPayment";
+  static String bookingAndPaymentTradesperson = "bookingAndPaymentTradesperson";
+  static String bookingAndPaymentDisputes = "bookingAndPaymentDisputes";
+  static String bookingAndPaymentRecommended = "bookingAndPaymentRecommended";
+  static String disclaimer = "disclaimer";
+  static String disclaimerMediator = "disclaimerMediator";
+  static String disclaimerDamages = "disclaimerDamages";
+  static String disclaimerResponsible = "disclaimerResponsible";
+  //End Static Pages
 }
