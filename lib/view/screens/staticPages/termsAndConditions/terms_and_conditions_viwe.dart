@@ -37,7 +37,7 @@ class TermsAndConditionsViwe extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Headline6(
-                  title: TranslationData.termsWelcomeToHirfiHome.tr,
+                  title: TranslationData.termsAndConditionsText.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 5,
                 ),
@@ -161,6 +161,76 @@ class TermsAndConditionsViwe extends StatelessWidget {
                       border: Border.all(width: 1, color: AppColors.line)),
                 ),
                 SizedBox(height: 12),
+                Headline2(
+                  title: TranslationData.privacyAndSecurity.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
+                ),
+                SizedBox(height: 16),
+                Headline6(
+                  title: TranslationData.privacyAndSecurityPrivacyPolicy.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                Headline6(
+                  title: TranslationData.privacyAndSecurityProhibited.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                SizedBox(height: 12),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: AppColors.line)),
+                ),
+                SizedBox(height: 12),
+                Headline2(
+                  title: TranslationData.changesToTerms.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
+                ),
+                SizedBox(height: 16),
+                Headline6(
+                  title: TranslationData.changesToTermsModify.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                Headline6(
+                  title: TranslationData.changesToTermsContinuing.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                SizedBox(height: 12),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: AppColors.line)),
+                ),
+                SizedBox(height: 12),
+                Headline2(
+                  title: TranslationData.contactAndSupport.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
+                ),
+                SizedBox(height: 16),
+                Headline6(
+                  title: TranslationData.contactAndSupportEmail.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                Headline6(
+                  title: TranslationData.contactAndSupportNumber.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                Headline6(
+                  title: TranslationData.contactAndSupportChat.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
+                SizedBox(height: 24),
+                Headline6(
+                  title: TranslationData.contactAndSupportThank.tr,
+                  fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
+                  maxLines: 2,
+                ),
               ],
             );
           },

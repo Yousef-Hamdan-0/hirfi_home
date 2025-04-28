@@ -57,7 +57,7 @@ class AppTranslation extends Translations {
           //End Auth
 
           //Static Pages
-          TranslationData.termsWelcomeToHirfiHome:
+          TranslationData.termsAndConditionsText:
               "مرحبًا بك في Hirfi Home! قبل استخدام تطبيقنا، يرجى قراءة هذه الشروط والأحكام بعناية. باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط.",
           TranslationData.definitions: "1. التعاريف",
           TranslationData.definitionsUser: "-)المستخدم: أي شخص يستخدم التطبيق للبحث عن خدمات المهنيين أو طلبها.",
@@ -76,6 +76,31 @@ class AppTranslation extends Translations {
           TranslationData.disclaimerMediator: "-)يعمل التطبيق كوسيط بين المستخدمين والمهنيين ولا يضمن جودة الخدمات المقدمة.",
           TranslationData.disclaimerDamages: "-)التطبيق غير مسؤول عن أي أضرار أو خسائر أو مشكلات ناتجة عن خدمات المهنيين.",
           TranslationData.disclaimerResponsible: "-)يتحمل المستخدمون مسؤولية اتخاذ قرارات مدروسة عند اختيار المهني بناءً على التقييمات والمعلومات المتاحة.",
+          TranslationData.privacyAndSecurity: "5. الخصوصية والأمان",
+          TranslationData.privacyAndSecurityPrivacyPolicy: "-)نحن نحترم خصوصية المستخدمين ونتعامل مع بياناتهم وفقًا لـ [سياسة الخصوصية] الخاصة بنا.",
+          TranslationData.privacyAndSecurityProhibited: "-)يُحظر مشاركة المعلومات الشخصية أو المالية عبر التطبيق بطرق غير آمنة.",
+          TranslationData.changesToTerms: "6. تعديلات على الشروط",
+          TranslationData.changesToTermsModify: "-)يحتفظ التطبيق بالحق في تعديل هذه الشروط أو تحديثها في أي وقت، وسيتم إخطار المستخدمين بالتغييرات المهمة.",
+          TranslationData.changesToTermsContinuing: "-)استمرار استخدام التطبيق بعد التحديث يعني قبول الشروط الجديدة.",
+          TranslationData.contactAndSupport: "7. التواصل والدعم",
+          TranslationData.contactAndSupportEmail: "📩 البريد الإلكتروني: [support@email.com]",
+          TranslationData.contactAndSupportNumber: "📞 رقم الدعم: [+123456789]",
+          TranslationData.contactAndSupportChat: "💬 دردشة مباشرة: متوفرة داخل التطبيق",
+          TranslationData.contactAndSupportThank: "شكرًا لاستخدامك [Hirfi home]! 🚀",
+          TranslationData.helpAndSupport: "المساعدة والدعم",
+          TranslationData.helpAndSupportText: "مرحبًا بك في Hirfi Home! نحن هنا لضمان حصولك على أفضل تجربة. إذا واجهت أي مشكلات أو كان لديك أي استفسار، لا تتردد في التواصل معنا.",
+          TranslationData.frequentlyAskedQuestions: "الأسئلة المتكررة (FAQ)",
+          TranslationData.fAQSearch: "-)كيف يمكنني البحث عن مهني؟",
+          TranslationData.fAQSearchText: "استخدم شريط البحث أو تصفح الفئات مثل الكهربائيين، السباكين، وفنيي إصلاح السيارات.",
+          TranslationData.fAQContact: "-)كيف أتواصل مع مهني؟",
+          TranslationData.fAQContactText: "بمجرد العثور على المهني المناسب، يمكنك الدردشة معه وإرسال صور أو فيديوهات لشرح المشكلة.",
+          TranslationData.fAQRequest: "-)هل يمكنني طلب زيارة منزلية؟",
+          TranslationData.fAQRequestText: "نعم! إذا لم يتم حل المشكلة عبر الدردشة، يمكنك طلب زيارة ميدانية.",
+          TranslationData.fAQQuality: "-)كيف أضمن جودة الخدمة؟",
+          TranslationData.fAQQualityText: "نقدم مهنيين بتقييمات عالية من خلال مراجعات المستخدمين ونظام توصية ذكي.",
+          TranslationData.fAQIssue: "-)ماذا أفعل إذا واجهت مشكلة في التطبيق؟",
+          TranslationData.fAQIssueText: "جرّب تحديث التطبيق أو إعادة تشغيله. إذا استمرت المشكلة، يرجى التواصل معنا.",
+          TranslationData.contactUs: "تواصل معنا",
           //End Static Pages
         },
         "en": {
@@ -131,7 +156,7 @@ class AppTranslation extends Translations {
           //End Auth
 
           //Static Pages
-          TranslationData.termsWelcomeToHirfiHome:
+          TranslationData.termsAndConditionsText:
               "Welcome to Hirfi home! Before using our app, please read these terms and conditions carefully. By using the app, you agree to comply with these terms.",
           TranslationData.definitions: "1. Definitions",
           TranslationData.definitionsUser: "-)User: Any person using the app to search for or request tradesperson services.",
@@ -150,6 +175,31 @@ class AppTranslation extends Translations {
           TranslationData.disclaimerMediator: "-)The app acts as a mediator between users and tradespeople and does not guarantee service quality.",
           TranslationData.disclaimerDamages: "-)The app is not responsible for any damages, losses, or issues arising from tradesperson services.",
           TranslationData.disclaimerResponsible: "-)Users are responsible for making informed decisions when selecting a tradesperson based on available ratings and information.",
+          TranslationData.privacyAndSecurity: "5. Privacy and Security",
+          TranslationData.privacyAndSecurityPrivacyPolicy: "-)We respect user privacy and handle data in accordance with our [Privacy Policy].",
+          TranslationData.privacyAndSecurityProhibited: "-)Sharing personal or financial information within the app in an insecure manner is prohibited.",
+          TranslationData.changesToTerms: "6. Changes to Terms",
+          TranslationData.changesToTermsModify: "-)The app reserves the right to update or modify these terms at any time, and users will be notified of significant changes.",
+          TranslationData.changesToTermsContinuing: "-)Continuing to use the app after updates implies acceptance of the new terms.",
+          TranslationData.contactAndSupport: "7. Contact and Support",
+          TranslationData.contactAndSupportEmail: "📩 Email: [support@email.com]",
+          TranslationData.contactAndSupportNumber: "📞 Support Number: [+123456789]",
+          TranslationData.contactAndSupportChat: "💬 Live Chat: Available within the app",
+          TranslationData.contactAndSupportThank: "Thank you for using [Hirfi home]! 🚀",
+          TranslationData.helpAndSupport: "Help & Support",
+          TranslationData.helpAndSupportText: "Welcome to Hirfi Home! We are here to ensure you have the best experience. If you encounter any issues or have questions, feel free to reach out.",
+          TranslationData.frequentlyAskedQuestions: "Frequently Asked Questions (FAQ)",
+          TranslationData.fAQSearch: "-)How can I search for a tradesperson?",
+          TranslationData.fAQSearchText: " Use the search bar or browse categories like  electricians, plumbers, and car repair specialists.",
+          TranslationData.fAQContact: "-)How do I contact a tradesperson?",
+          TranslationData.fAQContactText: " Once you find the right tradesperson, you can chat with them and send pictures or videos to describe the issue.",
+          TranslationData.fAQRequest: "-)Can I request a home visit?",
+          TranslationData.fAQRequestText: " Yes! If the issue cannot be resolved via chat, you can request an in-person visit.",
+          TranslationData.fAQQuality: "-)How can I ensure service quality?",
+          TranslationData.fAQQualityText: " We offer top-rated tradespeople through user reviews and a smart recommendation system.",
+          TranslationData.fAQIssue: "-)What if I face an issue with the app?",
+          TranslationData.fAQIssueText: " Try updating or restarting the app. If the problem persists, contact us.",
+          TranslationData.contactUs: "Contact Us",
           //End Static Pages
         }
       };

@@ -55,7 +55,7 @@ class TranslationData {
   //End auth
 
   //Static Pages
-  static String termsWelcomeToHirfiHome = "termsWelcomeToHirfiHome";
+  static String termsAndConditionsText = "termsAndConditionsText";
   static String definitions = "definitions";
   static String definitionsUser = "definitionsUser";
   static String definitionsTradesperson = "definitionsTradesperson";
@@ -73,5 +73,30 @@ class TranslationData {
   static String disclaimerMediator = "disclaimerMediator";
   static String disclaimerDamages = "disclaimerDamages";
   static String disclaimerResponsible = "disclaimerResponsible";
+  static String privacyAndSecurity = "privacyAndSecurity";
+  static String privacyAndSecurityPrivacyPolicy = "privacyAndSecurityPrivacyPolicy";
+  static String privacyAndSecurityProhibited = "privacyAndSecurityProhibited";
+  static String changesToTerms = "changesToTerms";
+  static String changesToTermsModify = "changesToTermsModify";
+  static String changesToTermsContinuing = "changesToTermsContinuing";
+  static String contactAndSupport = "contactAndSupport";
+  static String contactAndSupportEmail = "contactAndSupportEmail";
+  static String contactAndSupportNumber = "contactAndSupportNumber";
+  static String contactAndSupportChat = "contactAndSupportChat";
+  static String contactAndSupportThank = "contactAndSupportThank";
+  static String helpAndSupport = "helpAndSupport";
+  static String helpAndSupportText = "helpAndSupportText";
+  static String frequentlyAskedQuestions = "frequentlyAskedQuestions";
+  static String fAQSearch = "fAQSearch";
+  static String fAQSearchText = "fAQSearchText";
+  static String fAQContact = "fAQContact";
+  static String fAQContactText = "fAQSearchText";
+  static String fAQRequest = "fAQRequest";
+  static String fAQRequestText = "fAQRequestText";
+  static String fAQQuality = "fAQQuality";
+  static String fAQQualityText = "fAQQualityText";
+  static String fAQIssue = "fAQIssue";
+  static String fAQIssueText = "fAQIssueText";
+  static String contactUs = "contactUs";
   //End Static Pages
 }
