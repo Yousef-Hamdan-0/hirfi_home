@@ -6,15 +6,14 @@ import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/theme/text_themes.dart';
 import 'package:hirfi_home/util/exptions.dart';
 import 'package:hirfi_home/util/images.dart';
+import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/auth/otp/otp_controller.dart';
 import 'package:hirfi_home/view/widget/otp/pin_code_fields.dart';
 
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
-import 'package:hirfi_home/view/widget/progress_button/progress_button.dart';
 import 'package:hirfi_home/view/widget/text/body_text2.dart';
-import 'package:hirfi_home/view/widget/text/headline1.dart';
 import 'package:hirfi_home/view/widget/text/headline4.dart';
 import 'package:hirfi_home/view/widget/text/headline5.dart';
 
@@ -103,12 +102,34 @@ class OtpView extends GetView<OtpController> {
                     const SizedBox(
                       height: 32,
                     ),
-                    PrimaryButton(
-                        onTap: () {
-                          
-                          
+                    Obx(() => PrimaryButton(
+                        onTap: () async {
+                          if (controller.otpController.text.length == 6) {
+                            bool isVerified = await controller.verifyOtpCode(
+                              verificationId: controller.verificationId.value,
+                              smsCode: controller.otpController.text.trim(),
+                            );
+
+                            if (isVerified) {
+                              controller.isLoading.value
+                                  ? null
+                                  : () => controller.signUp(
+                                        email: controller.saveEmail.value,
+                                        password: controller.savePassword.value,
+                                        name: controller.saveName.value,
+                                        phone: controller.savePhonenumber.value,
+                                      );
+                              Get.offAllNamed(RoutesString.homeScreen);
+                            } else {
+                              Get.snackbar('فشل ❌',
+                                  'رمز التحقق غير صحيح. حاول مرة أخرى.');
+                            }
+                          } else {
+                            Get.snackbar(
+                                'خطأ', 'الرجاء إدخال رمز مكون من 6 أرقام.');
+                          }
                         },
-                        title: TranslationData.verify.tr),
+                        title: "Verify")),
                     const SizedBox(
                       height: 26,
                     ),
@@ -134,7 +155,7 @@ class OtpView extends GetView<OtpController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Headline5(
-                            title: 'resendCodeAfter' ' ',
+                            title: '${TranslationData.resendCodeAfter.tr} ',
                             style: TextThemeStyle().headline5.copyWith(
                                   color: AppColors.black.withOpacity(0.6),
                                 ),

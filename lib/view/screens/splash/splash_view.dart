@@ -4,8 +4,8 @@ import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/view/screens/splash/splash_controller.dart';
 
-class SplashViwe extends GetView<SplashController> {
-  const SplashViwe({super.key});
+class SplashView extends GetView<SplashController> {
+  const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class SplashViwe extends GetView<SplashController> {
               // Control the "irfi" part
               Positioned(
                 top: screenH / 2 - 16,
-                left: screenW / 2 - 48 + 22, 
+                left: screenW / 2 - 48 + 22,
                 child: ClipRect(
                   child: AnimatedContainer(
                     duration: Duration(milliseconds: 1000),
@@ -59,8 +59,8 @@ class SplashViwe extends GetView<SplashController> {
 
               // Control the "home" part
               Positioned(
-                top: screenH / 2 + 30, 
-                left: screenW / 2 - 16, 
+                top: screenH / 2 + 30,
+                left: screenW / 2 - 16,
                 child: ClipRect(
                   child: AnimatedContainer(
                     duration: Duration(milliseconds: 800),
@@ -71,9 +71,7 @@ class SplashViwe extends GetView<SplashController> {
                         AnimatedPositioned(
                           duration: Duration(milliseconds: 1200),
                           curve: Curves.easeInOut,
-                          top: controller.moveHomeDown.value
-                              ? 0
-                              : -60, 
+                          top: controller.moveHomeDown.value ? 0 : -60,
                           left: 0,
                           child: Image.asset(
                             ImagesAssets.homeInLogo,

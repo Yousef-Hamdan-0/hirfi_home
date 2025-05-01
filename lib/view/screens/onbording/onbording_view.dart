@@ -14,8 +14,8 @@ import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/primary_taxt_button/primary_taxt_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnbordingViwe extends GetView<OnbordingController> {
-  const OnbordingViwe({super.key});
+class OnbordingView extends GetView<OnbordingController> {
+  const OnbordingView({super.key});
 
   @override
   Widget build(BuildContext context) {

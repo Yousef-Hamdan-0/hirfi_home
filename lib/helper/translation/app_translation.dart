@@ -65,8 +65,17 @@ class AppTranslation extends Translations {
           TranslationData.enterTheCode:
               "أدخل الرمز الذي أرسلناه للتو إلى رقم هاتفك المسجل",
           TranslationData.verify: "تحقق",
+          TranslationData.resendCodeAfter: "إعادة إرسال الرمز بعد",
+          TranslationData.congratulations: "مبروك!",
+          TranslationData.congratulationsExplanation:
+              "تم تجهيز حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية خلال ثوانٍ قليلة...",
           //End Otp
           //End Auth
+          //Create Profile
+          TranslationData.fillYourProfile: "املأ ملفك الشخصي",
+          TranslationData.gender: " الجنس",
+          TranslationData.createProfile: "إنشاء ملف شخصي",
+          //Create Profile End
         },
         "en": {
           //Onboarding
@@ -129,8 +138,17 @@ class AppTranslation extends Translations {
           TranslationData.enterTheCode:
               "Enter the the code we just sent you on your registered Phone Number",
           TranslationData.verify: "Verify",
+          TranslationData.resendCodeAfter: "resend code after",
+          TranslationData.congratulations: "Congratulations",
+          TranslationData.congratulationsExplanation:
+              "Your account is ready to use. You will be redirected to the Home Page in a few seconds...",
           //End Otp
           //End Auth
+          //Create Profile
+          TranslationData.fillYourProfile: "Fill Your Profile",
+          TranslationData.gender: "Gender",
+          TranslationData.createProfile: "Create Profile",
+          //Create Profile End
         }
       };
 }

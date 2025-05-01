@@ -62,6 +62,14 @@ class TranslationData {
   static String verifyCode = "verifyCode";
   static String enterTheCode = "enterTheCode";
   static String verify = "verify";
+  static String resendCodeAfter = "resendCodeAfter";
+  static String congratulations = "congratulations";
+  static String congratulationsExplanation = "congratulationsExplanation";
   //End Otp
+  //create Profile
+  static String fillYourProfile = "fillYourProfile";
+  static String gender = "gender";
+  static String createProfile = "createProfile";
+  //create Profile end
   //End auth
 }

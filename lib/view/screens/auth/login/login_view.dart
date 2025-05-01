@@ -16,8 +16,8 @@ import 'package:hirfi_home/view/widget/text/body_text2.dart';
 import 'package:hirfi_home/view/widget/text/headline4.dart';
 import 'package:hirfi_home/view/widget/text_field.dart';
 
-class LoginViwe extends GetView<LoginController> {
-  const LoginViwe({super.key});
+class LoginView extends GetView<LoginController> {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:hirfi_home/helper/src/supabase.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hirfi_home/view/screens/auth/otp/otp_controller.dart';
 import 'package:hirfi_home/view/widget/my_country_code/country_code_method.dart';
 
 class SignupUserController extends GetxController {
@@ -12,6 +13,7 @@ class SignupUserController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final OtpController otpController = Get.put(OtpController());
   RxBool visibility = true.obs;
   RxBool isChecked = false.obs;
 
@@ -33,6 +35,13 @@ class SignupUserController extends GetxController {
     isChecked.value = !isChecked.value;
 
     update();
+  }
+
+  void clear() {
+    nameController.clear();
+    emailController.clear();
+    phoneNumberController.clear();
+    passwordController.clear();
   }
 
   Future<void> signUpWithProfile({
@@ -98,7 +107,8 @@ class SignupUserController extends GetxController {
         String phone =
             mainCountryCode.value.dialCode + phoneNumberController.text;
         Get.log(phone);
-
+        otpController.saveData(nameController.text, emailController.text,
+            phoneNumberController.text, passwordController.text, verificationId);
         Get.toNamed(
           RoutesString.otp,
           arguments: [

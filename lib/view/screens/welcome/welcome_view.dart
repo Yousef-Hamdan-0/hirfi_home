@@ -13,8 +13,8 @@ import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/text/body_text2.dart';
 import 'package:hirfi_home/view/widget/text/headline4.dart';
 
-class WelcomeViwe extends GetView<WelcomeController> {
-  const WelcomeViwe({super.key});
+class WelcomeView extends GetView<WelcomeController> {
+  const WelcomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

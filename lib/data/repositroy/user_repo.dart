@@ -1,1 +1,3 @@
-class AppUserRepo{}
+class AppUserRepo{
+  
+}
