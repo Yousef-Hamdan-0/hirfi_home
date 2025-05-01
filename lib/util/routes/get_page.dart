@@ -14,6 +14,12 @@ import 'package:hirfi_home/view/screens/home/home_binding.dart';
 import 'package:hirfi_home/view/screens/home/home_view.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_binding.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_view.dart';
+import 'package:hirfi_home/view/screens/onbording/onbording_viwe.dart';
+import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
+import 'package:hirfi_home/view/screens/splash/splash_viwe.dart';
+import 'package:hirfi_home/view/screens/staticPages/cookiesPolicy/cookies_policy_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/helpAndSupport/help_and_support_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/termsAndConditions/terms_and_conditions_view.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_binding.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 
@@ -37,7 +43,7 @@ List<GetPage<dynamic>>? getPage = [
   ),
   GetPage(
     name: RoutesString.login,
-    page: () => LoginViwe(),
+    page: () => LoginView(),
     binding: LoginBinding(),
   ),
   GetPage(

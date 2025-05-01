@@ -72,4 +72,50 @@ class TranslationData {
   static String createProfile = "createProfile";
   //create Profile end
   //End auth
+
+  //Static Pages
+  static String termsAndConditionsText = "termsAndConditionsText";
+  static String definitions = "definitions";
+  static String definitionsUser = "definitionsUser";
+  static String definitionsTradesperson = "definitionsTradesperson";
+  static String definitionsApp = "definitionsApp";
+  static String termsOfUse = "termsOfUse";
+  static String termsOfUseOlder = "termsOfUseOlder";
+  static String termsOfUseIllegal = "termsOfUseIllegal";
+  static String termsOfUseInformation = "termsOfUseInformation";
+  static String termsOfUseDelete = "termsOfUseDelete";
+  static String bookingAndPayment = "bookingAndPayment";
+  static String bookingAndPaymentTradesperson = "bookingAndPaymentTradesperson";
+  static String bookingAndPaymentDisputes = "bookingAndPaymentDisputes";
+  static String bookingAndPaymentRecommended = "bookingAndPaymentRecommended";
+  static String disclaimer = "disclaimer";
+  static String disclaimerMediator = "disclaimerMediator";
+  static String disclaimerDamages = "disclaimerDamages";
+  static String disclaimerResponsible = "disclaimerResponsible";
+  static String privacyAndSecurity = "privacyAndSecurity";
+  static String privacyAndSecurityPrivacyPolicy = "privacyAndSecurityPrivacyPolicy";
+  static String privacyAndSecurityProhibited = "privacyAndSecurityProhibited";
+  static String changesToTerms = "changesToTerms";
+  static String changesToTermsModify = "changesToTermsModify";
+  static String changesToTermsContinuing = "changesToTermsContinuing";
+  static String contactAndSupport = "contactAndSupport";
+  static String contactAndSupportEmail = "contactAndSupportEmail";
+  static String contactAndSupportNumber = "contactAndSupportNumber";
+  static String contactAndSupportChat = "contactAndSupportChat";
+  static String contactAndSupportThank = "contactAndSupportThank";
+  static String helpAndSupport = "helpAndSupport";
+  static String helpAndSupportText = "helpAndSupportText";
+  static String frequentlyAskedQuestions = "frequentlyAskedQuestions";
+  static String fAQSearch = "fAQSearch";
+  static String fAQSearchText = "fAQSearchText";
+  static String fAQContact = "fAQContact";
+  static String fAQContactText = "fAQSearchText";
+  static String fAQRequest = "fAQRequest";
+  static String fAQRequestText = "fAQRequestText";
+  static String fAQQuality = "fAQQuality";
+  static String fAQQualityText = "fAQQualityText";
+  static String fAQIssue = "fAQIssue";
+  static String fAQIssueText = "fAQIssueText";
+  static String contactUs = "contactUs";
+  //End Static Pages
 }
