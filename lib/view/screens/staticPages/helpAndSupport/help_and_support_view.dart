@@ -7,8 +7,8 @@ import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/text/headline2.dart';
 import 'package:hirfi_home/view/widget/text/headline6.dart';
 
-class HelpAndSupportViwe extends StatelessWidget {
-  const HelpAndSupportViwe({super.key});
+class HelpAndSupportView extends StatelessWidget {
+  const HelpAndSupportView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -14,15 +14,16 @@ import 'package:hirfi_home/view/screens/onbording/onbording_binding.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_viwe.dart';
 import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
 import 'package:hirfi_home/view/screens/splash/splash_viwe.dart';
-import 'package:hirfi_home/view/screens/staticPages/helpAndSupport/help_and_support_viwe.dart';
-import 'package:hirfi_home/view/screens/staticPages/termsAndConditions/terms_and_conditions_viwe.dart';
+import 'package:hirfi_home/view/screens/staticPages/cookiesPolicy/cookies_policy_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/helpAndSupport/help_and_support_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/termsAndConditions/terms_and_conditions_view.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_binding.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_viwe.dart';
 
 List<GetPage<dynamic>>? getPage = [
   GetPage(
       name: RoutesString.splash,
-      page: () => const HelpAndSupportViwe(),
+      page: () => const CookiesPolicyView(),
       //binding: SplashBinding()
       ),
   GetPage(
