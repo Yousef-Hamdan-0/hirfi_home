@@ -71,13 +71,13 @@ class AppTranslation extends Translations {
               "تم تجهيز حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية خلال ثوانٍ قليلة...",
           //End Otp
           //End Auth
-<<<<<<< HEAD
+
           //Create Profile
           TranslationData.fillYourProfile: "املأ ملفك الشخصي",
           TranslationData.gender: " الجنس",
           TranslationData.createProfile: "إنشاء ملف شخصي",
           //Create Profile End
-=======
+
 
           //Static Pages
           TranslationData.termsAndConditionsText:
@@ -125,7 +125,7 @@ class AppTranslation extends Translations {
           TranslationData.fAQIssueText: "جرّب تحديث التطبيق أو إعادة تشغيله. إذا استمرت المشكلة، يرجى التواصل معنا.",
           TranslationData.contactUs: "تواصل معنا",
           //End Static Pages
->>>>>>> origin/qossay
+
         },
         "en": {
           //Onboarding
@@ -177,7 +177,7 @@ class AppTranslation extends Translations {
               "The password must not be less than 8 characters.",
           TranslationData.passwordPattern:
               "Enter a password with at least 8 characters, a capital letter, a small letter, a number, and a special sign.",
-<<<<<<< HEAD
+
           TranslationData.theEmailAddressYouEnteredIsInvalid:
               "The email address you entered is invalid.",
           TranslationData.phoneNumberPattern:
@@ -200,7 +200,7 @@ class AppTranslation extends Translations {
           TranslationData.gender: "Gender",
           TranslationData.createProfile: "Create Profile",
           //Create Profile End
-=======
+
           //End Auth
 
           //Static Pages
@@ -249,7 +249,7 @@ class AppTranslation extends Translations {
           TranslationData.fAQIssueText: " Try updating or restarting the app. If the problem persists, contact us.",
           TranslationData.contactUs: "Contact Us",
           //End Static Pages
->>>>>>> origin/qossay
+
         }
       };
 }
