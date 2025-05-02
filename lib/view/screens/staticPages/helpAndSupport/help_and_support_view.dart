@@ -5,6 +5,7 @@ import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/text/headline2.dart';
+import 'package:hirfi_home/view/widget/text/headline4.dart';
 import 'package:hirfi_home/view/widget/text/headline6.dart';
 
 class HelpAndSupportView extends StatelessWidget {
@@ -53,7 +54,7 @@ class HelpAndSupportView extends StatelessWidget {
                   fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
                 ),
                 SizedBox(height: 16),
-                Headline6(
+                Headline4(
                   title: TranslationData.fAQSearch.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
@@ -63,7 +64,7 @@ class HelpAndSupportView extends StatelessWidget {
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
                 ),
-                Headline6(
+                Headline4(
                   title: TranslationData.fAQContact.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
@@ -73,7 +74,7 @@ class HelpAndSupportView extends StatelessWidget {
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
                 ),
-                Headline6(
+                Headline4(
                   title: TranslationData.fAQRequest.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
@@ -83,7 +84,7 @@ class HelpAndSupportView extends StatelessWidget {
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
                 ),
-                Headline6(
+                Headline4(
                   title: TranslationData.fAQQuality.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
@@ -93,7 +94,7 @@ class HelpAndSupportView extends StatelessWidget {
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,
                 ),
-                Headline6(
+                Headline4(
                   title: TranslationData.fAQIssue.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 16 : 14,
                   maxLines: 2,

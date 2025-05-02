@@ -74,7 +74,8 @@ class TranslationData {
   static String disclaimerDamages = "disclaimerDamages";
   static String disclaimerResponsible = "disclaimerResponsible";
   static String privacyAndSecurity = "privacyAndSecurity";
-  static String privacyAndSecurityPrivacyPolicy = "privacyAndSecurityPrivacyPolicy";
+  static String privacyAndSecurityPrivacyPolicy =
+      "privacyAndSecurityPrivacyPolicy";
   static String privacyAndSecurityProhibited = "privacyAndSecurityProhibited";
   static String changesToTerms = "changesToTerms";
   static String changesToTermsModify = "changesToTermsModify";
@@ -98,5 +99,40 @@ class TranslationData {
   static String fAQIssue = "fAQIssue";
   static String fAQIssueText = "fAQIssueText";
   static String contactUs = "contactUs";
+  static String cookiesPolicy = "cookiesPolicy";
+  static String cookiesPolicyLastUpdated = "cookiesPolicyLastUpdated";
+  static String cookiesPolicyText = "cookiesPolicyText";
+  static String cookiesPolicyDefinition = "cookiesPolicyDefinition";
+  static String howHirfiHomeUsesCookies = "howHirfiHomeUsesCookies";
+  static String essentialCookies = "essentialCookies";
+  static String essentialCookiesSecurely = "essentialCookiesSecurely";
+  static String essentialCookiesServices = "essentialCookiesServices";
+  static String functionalCookies = "functionalCookies";
+  static String functionalCookiesLanguage = "functionalCookiesLanguage";
+  static String functionalCookiesEfficient = "functionalCookiesEfficient";
+  static String performanceAndAnalyticsCookies =
+      "performanceAndAnalyticsCookies";
+  static String performanceAndAnalyticsCookiesAnonymous =
+      "performanceAndAnalyticsCookiesAnonymous";
+  static String performanceAndAnalyticsCookiesQuality =
+      "performanceAndAnalyticsCookiesQuality";
+  static String marketingAndAdvertisingCookies =
+      "marketingAndAdvertisingCookies";
+  static String marketingAndAdvertisingCookiesTargeted =
+      "marketingAndAdvertisingCookiesTargeted";
+  static String marketingAndAdvertisingCookiesMeasure =
+      "marketingAndAdvertisingCookiesMeasure";
+  static String privacyAndSecurityCookies = "privacyAndSecurityCookies";
+  static String privacyAndSecurityCookiesPolicy =
+      "privacyAndSecurityCookiesPolicy";
+  static String privacyAndSecurityCookiesSharing =
+      "privacyAndSecurityCookiesSharing";
+  static String changesToTermsCookies = "changesToTermsCookies";
+  static String changesToTermsCookiesUpdate = "changesToTermsCookiesUpdate";
+  static String changesToTermsCookiesContinuing =
+      "changesToTermsCookiesContinuing";
+  static String about = "about";
+  static String aboutText = "aboutText";
+  static String version = "version";
   //End Static Pages
 }
