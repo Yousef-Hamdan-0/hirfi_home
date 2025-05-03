@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
-import 'package:hirfi_home/util/images.dart';
 
 class SettingPrimaryButton extends StatelessWidget {
   const SettingPrimaryButton({
     super.key,
-      required this.onTap,
-      required this.title,
-      this.fontSize,
-      this.color,
-      this.backgroundColor,
-      this.icon,
-      this.iconSize,
-      this.image
+    required this.onTap,
+    required this.title,
+    required this.image,
+    this.fontSize,
+    this.color,
+    this.backgroundColor,
+    this.icon,
+    this.iconSize,
   });
   final VoidCallback onTap;
   final String title;
@@ -22,7 +20,7 @@ class SettingPrimaryButton extends StatelessWidget {
   final Color? color;
   final Color? backgroundColor;
   final IconData? icon;
-  final SvgPicture? image;
+  final Image image;
   final double? iconSize;
 
   @override
@@ -36,7 +34,8 @@ class SettingPrimaryButton extends StatelessWidget {
           color: color ?? AppColors.lightGrey,
         ),
       ),
-      trailing: Icon(Icons.chevron_right, color: color ?? AppColors.almostBlack),
+      trailing:
+          Icon(Icons.chevron_right, color: color ?? AppColors.almostBlack),
       onTap: () {
         onTap;
       },

@@ -174,6 +174,21 @@ class AppTranslation extends Translations {
               "يهدف هذا المشروع إلى تطوير تطبيق يجمع جميع الحرفيين المهرة (مثل الكهربائيين، السباكين، فنّيّي السيارات وغيرهم) في مكان واحد، مما يُسهّل على المستخدمين العثور على المختص المناسب بسرعة وكفاءة. يتيح التطبيق للمستخدمين التواصل المباشر مع الحرفيين عبر المحادثة، وإرسال الصور ومقاطع الفيديو للاستفسار عن الأعطال وتحديد ما إذا كان بالإمكان حلّ المشكلة ذاتيًا دون الحاجة إلى زيارة ميدانية. هذا يوفر الوقت والجهد على كلا الطرفين، مع وجود خيار إضافي لطلب زيارة منزلية عند الحاجة.",
           TranslationData.version: "الإصدار: 0.0.1",
           //End Static Pages
+
+          //Settings
+          TranslationData.settings: "الإعدادات",
+          TranslationData.personalDetails: "المعلومات الشخصية",
+          TranslationData.changePassword: "تغيير كلمة المرور",
+          TranslationData.notification: "الإشعارات",
+          TranslationData.darkMode: "الوضع الداكن",
+          TranslationData.languages: "اللغة",
+          TranslationData.rateApp: "قيّم التطبيق",
+          TranslationData.feedback: "إرسال ملاحظات",
+          TranslationData.logout: "تسجيل الخروج",
+          TranslationData.createNewPassword: "إنشاء كلمة مرور جديدة",
+          TranslationData.yourNewPassword: "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور التي استخدمتها سابقًا.",
+          TranslationData.confirmPassword: "تأكيد كلمة المرور",
+          //End Settings
         },
         "en": {
           //Onboarding
@@ -345,6 +360,21 @@ class AppTranslation extends Translations {
               "The project aims to develop an application that gathers all skilled professionals (such as electricians, plumbers, automotive technicians, and others) in one place, making it easier for users to quickly and efficiently find the right specialist. The app enables users to communicate directly with professionals through chat, sending photos and videos to inquire about issues and determine whether problems can be resolved independently without requiring an on-site visit. This saves time and effort for both parties, with the additional option to request a home visit if needed.",
           TranslationData.version: "Version: 0.0.1",
           //End Static Pages
+
+          //Settings
+          TranslationData.settings: "Settings",
+          TranslationData.personalDetails: "Personal details",
+          TranslationData.changePassword: "Change password",
+          TranslationData.notification: "Notification",
+          TranslationData.darkMode: "Dark Mode",
+          TranslationData.languages: "Languages",
+          TranslationData.rateApp: "Rate App",
+          TranslationData.feedback: "Feedback",
+          TranslationData.logout: "Logout",
+          TranslationData.createNewPassword: "Create new password",
+          TranslationData.yourNewPassword: "Your new password must be different form previously used password",
+          TranslationData.confirmPassword: "Confirm Password",
+          //End Settings
         }
       };
 }

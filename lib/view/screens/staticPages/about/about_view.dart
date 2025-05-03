@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
+import 'package:hirfi_home/util/app_icon.dart';
 import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_button/setting_primary_button.dart';
@@ -71,6 +72,7 @@ class AboutView extends StatelessWidget {
                   onTap: (){},
                   title: TranslationData.termsCondition.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
+                  image: Image.asset(AppIcon.termsAndConfitions),
                 ),
                 SizedBox(height: 12),
                 Container(
@@ -83,6 +85,7 @@ class AboutView extends StatelessWidget {
                   onTap: (){},
                   title: TranslationData.cookiesPolicy.tr,
                   fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
+                  image: Image.asset(AppIcon.cookiesPolicy),
                 ),
               ],
             );

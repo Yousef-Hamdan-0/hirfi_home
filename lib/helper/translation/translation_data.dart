@@ -135,4 +135,19 @@ class TranslationData {
   static String aboutText = "aboutText";
   static String version = "version";
   //End Static Pages
+
+  //Settings
+  static String settings = "settings";
+  static String personalDetails = "personalDetails";       
+  static String changePassword = "changePassword";       
+  static String notification = "notification";       
+  static String darkMode = "darkMode";       
+  static String languages = "languages";       
+  static String rateApp = "rateApp";       
+  static String feedback = "feedback";       
+  static String logout = "logout";
+  static String createNewPassword = "createNewPassword";
+  static String yourNewPassword = "yourNewPassword";
+  static String confirmPassword = "confirmPassword";   
+  //End Settings
 }

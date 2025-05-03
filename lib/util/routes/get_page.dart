@@ -12,6 +12,9 @@ import 'package:hirfi_home/view/screens/home/home_binding.dart';
 import 'package:hirfi_home/view/screens/home/home_viwe.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_binding.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_viwe.dart';
+import 'package:hirfi_home/view/screens/settings/change_password/change_password_bindings.dart';
+import 'package:hirfi_home/view/screens/settings/change_password/change_password_view.dart';
+import 'package:hirfi_home/view/screens/settings/settings_view.dart';
 import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
 import 'package:hirfi_home/view/screens/splash/splash_viwe.dart';
 import 'package:hirfi_home/view/screens/staticPages/about/about_view.dart';
@@ -23,10 +26,10 @@ import 'package:hirfi_home/view/screens/welcome/welcome_viwe.dart';
 
 List<GetPage<dynamic>>? getPage = [
   GetPage(
-      name: RoutesString.splash,
-      page: () => const AboutView(),
-      //binding: SplashBinding()
-      ),
+    name: RoutesString.splash,
+    page: () => const ChangePasswordView(),
+    binding: ChangePasswordBindings(),
+  ),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingViwe(),
@@ -59,5 +62,10 @@ List<GetPage<dynamic>>? getPage = [
     name: RoutesString.otp,
     page: () => OtpView(),
     binding: OtpBinding(),
-  )
+  ),
+  GetPage(
+    name: RoutesString.changePassword,
+    page: () => ChangePasswordView(),
+    binding: ChangePasswordBindings(),
+  ),
 ];
