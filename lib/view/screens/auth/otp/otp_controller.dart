@@ -2,9 +2,10 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hirfi_home/data/model/auth/user_profile.dart';
+import 'package:hirfi_home/data/repositroy/user_auth_repo.dart';
+import 'package:hirfi_home/data/repositroy/user_profile_repo.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
-
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class OtpController extends GetxController {
   var data = Get.arguments;
@@ -17,13 +18,16 @@ class OtpController extends GetxController {
   RxInt counter = 4.obs;
   RxInt otpCounter = 0.obs;
   Rx<Timer> timer = Timer(const Duration(seconds: 30), () {}).obs;
-  final SupabaseClient _supabase = Supabase.instance.client;
+
   RxBool isLoading = false.obs;
   RxString saveName = ''.obs;
   RxString saveEmail = ''.obs;
   RxString savePhonenumber = ''.obs;
   RxString savePassword = ''.obs;
+  final AuthUserRepository _authRepo;
+  final UserProfileRepository _profileRepo;
 
+  OtpController(this._authRepo, this._profileRepo);
   @override
   void onInit() {
     startTimer();
@@ -44,41 +48,6 @@ class OtpController extends GetxController {
     );
   }
 
-  Future<void> signUp({
-    required String email,
-    required String password,
-    required String name,
-    required String phone,
-  }) async {
-    try {
-      isLoading(true);
-
-      // 1. إنشاء المستخدم في Supabase Auth
-      final authResponse = await _supabase.auth.signUp(
-        email: email.trim(),
-        password: password.trim(),
-      );
-
-      if (authResponse.user?.id != null) {
-        // 2. حفظ البيانات الإضافية في جدول profiles
-        await _supabase.from('user_profile').insert({
-          'id': authResponse.user!.id,
-          'email': email.trim(), // نفس ID المستخدم في auth.users
-          'name': name.trim(),
-          'phone_number': phone.trim(),
-        });
-
-        Get.offAllNamed(RoutesString.homeScreen); // الانتقال للصفحة الرئيسية
-      }
-    } on AuthException catch (e) {
-      Get.snackbar('خطأ', e.message);
-    } catch (e) {
-      Get.snackbar('خطأ', 'حدث خطأ غير متوقع: ${e.toString()}');
-    } finally {
-      isLoading(false);
-    }
-  }
-
   void saveData(String newName, String newEmail, String newPhone,
       String newPassword, String newVerificationId) {
     saveName.value = newName;
@@ -88,21 +57,64 @@ class OtpController extends GetxController {
     verificationId.value = newVerificationId;
   }
 
-  Future<bool> verifyOtpCode({
-    required String verificationId,
-    required String smsCode,
-  }) async {
+  Future<void> signUp() async {
+    final name = saveName.value.trim();
+    final email = saveEmail.value.trim();
+    final phone = savePhonenumber.value.trim();
+    final password = savePassword.value;
+
+    if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
+      Get.snackbar('بيانات ناقصة', 'جميع الحقول مطلوبة');
+      return;
+    }
+
     try {
-      PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: verificationId,
-        smsCode: smsCode,
+      isLoading(true);
+
+      final authUser = await _authRepo.signUp(
+        email: email,
+        password: password,
+        userMetadata: {
+          'name': name,
+          'phone': phone,
+        },
       );
 
-      await FirebaseAuth.instance.signInWithCredential(credential);
+      final profile = UserProfile(
+        id: authUser.id,
+        name: name,
+        email: email,
+        phoneNumber: phone,
+        profilePicture: null,
+        dateOfBirth: null,
+        gender: null,
+      );
 
-      return true; // تحقق ناجح
-    } on FirebaseAuthException catch (_) {
-      return false; // تحقق فاشل
+      await _profileRepo.insertProfile(profile);
+
+      Get.offAllNamed(RoutesString.createProfile);
+    } catch (e) {
+      Get.snackbar('فشل التسجيل', e.toString());
+    } finally {
+      isLoading(false);
     }
   }
+
+  // Future<bool> verifyOtpCode({
+  //   required String verificationId,
+  //   required String smsCode,
+  // }) async {
+  //   try {
+  //     PhoneAuthCredential credential = PhoneAuthProvider.credential(
+  //       verificationId: verificationId,
+  //       smsCode: smsCode,
+  //     );
+
+  //     await FirebaseAuth.instance.signInWithCredential(credential);
+
+  //     return true; // تحقق ناجح
+  //   } on FirebaseAuthException catch (_) {
+  //     return false; // تحقق فاشل
+  //   }
+  // }
 }

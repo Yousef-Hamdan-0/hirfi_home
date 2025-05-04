@@ -60,5 +60,9 @@ List<GetPage<dynamic>>? getPage = [
     name: RoutesString.otp,
     page: () => OtpView(),
     binding: OtpBinding(),
-  )
+  ),
+  GetPage(
+      name: RoutesString.createProfile,
+      page: () => CreateProfileView(),
+      binding: CreateProfileBinding())
 ];

@@ -60,6 +60,7 @@ class WelcomeView extends GetView<WelcomeController> {
                     title: TranslationData.welcome.tr,
                     fontSize: Get.locale!.languageCode == 'ar' ? 20 : 18,
                     fontWeight: FontWeight.bold,
+                    
                   ),
                   SizedBox(
                     height: 12,

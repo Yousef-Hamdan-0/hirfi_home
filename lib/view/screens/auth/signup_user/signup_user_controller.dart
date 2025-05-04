@@ -13,7 +13,8 @@ class SignupUserController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  final OtpController otpController = Get.put(OtpController());
+  final OtpController otpController =
+      Get.put(OtpController(Get.find(), Get.find()));
   RxBool visibility = true.obs;
   RxBool isChecked = false.obs;
 
@@ -107,8 +108,12 @@ class SignupUserController extends GetxController {
         String phone =
             mainCountryCode.value.dialCode + phoneNumberController.text;
         Get.log(phone);
-        otpController.saveData(nameController.text, emailController.text,
-            phoneNumberController.text, passwordController.text, verificationId);
+        otpController.saveData(
+            nameController.text,
+            emailController.text,
+            phoneNumberController.text,
+            passwordController.text,
+            verificationId);
         Get.toNamed(
           RoutesString.otp,
           arguments: [

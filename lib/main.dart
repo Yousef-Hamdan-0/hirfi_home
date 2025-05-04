@@ -13,9 +13,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
-    url: "https://coabsdshmeummqnctavd.supabase.co",
+    url: "https://uacgfcwkaeomzwllqyin.supabase.co",
     anonKey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvYWJzZHNobWV1bW1xbmN0YXZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNDMzMjQsImV4cCI6MjA1OTgxOTMyNH0.jk7ZHrxcosdvoAn8oSiaCpNHq5XCUtKGwPpPwBwxGj0",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhY2dmY3drYWVvbXp3bGxxeWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYyMDExMTAsImV4cCI6MjA2MTc3NzExMH0.jAO1S4OSUzgY_2m94OF_Lo_lYgMjmMDsgBgFLlFaKPA",
   );
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
