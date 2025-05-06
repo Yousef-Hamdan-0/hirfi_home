@@ -8,4 +8,6 @@ class AppIcon {
   static const String apple = 'assets/images/icon/apple logo.png';
   static const String shieldTick = 'assets/images/icon/shield-tick.png';
   static const String imageEdit = 'assets/images/icon/image-edit.png';
+  static const String profileCircle = 'assets/images/icon/profile-circle.png';
+  static const String calendar = 'assets/images/icon/calendar.png';
 }

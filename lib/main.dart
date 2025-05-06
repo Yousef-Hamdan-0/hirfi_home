@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hirfi_home/firebase_options.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/helper/translation/app_translation.dart';
@@ -9,7 +10,7 @@ import 'package:hirfi_home/util/routes/get_page.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
+GetStorage box = GetStorage();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(

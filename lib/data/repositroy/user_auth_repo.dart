@@ -1,5 +1,6 @@
 // lib/data/repositories/auth_user_repository.dart
 
+import 'package:get_storage/get_storage.dart';
 import 'package:hirfi_home/data/model/auth/user_auth_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -17,7 +18,7 @@ class AuthUserRepository {
   Future<UserAuthModel> signUp({
     required String email,
     required String password,
-    Map<String, dynamic>? userMetadata, // مثل name، phone
+    Map<String, dynamic>? userMetadata,
   }) async {
     final response = await _client.auth.signUp(
       email: email.trim(),
@@ -30,8 +31,12 @@ class AuthUserRepository {
 
     if (user == null || session == null) {
       throw Exception('فشل في إنشاء الحساب أو تسجيل الدخول.');
-      
     }
+
+    // ✅ حفظ التوكنات
+    final box = GetStorage();
+    box.write('access_token', session.accessToken);
+    box.write('refresh_token', session.refreshToken);
 
     return UserAuthModel.fromSupabaseUser(user);
   }

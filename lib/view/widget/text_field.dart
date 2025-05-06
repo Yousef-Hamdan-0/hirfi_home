@@ -10,10 +10,12 @@ class MainTextField extends StatelessWidget {
     required this.controller,
     required this.hint,
     required this.textInputType,
+    this.hintColor,
     this.title,
     this.focusNode,
     this.validator,
     this.maxLength,
+    this.enabled,
     this.obscureText,
     this.onChanged,
     this.prefixIcon,
@@ -36,9 +38,11 @@ class MainTextField extends StatelessWidget {
   final Function(String)? onChanged;
   final TextEditingController controller;
   final String hint;
+  final Color? hintColor;
   final TextInputType textInputType;
   final Widget? prefixIcon, suffix, suffixIcon;
   final int? maxLength;
+  final bool? enabled;
   final bool? obscureText;
   final bool? iconSize;
   final FormFieldValidator<String>? validator;
@@ -66,6 +70,7 @@ class MainTextField extends StatelessWidget {
           //   height: 12,
           // ),
           TextFormField(
+            enabled: enabled,
             scrollPadding: EdgeInsets.only(
               bottom: MediaQuery.of(context).viewInsets.bottom + 300,
             ),
@@ -147,7 +152,7 @@ class MainTextField extends StatelessWidget {
               fillColor: backgrgroundColor ?? Color(0xffF5F5F5),
               hintText: hint,
               hintStyle: TextStyle(
-                color: AppColors.hintText,
+                color: hintColor ?? AppColors.hintText,
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
                 fontFamily: AppFonts.interReg,

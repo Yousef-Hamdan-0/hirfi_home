@@ -1,5 +1,6 @@
 // lib/data/repositories/user_profile_repository.dart
 
+import 'package:flutter/material.dart';
 import 'package:hirfi_home/data/model/auth/user_profile.dart';
 import 'package:hirfi_home/data/service/subabase_service/supabase_fetch_service.dart';
 import 'package:hirfi_home/data/service/subabase_service/supabase_send_service.dart';
@@ -107,7 +108,33 @@ class UserProfileRepository {
         }
       }
     } catch (e) {
-      print('Insert/Update error: $e');
+      debugPrint('Insert Profile Error: $e');
+      rethrow;
+    }
+  }
+
+  Future<void> deleteProfile(String userId) async {
+    await _sendService.delete('user_profile', 'id', userId);
+  }
+
+  Future<void> updateAdditionalInfo({
+    required String userId,
+    String? profilePicture,
+    String? dateOfBirth,
+    String? gender,
+  }) async {
+    final data = <String, dynamic>{};
+
+    if (profilePicture != null) data['profile_picture'] = profilePicture;
+    if (dateOfBirth != null) data['date_of_birth'] = dateOfBirth;
+    if (gender != null) data['gender'] = gender;
+
+    if (data.isEmpty) return;
+
+    try {
+      await _sendService.update('user_profile', data, 'id', userId);
+    } catch (e) {
+      debugPrint('❌ Failed to update additional info: $e');
       rethrow;
     }
   }

@@ -68,7 +68,10 @@ class TranslationData {
   //End Otp
   //create Profile
   static String fillYourProfile = "fillYourProfile";
+  static String dateOfBirth = "Date of Birth";
   static String gender = "gender";
+  static String male = "male";
+  static String female = "female";
   static String createProfile = "createProfile";
   //create Profile end
   //End auth
@@ -93,7 +96,8 @@ class TranslationData {
   static String disclaimerDamages = "disclaimerDamages";
   static String disclaimerResponsible = "disclaimerResponsible";
   static String privacyAndSecurity = "privacyAndSecurity";
-  static String privacyAndSecurityPrivacyPolicy = "privacyAndSecurityPrivacyPolicy";
+  static String privacyAndSecurityPrivacyPolicy =
+      "privacyAndSecurityPrivacyPolicy";
   static String privacyAndSecurityProhibited = "privacyAndSecurityProhibited";
   static String changesToTerms = "changesToTerms";
   static String changesToTermsModify = "changesToTermsModify";

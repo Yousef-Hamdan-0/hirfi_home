@@ -32,20 +32,43 @@ class SplashController extends GetxController {
 
   void startAppFlow() async {
     final hasConnection = await checkConnection();
-
     if (!hasConnection) {
-      print('No Internet connection');
+      print('📡 No Internet connection');
       return;
     }
 
     final isLoggedIn = await checkSupabaseSession();
 
     if (isLoggedIn) {
-      print('nar');
+      print('✅ Logged in session found');
       Get.offAllNamed(RoutesString.homeScreen);
     } else {
+      print('👤 No valid session, go to onboarding/login');
       Get.offAllNamed(RoutesString.onbording);
     }
+  }
+
+  Future<bool> checkSupabaseSession() async {
+    final auth = Supabase.instance.client.auth;
+    final session = auth.currentSession;
+
+    if (session == null) return false;
+
+    final expiry = session.expiresAt;
+    final now = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+
+    // ✅ إذا الجلسة منتهية، جرب التجديد
+    if (expiry != null && expiry <= now) {
+      try {
+        final refreshed = await auth.refreshSession();
+        return refreshed.session != null;
+      } catch (e) {
+        print('❌ Failed to refresh session: $e');
+        return false;
+      }
+    }
+
+    return true;
   }
 
   Future<bool> checkConnection() async {
@@ -65,10 +88,5 @@ class SplashController extends GetxController {
       print('No real internet (exception): $e');
       return false;
     }
-  }
-
-  Future<bool> checkSupabaseSession() async {
-    final session = Supabase.instance.client.auth.currentSession;
-    return session != null;
   }
 }

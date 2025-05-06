@@ -4,7 +4,9 @@ import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
 import 'package:hirfi_home/view/screens/create_profile/create_profile_controller.dart';
+import 'package:hirfi_home/view/widget/main_dropdown_field.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
+import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/text_field.dart';
 
 class CreateProfileView extends GetView<CreateProfileController> {
@@ -30,15 +32,17 @@ class CreateProfileView extends GetView<CreateProfileController> {
                       width: MediaQuery.sizeOf(context).width * 0.45,
                       height: MediaQuery.sizeOf(context).width * 0.45,
                       decoration: BoxDecoration(
-                        color: AppColors.grey,
                         shape: BoxShape.circle,
-                        image: controller.selectedImage.value != null
+                        image: controller.selectedImage.value == null
                             ? DecorationImage(
+                                image: AssetImage(AppIcon.profileCircle),
+                                fit: BoxFit.fill,
+                              )
+                            : DecorationImage(
                                 image:
                                     FileImage(controller.selectedImage.value!),
                                 fit: BoxFit.cover,
-                              )
-                            : null,
+                              ),
                       ),
                     ),
                   ),
@@ -57,12 +61,70 @@ class CreateProfileView extends GetView<CreateProfileController> {
               SizedBox(
                 height: 8,
               ),
-              Container(
-                child: TextFormField(
-                  enabled: false,
-                  cursorWidth: MediaQuery.sizeOf(context).width,
-                ),
-              )
+              Obx(() => Column(
+                    children: [
+                      MainTextField(
+                          controller: controller.nameController,
+                          hint: controller.name.value,
+                          enabled: false,
+                          textInputType: TextInputType.none),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      MainTextField(
+                        controller: controller.nameController,
+                        hint: controller.email.value,
+                        enabled: false,
+                        textInputType: TextInputType.none,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      MainTextField(
+                        controller: controller.nameController,
+                        hint: controller.phoneNumber.value,
+                        enabled: false,
+                        textInputType: TextInputType.none,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: () => controller.pickDate(context),
+                        child: MainTextField(
+                          controller: controller.nameController,
+                          hint: controller.dateOfBirth.value,
+                          hintColor: AppColors.almostBlack,
+                          prefixIcon: Image.asset(AppIcon.calendar),
+                          enabled: false,
+                          textInputType: TextInputType.none,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      MainDropdownField<String>(
+                        items: controller.gender,
+                        selectedItem: controller.selected.value,
+                        hint: 'الجنس',
+                        onChanged: (value) {
+                          controller.selected.value = value.toString();
+                        },
+                        validator: (value) {
+                          if (value == null) return 'الرجاء اختيار الجنس';
+                          return null;
+                        },
+                      ),
+                      SizedBox(
+                        height: 32,
+                      ),
+                      PrimaryButton(
+                          onTap: () => controller.completeUserProfile(
+                              dateOfBirth: controller.dateOfBirth.value,
+                              gender: controller.selected.value),
+                          title: TranslationData.createProfile.tr)
+                    ],
+                  )),
             ],
           ),
         ),

@@ -57,41 +57,59 @@ class OtpController extends GetxController {
     verificationId.value = newVerificationId;
   }
 
+  bool _validateFields(
+      String name, String email, String phone, String password) {
+    if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
+      Get.snackbar('بيانات ناقصة', 'جميع الحقول مطلوبة');
+      return false;
+    }
+    return true;
+  }
+
+  Future<void> _createAccountAndProfile({
+    required String name,
+    required String email,
+    required String phone,
+    required String password,
+  }) async {
+    final authUser = await _authRepo.signUp(
+      email: email,
+      password: password,
+      userMetadata: {
+        'name': name,
+        'phone': phone,
+      },
+    );
+
+    final profile = UserProfile(
+      id: authUser.id,
+      name: name,
+      email: email,
+      phoneNumber: phone,
+      profilePicture: null,
+      dateOfBirth: null,
+      gender: null,
+    );
+
+    await _profileRepo.insertProfile(profile);
+  }
+
   Future<void> signUp() async {
     final name = saveName.value.trim();
     final email = saveEmail.value.trim();
     final phone = savePhonenumber.value.trim();
     final password = savePassword.value;
 
-    if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
-      Get.snackbar('بيانات ناقصة', 'جميع الحقول مطلوبة');
-      return;
-    }
+    if (!_validateFields(name, email, phone, password)) return;
 
     try {
       isLoading(true);
-
-      final authUser = await _authRepo.signUp(
-        email: email,
-        password: password,
-        userMetadata: {
-          'name': name,
-          'phone': phone,
-        },
-      );
-
-      final profile = UserProfile(
-        id: authUser.id,
+      await _createAccountAndProfile(
         name: name,
         email: email,
-        phoneNumber: phone,
-        profilePicture: null,
-        dateOfBirth: null,
-        gender: null,
+        phone: phone,
+        password: password,
       );
-
-      await _profileRepo.insertProfile(profile);
-
       Get.offAllNamed(RoutesString.createProfile);
     } catch (e) {
       Get.snackbar('فشل التسجيل', e.toString());
@@ -100,21 +118,21 @@ class OtpController extends GetxController {
     }
   }
 
-  // Future<bool> verifyOtpCode({
-  //   required String verificationId,
-  //   required String smsCode,
-  // }) async {
-  //   try {
-  //     PhoneAuthCredential credential = PhoneAuthProvider.credential(
-  //       verificationId: verificationId,
-  //       smsCode: smsCode,
-  //     );
+  Future<bool> verifyOtpCode({
+    required String verificationId,
+    required String smsCode,
+  }) async {
+    try {
+      PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId,
+        smsCode: smsCode,
+      );
 
-  //     await FirebaseAuth.instance.signInWithCredential(credential);
+      await FirebaseAuth.instance.signInWithCredential(credential);
 
-  //     return true; // تحقق ناجح
-  //   } on FirebaseAuthException catch (_) {
-  //     return false; // تحقق فاشل
-  //   }
-  // }
+      return true; // تحقق ناجح
+    } on FirebaseAuthException catch (_) {
+      return false; // تحقق فاشل
+    }
+  }
 }
