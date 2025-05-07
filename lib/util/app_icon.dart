@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AppIcon {
   static const String username = 'assets/images/icon/username.png';

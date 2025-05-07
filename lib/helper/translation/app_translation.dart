@@ -71,7 +71,9 @@ class AppTranslation extends Translations {
               "تم تجهيز حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية خلال ثوانٍ قليلة...",
           //End Otp
           //End Auth
-
+          //Profile
+          TranslationData.profile: "الملف الشخصي",
+          //End Profile
           //Create Profile
           TranslationData.fillYourProfile: "املأ ملفك الشخصي",
           TranslationData.gender: " الجنس",
@@ -230,9 +232,10 @@ class AppTranslation extends Translations {
           TranslationData.dateOfBirth: "Date of Birth",
           TranslationData.createProfile: "Create Profile",
           //Create Profile End
-
           //End Auth
-
+          //Profile
+          TranslationData.profile: "Prfile",
+          //End Profile
           //Static Pages
           TranslationData.termsAndConditionsText:
               "Welcome to Hirfi home! Before using our app, please read these terms and conditions carefully. By using the app, you agree to comply with these terms.",

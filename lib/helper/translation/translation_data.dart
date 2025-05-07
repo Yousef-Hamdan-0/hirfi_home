@@ -75,6 +75,9 @@ class TranslationData {
   static String createProfile = "createProfile";
   //create Profile end
   //End auth
+  //profile
+  static String profile = "prfile";
+  //End Profile
 
   //Static Pages
   static String termsAndConditionsText = "termsAndConditionsText";
