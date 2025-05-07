@@ -74,7 +74,10 @@ class LoginView extends GetView<LoginController> {
                         ),
                     prefixIcon: Image.asset(AppIcon.password)),
                 SizedBox(height: 24),
-                PrimaryButton(onTap: () {}, title: TranslationData.signIn.tr),
+                PrimaryButton(
+                  onTap: () {}, 
+                  title: TranslationData.signIn.tr
+                ),
                 SizedBox(height: 24),
                 OrLine(),
                 SizedBox(height: 24),

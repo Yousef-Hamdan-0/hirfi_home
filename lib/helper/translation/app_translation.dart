@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 
@@ -154,7 +155,67 @@ class AppTranslation extends Translations {
           TranslationData.fAQIssueText:
               "جرّب تحديث التطبيق أو إعادة تشغيله. إذا استمرت المشكلة، يرجى التواصل معنا.",
           TranslationData.contactUs: "تواصل معنا",
+          TranslationData.cookiesPolicy: "سياسة ملفات تعريف الارتباط",
+          TranslationData.cookiesPolicyLastUpdated: "آخر تحديث: 22/5/2025",
+          TranslationData.cookiesPolicyText:
+              "مرحبًا بك في Hirfi Home. توضح لك هذه السياسة كيفية استخدامنا لملفات تعريف الارتباط (Cookies) والتقنيات المشابهة لتحسين تجربتك عند استخدام التطبيق.",
+          TranslationData.cookiesPolicyDefinition:
+              "ما هي ملفات تعريف الارتباط؟ هي ملفات نصية صغيرة تُخزَّن على جهازك عند استخدامك للتطبيق أو زيارة مواقع الويب. تساهم هذه الملفات في تحسين تجربتك وتساعدنا على تقديم خدمات أفضل.",
+          TranslationData.howHirfiHomeUsesCookies:
+              "كيفية استخدام تطبيق Hirfi Home لملفات تعريف الارتباط:",
+          TranslationData.essentialCookies: "1. ملفات تعريف الارتباط الضرورية:",
+          TranslationData.essentialCookiesSecurely:
+              "-)ضرورية لعمل التطبيق بشكل صحيح وآمن.",
+          TranslationData.essentialCookiesServices:
+              "-)تتيح الوصول إلى الميزات والخدمات الأساسية.",
+          TranslationData.functionalCookies:
+              "2. ملفات تعريف الارتباط الوظيفية:",
+          TranslationData.functionalCookiesLanguage:
+              "-)تساعد على تذكر تفضيلاتك (مثل اللغة أو تصميم العرض)",
+          TranslationData.functionalCookiesEfficient:
+              "-)تتيح تجربة استخدام مخصصة وأكثر كفاءة.",
+          TranslationData.performanceAndAnalyticsCookies:
+              "3. ملفات الأداء والتحليلات:",
+          TranslationData.performanceAndAnalyticsCookiesAnonymous:
+              "-)تجمع معلومات مجهولة حول كيفية استخدامك للتطبيق.",
+          TranslationData.performanceAndAnalyticsCookiesQuality:
+              "-)تساعدنا على تحسين جودة وأداء التطبيق.",
+          TranslationData.marketingAndAdvertisingCookies:
+              "4. ملفات تعريف الارتباط للتسويق والإعلانات:",
+          TranslationData.marketingAndAdvertisingCookiesTargeted:
+              "-)تُستخدم لتقديم إعلانات مخصصة تتناسب مع اهتماماتك.",
+          TranslationData.marketingAndAdvertisingCookiesMeasure:
+              "-)تساعد على قياس مدى فعالية حملاتنا التسويقية.",
+          TranslationData.privacyAndSecurityCookies: "5. الخصوصية والأمان:",
+          TranslationData.privacyAndSecurityCookiesPolicy:
+              "-)نحترم خصوصيتك ونتعامل مع بياناتك وفقًا لسياسة الخصوصية الخاصة بنا.",
+          TranslationData.privacyAndSecurityCookiesSharing:
+              "-)لا نشارك معلوماتك الشخصية أو المالية خارج التطبيق دون إذن واضح منك.",
+          TranslationData.changesToTermsCookies: "6. تغييرات على الشروط:",
+          TranslationData.changesToTermsCookiesUpdate:
+              "-)يحتفظ التطبيق بالحق في تحديث أو تعديل هذه الشروط في أي وقت، وسيتم إعلام المستخدمين بأي تغييرات جوهرية.",
+          TranslationData.changesToTermsCookiesContinuing:
+              "-)استمرارك في استخدام التطبيق بعد التحديثات يُعد موافقة ضمنية على الشروط الجديدة.",
+          TranslationData.about: "حول التطبيق",
+          TranslationData.aboutText:
+              "يهدف هذا المشروع إلى تطوير تطبيق يجمع جميع الحرفيين المهرة (مثل الكهربائيين، السباكين، فنّيّي السيارات وغيرهم) في مكان واحد، مما يُسهّل على المستخدمين العثور على المختص المناسب بسرعة وكفاءة. يتيح التطبيق للمستخدمين التواصل المباشر مع الحرفيين عبر المحادثة، وإرسال الصور ومقاطع الفيديو للاستفسار عن الأعطال وتحديد ما إذا كان بالإمكان حلّ المشكلة ذاتيًا دون الحاجة إلى زيارة ميدانية. هذا يوفر الوقت والجهد على كلا الطرفين، مع وجود خيار إضافي لطلب زيارة منزلية عند الحاجة.",
+          TranslationData.version: "الإصدار: 0.0.1",
           //End Static Pages
+
+          //Settings
+          TranslationData.settings: "الإعدادات",
+          TranslationData.personalDetails: "المعلومات الشخصية",
+          TranslationData.changePassword: "تغيير كلمة المرور",
+          TranslationData.notification: "الإشعارات",
+          TranslationData.darkMode: "الوضع الداكن",
+          TranslationData.languages: "اللغة",
+          TranslationData.rateApp: "قيّم التطبيق",
+          TranslationData.feedback: "إرسال ملاحظات",
+          TranslationData.logout: "تسجيل الخروج",
+          TranslationData.createNewPassword: "إنشاء كلمة مرور جديدة",
+          TranslationData.yourNewPassword: "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور التي استخدمتها سابقًا.",
+          TranslationData.confirmPassword: "تأكيد كلمة المرور",
+          //End Settings
         },
         "en": {
           //Onboarding
@@ -309,7 +370,66 @@ class AppTranslation extends Translations {
           TranslationData.fAQIssueText:
               " Try updating or restarting the app. If the problem persists, contact us.",
           TranslationData.contactUs: "Contact Us",
+          TranslationData.cookiesPolicy: "Cookies Policy",
+          TranslationData.cookiesPolicyLastUpdated: "Last Updated: 22/5/2025",
+          TranslationData.cookiesPolicyText:
+              "Welcome to Hirfi Home. This Cookies Policy explains how we use cookies and similar technologies to improve your experience when using our app.",
+          TranslationData.cookiesPolicyDefinition:
+              "What are Cookies? Cookies are small text files stored on your device when you use apps or visit websites. They help enhance your experience and allow us to provide better services.",
+          TranslationData.howHirfiHomeUsesCookies:
+              "How Hirfi Home Uses Cookies:",
+          TranslationData.essentialCookies: "1. Essential Cookies:",
+          TranslationData.essentialCookies:
+              "-)Necessary for the app to function correctly and securely.",
+          TranslationData.essentialCookiesServices:
+              "-)Allow access to core features and services.",
+          TranslationData.functionalCookies: "2. Functional Cookies:",
+          TranslationData.functionalCookiesLanguage:
+              "-)Help remember your preferences (such as language and layout).",
+          TranslationData.functionalCookiesEfficient:
+              "-)Offer personalized and efficient app experiences.",
+          TranslationData.performanceAndAnalyticsCookies:
+              "3. Performance and Analytics Cookies:",
+          TranslationData.performanceAndAnalyticsCookiesAnonymous:
+              "-)Collect anonymous information about how you use our app.",
+          TranslationData.performanceAndAnalyticsCookiesQuality:
+              "-)Enable us to improve app quality and performance.",
+          TranslationData.marketingAndAdvertisingCookies:
+              "4. Marketing and Advertising Cookies:",
+          TranslationData.marketingAndAdvertisingCookiesTargeted:
+              "-)Used to deliver targeted advertising relevant to your interests.",
+          TranslationData.marketingAndAdvertisingCookiesMeasure:
+              "-)Help measure the effectiveness of our marketing campaigns.",
+          TranslationData.privacyAndSecurityCookies: "5. Privacy and Security:",
+          TranslationData.privacyAndSecurityCookiesPolicy:
+              "-)We respect user privacy and handle data in accordance with our Privacy Policy.",
+          TranslationData.privacyAndSecurityCookiesSharing:
+              "-)Sharing personal or financial information within the app in an insecure manner is prohibited.",
+          TranslationData.changesToTermsCookies: "6. Changes to Terms:",
+          TranslationData.changesToTermsCookiesUpdate:
+              "-)The app reserves the right to update or modify these terms at any time, and users will be notified of significant changes.",
+          TranslationData.changesToTermsCookiesContinuing:
+              "-)Continuing to use the app after updates implies acceptance of the new terms.",
+          TranslationData.about: "About",
+          TranslationData.aboutText:
+              "The project aims to develop an application that gathers all skilled professionals (such as electricians, plumbers, automotive technicians, and others) in one place, making it easier for users to quickly and efficiently find the right specialist. The app enables users to communicate directly with professionals through chat, sending photos and videos to inquire about issues and determine whether problems can be resolved independently without requiring an on-site visit. This saves time and effort for both parties, with the additional option to request a home visit if needed.",
+          TranslationData.version: "Version: 0.0.1",
           //End Static Pages
+
+          //Settings
+          TranslationData.settings: "Settings",
+          TranslationData.personalDetails: "Personal details",
+          TranslationData.changePassword: "Change password",
+          TranslationData.notification: "Notification",
+          TranslationData.darkMode: "Dark Mode",
+          TranslationData.languages: "Languages",
+          TranslationData.rateApp: "Rate App",
+          TranslationData.feedback: "Feedback",
+          TranslationData.logout: "Logout",
+          TranslationData.createNewPassword: "Create new password",
+          TranslationData.yourNewPassword: "Your new password must be different form previously used password",
+          TranslationData.confirmPassword: "Confirm Password",
+          //End Settings
         }
       };
 }

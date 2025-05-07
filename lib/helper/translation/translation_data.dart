@@ -124,5 +124,55 @@ class TranslationData {
   static String fAQIssue = "fAQIssue";
   static String fAQIssueText = "fAQIssueText";
   static String contactUs = "contactUs";
+  static String cookiesPolicy = "cookiesPolicy";
+  static String cookiesPolicyLastUpdated = "cookiesPolicyLastUpdated";
+  static String cookiesPolicyText = "cookiesPolicyText";
+  static String cookiesPolicyDefinition = "cookiesPolicyDefinition";
+  static String howHirfiHomeUsesCookies = "howHirfiHomeUsesCookies";
+  static String essentialCookies = "essentialCookies";
+  static String essentialCookiesSecurely = "essentialCookiesSecurely";
+  static String essentialCookiesServices = "essentialCookiesServices";
+  static String functionalCookies = "functionalCookies";
+  static String functionalCookiesLanguage = "functionalCookiesLanguage";
+  static String functionalCookiesEfficient = "functionalCookiesEfficient";
+  static String performanceAndAnalyticsCookies =
+      "performanceAndAnalyticsCookies";
+  static String performanceAndAnalyticsCookiesAnonymous =
+      "performanceAndAnalyticsCookiesAnonymous";
+  static String performanceAndAnalyticsCookiesQuality =
+      "performanceAndAnalyticsCookiesQuality";
+  static String marketingAndAdvertisingCookies =
+      "marketingAndAdvertisingCookies";
+  static String marketingAndAdvertisingCookiesTargeted =
+      "marketingAndAdvertisingCookiesTargeted";
+  static String marketingAndAdvertisingCookiesMeasure =
+      "marketingAndAdvertisingCookiesMeasure";
+  static String privacyAndSecurityCookies = "privacyAndSecurityCookies";
+  static String privacyAndSecurityCookiesPolicy =
+      "privacyAndSecurityCookiesPolicy";
+  static String privacyAndSecurityCookiesSharing =
+      "privacyAndSecurityCookiesSharing";
+  static String changesToTermsCookies = "changesToTermsCookies";
+  static String changesToTermsCookiesUpdate = "changesToTermsCookiesUpdate";
+  static String changesToTermsCookiesContinuing =
+      "changesToTermsCookiesContinuing";
+  static String about = "about";
+  static String aboutText = "aboutText";
+  static String version = "version";
   //End Static Pages
+
+  //Settings
+  static String settings = "settings";
+  static String personalDetails = "personalDetails";       
+  static String changePassword = "changePassword";       
+  static String notification = "notification";       
+  static String darkMode = "darkMode";       
+  static String languages = "languages";       
+  static String rateApp = "rateApp";       
+  static String feedback = "feedback";       
+  static String logout = "logout";
+  static String createNewPassword = "createNewPassword";
+  static String yourNewPassword = "yourNewPassword";
+  static String confirmPassword = "confirmPassword";   
+  //End Settings
 }

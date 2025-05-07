@@ -21,17 +21,37 @@ import 'package:hirfi_home/view/screens/home/home_view.dart';
 import 'package:hirfi_home/view/screens/map/maps_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_view.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_binding.dart';
+
 import 'package:hirfi_home/view/screens/onbording/onbording_view.dart';
 import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
 import 'package:hirfi_home/view/screens/splash/splash_view.dart';
+
+import 'package:hirfi_home/view/screens/onbording/onbording_viwe.dart';
+import 'package:hirfi_home/view/screens/settings/change_password/change_password_bindings.dart';
+import 'package:hirfi_home/view/screens/settings/change_password/change_password_view.dart';
+import 'package:hirfi_home/view/screens/settings/settings_view.dart';
+import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
+import 'package:hirfi_home/view/screens/splash/splash_viwe.dart';
+import 'package:hirfi_home/view/screens/staticPages/about/about_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/cookiesPolicy/cookies_policy_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/helpAndSupport/help_and_support_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/termsAndConditions/terms_and_conditions_view.dart';
+
 import 'package:hirfi_home/view/screens/welcome/welcome_binding.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 
 List<GetPage<dynamic>>? getPage = [
   GetPage(
+
       name: RoutesString.splash,
       page: () => const SplashView(),
       binding: SplashBinding()),
+GetPage(
+    name: RoutesString.splash,
+    page: () => const ChangePasswordView(),
+    binding: ChangePasswordBindings(),
+  ),
+
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingView(),
@@ -61,6 +81,7 @@ List<GetPage<dynamic>>? getPage = [
     binding: OtpBinding(),
   ),
   GetPage(
+
       name: RoutesString.createProfile,
       page: () => CreateProfileView(),
       binding: CreateProfileBinding()),
@@ -87,6 +108,11 @@ List<GetPage<dynamic>>? getPage = [
   GetPage(
     name: RoutesString.mainShell,
     page: () => MainShellView(),
-    binding: NavigationBinding(),
-  ),
+    binding: NavigationBinding(),),
+GetPage(
+    name: RoutesString.changePassword,
+    page: () => ChangePasswordView(),
+    binding: ChangePasswordBindings(),
+),
+  
 ];
