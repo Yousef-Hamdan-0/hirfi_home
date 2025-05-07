@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:hirfi_home/view/screens/home/home_controller.dart';
+import 'package:hirfi_home/view/screens/chat/chat_controller.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
+
+class ChatView extends GetView<ChatController> {
+  const ChatView({super.key});
 
   @override
   Widget build(BuildContext context) {

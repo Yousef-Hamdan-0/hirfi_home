@@ -1,5 +1,5 @@
 library pin_code_fields;
-
+//library pin_code_fields
 import 'dart:async';
 
 import 'dart:math';

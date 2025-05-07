@@ -41,7 +41,7 @@ class SplashController extends GetxController {
 
     if (isLoggedIn) {
       print('✅ Logged in session found');
-      Get.offAllNamed(RoutesString.homeScreen);
+      Get.offAllNamed(RoutesString.mainShell);
     } else {
       print('👤 No valid session, go to onboarding/login');
       Get.offAllNamed(RoutesString.onbording);
