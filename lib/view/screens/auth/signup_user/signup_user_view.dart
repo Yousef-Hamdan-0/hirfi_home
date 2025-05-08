@@ -7,7 +7,7 @@ import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_controller.dart';
 import 'package:hirfi_home/view/widget/check_box.dart';
-import 'package:hirfi_home/view/widget/or_line.dart';
+import 'package:hirfi_home/view/widget/line/or_line.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/primary_taxt_button/text_and_button.dart';

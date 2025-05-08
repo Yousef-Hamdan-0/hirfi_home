@@ -14,6 +14,30 @@ class AuthUserRepository {
     return UserAuthModel.fromSupabaseUser(user);
   }
 
+  Future<UserAuthModel> signIn({
+    required String email,
+    required String password,
+  }) async {
+    final response = await Supabase.instance.client.auth.signInWithPassword(
+      email: email.trim(),
+      password: password.trim(),
+    );
+
+    final user = response.user;
+    final session = response.session;
+
+    if (user == null || session == null) {
+      throw Exception('فشل تسجيل الدخول، تحقق من البيانات');
+    }
+
+    // ✅ حفظ التوكن في GetStorage
+    final box = GetStorage();
+    box.write('access_token', session.accessToken);
+    box.write('refresh_token', session.refreshToken);
+
+    return UserAuthModel.fromSupabaseUser(user);
+  }
+
   //إنشاء حساب
   Future<UserAuthModel> signUp({
     required String email,

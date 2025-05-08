@@ -8,7 +8,7 @@ import 'package:hirfi_home/view/screens/onbording/onbording_controller.dart';
 import 'package:hirfi_home/view/screens/onbording/widget/intro_page_1.dart';
 import 'package:hirfi_home/view/screens/onbording/widget/intro_page_2.dart';
 import 'package:hirfi_home/view/screens/onbording/widget/intro_page_3.dart';
-import 'package:hirfi_home/view/widget/change_language.dart';
+import 'package:hirfi_home/view/widget/setting_widgets/change_language.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/change_language_icon_button.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/primary_taxt_button/primary_taxt_button.dart';
@@ -20,6 +20,7 @@ class OnbordingView extends GetView<OnbordingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Column(
         children: [
           Expanded(

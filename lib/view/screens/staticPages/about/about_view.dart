@@ -69,9 +69,8 @@ class AboutView extends StatelessWidget {
                 ),
                 SizedBox(height: 112),
                 SettingPrimaryButton(
-                  onTap: (){},
+                  onTap: () {},
                   title: TranslationData.termsCondition.tr,
-                  fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
                   image: Image.asset(AppIcon.termsAndConfitions),
                 ),
                 SizedBox(height: 12),
@@ -82,9 +81,8 @@ class AboutView extends StatelessWidget {
                 ),
                 SizedBox(height: 12),
                 SettingPrimaryButton(
-                  onTap: (){},
+                  onTap: () {},
                   title: TranslationData.cookiesPolicy.tr,
-                  fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
                   image: Image.asset(AppIcon.cookiesPolicy),
                 ),
               ],

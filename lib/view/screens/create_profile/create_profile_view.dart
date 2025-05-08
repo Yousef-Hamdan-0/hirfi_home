@@ -20,6 +20,7 @@ class CreateProfileView extends GetView<CreateProfileController> {
         centerTitle: false,
         title: TranslationData.fillYourProfile.tr,
       ),
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.only(top: 8, left: 24, right: 24),
         child: Center(

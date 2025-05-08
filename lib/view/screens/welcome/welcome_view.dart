@@ -6,7 +6,7 @@ import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_controller.dart';
-import 'package:hirfi_home/view/widget/change_language.dart';
+import 'package:hirfi_home/view/widget/setting_widgets/change_language.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_icon_button.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';

@@ -10,6 +10,7 @@ class PrimaryAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.widgetTitle,
     this.icon,
+    this.imageIcon,
     this.child,
     this.title,
     this.centerTitle,
@@ -23,6 +24,7 @@ class PrimaryAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final bool? centerTitle;
   final IconData? icon;
+  final Image? imageIcon;
   final Color? iconColor;
   final List<Widget>? actions;
   @override
@@ -48,11 +50,12 @@ class PrimaryAppbar extends StatelessWidget implements PreferredSizeWidget {
             leading: child ??
                 InkWell(
                   onTap: onTap,
-                  child: Icon(
+                  child: icon != null
+                  ? Icon(
                     icon ?? Icons.arrow_back,
                     color: iconColor ?? AppColors.almostBlack,
                     size: 24,
-                  ),
+                  ):imageIcon,
                 ),
             actions: actions,
           ),

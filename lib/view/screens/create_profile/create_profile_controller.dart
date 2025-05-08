@@ -6,6 +6,7 @@ import 'package:hirfi_home/data/repositroy/user_profile_repo.dart';
 import 'package:hirfi_home/data/service/subabase_service/supabase_send_service.dart';
 import 'package:hirfi_home/helper/date_converter.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
+import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -119,5 +120,6 @@ class CreateProfileController extends GetxController {
     );
 
     debugPrint("✅ تم استكمال بيانات البروفايل");
+    Get.offAllNamed(RoutesString.mainShell);
   }
 }

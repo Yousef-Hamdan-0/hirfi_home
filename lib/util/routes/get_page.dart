@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:hirfi_home/controller/navigation_controller/navigation_binding.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
+import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_binding.dart';
+import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_controller.dart';
+import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_view.dart';
 import 'package:hirfi_home/view/screens/chat/chat_binding.dart';
 import 'package:hirfi_home/view/screens/chat/chat_view.dart';
 import 'package:hirfi_home/main_shell_view.dart';
@@ -23,35 +26,22 @@ import 'package:hirfi_home/view/screens/map/maps_view.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_binding.dart';
 
 import 'package:hirfi_home/view/screens/onbording/onbording_view.dart';
+import 'package:hirfi_home/view/screens/settings/setting_binfing.dart';
+import 'package:hirfi_home/view/screens/settings/settings_view.dart';
 import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
 import 'package:hirfi_home/view/screens/splash/splash_view.dart';
 
-import 'package:hirfi_home/view/screens/onbording/onbording_viwe.dart';
 import 'package:hirfi_home/view/screens/settings/change_password/change_password_bindings.dart';
 import 'package:hirfi_home/view/screens/settings/change_password/change_password_view.dart';
-import 'package:hirfi_home/view/screens/settings/settings_view.dart';
-import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
-import 'package:hirfi_home/view/screens/splash/splash_viwe.dart';
-import 'package:hirfi_home/view/screens/staticPages/about/about_view.dart';
-import 'package:hirfi_home/view/screens/staticPages/cookiesPolicy/cookies_policy_view.dart';
-import 'package:hirfi_home/view/screens/staticPages/helpAndSupport/help_and_support_view.dart';
-import 'package:hirfi_home/view/screens/staticPages/termsAndConditions/terms_and_conditions_view.dart';
 
 import 'package:hirfi_home/view/screens/welcome/welcome_binding.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 
 List<GetPage<dynamic>>? getPage = [
   GetPage(
-
       name: RoutesString.splash,
-      page: () => const SplashView(),
-      binding: SplashBinding()),
-GetPage(
-    name: RoutesString.splash,
-    page: () => const ChangePasswordView(),
-    binding: ChangePasswordBindings(),
-  ),
-
+      page: () => const EnterPhoneNumberView(),
+      binding: EnterPhoneNumberBinding()),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingView(),
@@ -64,6 +54,11 @@ GetPage(
     name: RoutesString.login,
     page: () => LoginView(),
     binding: LoginBinding(),
+  ),
+  GetPage(
+    name: RoutesString.changePassword,
+    page: () => ChangePasswordView(),
+    binding: ChangePasswordBindings(),
   ),
   GetPage(
     name: RoutesString.signUpCraftman,
@@ -81,7 +76,6 @@ GetPage(
     binding: OtpBinding(),
   ),
   GetPage(
-
       name: RoutesString.createProfile,
       page: () => CreateProfileView(),
       binding: CreateProfileBinding()),
@@ -106,13 +100,12 @@ GetPage(
     binding: ProfileBinding(),
   ),
   GetPage(
+      name: RoutesString.settings,
+      page: () => const SettingsView(),
+      binding: SettingBinding()),
+  GetPage(
     name: RoutesString.mainShell,
     page: () => MainShellView(),
-    binding: NavigationBinding(),),
-GetPage(
-    name: RoutesString.changePassword,
-    page: () => ChangePasswordView(),
-    binding: ChangePasswordBindings(),
-),
-  
+    binding: NavigationBinding(),
+  ),
 ];

@@ -41,6 +41,9 @@ class TranslationData {
   static String doYouHaveAnAccount = "doYouHaveAnAccount";
   static String signIn = 'signIn';
   static String forgotPassword = "forgotPassword";
+  //Forgot Password
+  static String enterYourPhoneNumberWeWillSendYouAVerificationCode = "enterYourPhoneNumberWeWillSendYouAVerificationCode";
+  //End Forgot Password
   static String signUp = 'signUp';
   static String hiWelcomeBack = "hiWelcomeBack";
   static String hopeYouAreDoingFine = "hopeYouAreDoingFine";
@@ -79,6 +82,13 @@ class TranslationData {
   static String profile = "prfile";
   //End Profile
 
+  //Settings
+  //LogOut
+  static String logOut = "logOut";
+  static String sureLogOut = "sureLogOut";
+  static String YesLogout = "YesLogout";
+  //End LogOut
+  //End Settings
   //Static Pages
   static String termsAndConditionsText = "termsAndConditionsText";
   static String definitions = "definitions";
@@ -163,16 +173,16 @@ class TranslationData {
 
   //Settings
   static String settings = "settings";
-  static String personalDetails = "personalDetails";       
-  static String changePassword = "changePassword";       
-  static String notification = "notification";       
-  static String darkMode = "darkMode";       
-  static String languages = "languages";       
-  static String rateApp = "rateApp";       
-  static String feedback = "feedback";       
+  static String personalDetails = "personalDetails";
+  static String changePassword = "changePassword";
+  static String notification = "notification";
+  static String darkMode = "darkMode";
+  static String languages = "languages";
+  static String rateApp = "rateApp";
+  static String feedback = "feedback";
   static String logout = "logout";
   static String createNewPassword = "createNewPassword";
   static String yourNewPassword = "yourNewPassword";
-  static String confirmPassword = "confirmPassword";   
+  static String confirmPassword = "confirmPassword";
   //End Settings
 }

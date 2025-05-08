@@ -12,7 +12,7 @@ import 'package:hirfi_home/view/widget/text/body_text2.dart';
 import 'package:hirfi_home/view/widget/text/headline4.dart';
 import 'package:hirfi_home/view/widget/text_field.dart';
 
-class ChangePasswordView extends GetView <ChangePasswordController> {
+class ChangePasswordView extends GetView<ChangePasswordController> {
   const ChangePasswordView({super.key});
 
   @override
@@ -22,6 +22,7 @@ class ChangePasswordView extends GetView <ChangePasswordController> {
         onTap: () {
           Get.back();
         },
+        icon: Icons.arrow_back,
         title: TranslationData.changePassword.tr,
       ),
       backgroundColor: AppColors.white,
@@ -69,8 +70,8 @@ class ChangePasswordView extends GetView <ChangePasswordController> {
                   hint: TranslationData.confirmPassword.tr,
                   textInputType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
-                  validator: (value) => AppTools()
-                      .passwordSetValidate(controller.confirmPasswordController),
+                  validator: (value) => AppTools().passwordSetValidate(
+                      controller.confirmPasswordController),
                   obscureText: controller.visibility.value,
                   prefixIcon: Icon(
                     Icons.lock_outline_rounded,
@@ -79,9 +80,7 @@ class ChangePasswordView extends GetView <ChangePasswordController> {
                 ),
                 SizedBox(height: 32),
                 PrimaryButton(
-                  onTap: () {},
-                  title: TranslationData.changePassword.tr
-                ),
+                    onTap: () {}, title: TranslationData.changePassword.tr),
               ],
             );
           },

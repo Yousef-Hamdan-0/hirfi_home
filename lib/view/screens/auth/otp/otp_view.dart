@@ -26,7 +26,9 @@ class OtpView extends GetView<OtpController> {
           onTap: () {
             Get.back();
           },
+          icon: Icons.arrow_back,
         ),
+        backgroundColor: AppColors.white,
         body: Form(
           key: controller.otpForm,
           child: Obx(

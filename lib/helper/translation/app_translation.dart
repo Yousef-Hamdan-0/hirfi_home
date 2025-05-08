@@ -42,6 +42,10 @@ class AppTranslation extends Translations {
           TranslationData.doYouHaveAnAccount: "هل لديك حساب بالفعل؟",
           TranslationData.signIn: "تسجيل الدخول",
           TranslationData.forgotPassword: "هل نسيت كلمة المرور؟",
+          //Forgot Password
+          TranslationData.enterYourPhoneNumberWeWillSendYouAVerificationCode:
+              "أدخل رقم هاتفك، وسنرسل لك رمز التحقق.",
+          //End Forgot Password
           TranslationData.signUp: "إنشاء حساب",
           TranslationData.hiWelcomeBack: "مرحبًا، أهلاً بعودتك!",
           TranslationData.hopeYouAreDoingFine: "أتمنى أن تكون بخير.",
@@ -75,6 +79,13 @@ class AppTranslation extends Translations {
           //Profile
           TranslationData.profile: "الملف الشخصي",
           //End Profile
+          //Settings
+          //LogOut
+          TranslationData.logOut: "تسجيل الخروج",
+          TranslationData.sureLogOut: "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+          TranslationData.YesLogout: "نعم، سجل الخروج",
+          //End LogOut
+          //End Settings
           //Create Profile
           TranslationData.fillYourProfile: "املأ ملفك الشخصي",
           TranslationData.gender: " الجنس",
@@ -213,7 +224,8 @@ class AppTranslation extends Translations {
           TranslationData.feedback: "إرسال ملاحظات",
           TranslationData.logout: "تسجيل الخروج",
           TranslationData.createNewPassword: "إنشاء كلمة مرور جديدة",
-          TranslationData.yourNewPassword: "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور التي استخدمتها سابقًا.",
+          TranslationData.yourNewPassword:
+              "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور التي استخدمتها سابقًا.",
           TranslationData.confirmPassword: "تأكيد كلمة المرور",
           //End Settings
         },
@@ -254,6 +266,10 @@ class AppTranslation extends Translations {
           TranslationData.doYouHaveAnAccount: "Do you have an account ?",
           TranslationData.signIn: "Sign In",
           TranslationData.forgotPassword: "Forgot password?",
+          //Forgot Password
+          TranslationData.enterYourPhoneNumberWeWillSendYouAVerificationCode:
+              "Enter your Email, we will send you a verification code.",
+          //End Forgot Password
           TranslationData.signUp: "Sign Up",
           TranslationData.hiWelcomeBack: "Hi, Welcome Back!",
           TranslationData.hopeYouAreDoingFine: "Hope you’re doing fine.",
@@ -297,6 +313,13 @@ class AppTranslation extends Translations {
           //Profile
           TranslationData.profile: "Prfile",
           //End Profile
+          //Settings
+          //LogOut
+          TranslationData.logOut: "Log out",
+          TranslationData.sureLogOut: "Are you sure you want to log out?",
+          TranslationData.YesLogout: "Yes, Logout",
+          //End LogOut
+          //End Settings
           //Static Pages
           TranslationData.termsAndConditionsText:
               "Welcome to Hirfi home! Before using our app, please read these terms and conditions carefully. By using the app, you agree to comply with these terms.",
@@ -427,7 +450,8 @@ class AppTranslation extends Translations {
           TranslationData.feedback: "Feedback",
           TranslationData.logout: "Logout",
           TranslationData.createNewPassword: "Create new password",
-          TranslationData.yourNewPassword: "Your new password must be different form previously used password",
+          TranslationData.yourNewPassword:
+              "Your new password must be different form previously used password",
           TranslationData.confirmPassword: "Confirm Password",
           //End Settings
         }
