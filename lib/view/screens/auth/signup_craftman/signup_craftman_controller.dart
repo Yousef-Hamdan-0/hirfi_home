@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
 
-class SignupCraftmanController extends GetxController{
+class createCraftsmanProfileController extends GetxController{
   
 }

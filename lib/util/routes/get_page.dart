@@ -40,8 +40,8 @@ import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 List<GetPage<dynamic>>? getPage = [
   GetPage(
       name: RoutesString.splash,
-      page: () => const EnterPhoneNumberView(),
-      binding: EnterPhoneNumberBinding()),
+      page: () => const SplashView(),
+      binding: SplashBinding()),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingView(),
@@ -61,9 +61,9 @@ List<GetPage<dynamic>>? getPage = [
     binding: ChangePasswordBindings(),
   ),
   GetPage(
-    name: RoutesString.signUpCraftman,
-    page: () => SignupCraftmanView(),
-    binding: SignupCraftmanBinding(),
+    name: RoutesString.createCraftsmanProfileView,
+    page: () => createCraftsmanProfileView(),
+    binding: createCraftsmanProfileBinding(),
   ),
   GetPage(
     name: RoutesString.signUpUser,

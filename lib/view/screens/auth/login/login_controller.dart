@@ -21,7 +21,6 @@ class LoginController extends GetxController {
   Future<void> login() async {
     final email = emailController.text.trim();
     final password = passwordController.text;
-
     if (email.isEmpty || password.isEmpty) {
       Get.snackbar('خطأ', 'يرجى إدخال البريد وكلمة المرور');
       return;

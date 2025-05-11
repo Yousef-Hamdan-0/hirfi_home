@@ -13,6 +13,7 @@ class SignupUserController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final String role = Get.arguments ?? 'user';
   final OtpController otpController =
       Get.put(OtpController(Get.find(), Get.find()));
   RxBool visibility = true.obs;
@@ -45,53 +46,6 @@ class SignupUserController extends GetxController {
     passwordController.clear();
   }
 
-  Future<void> signUpWithProfile({
-    required BuildContext context,
-    required String email,
-    required String password,
-    required String name,
-    required String phoneNumber,
-  }) async {
-    final scaffoldMessenger = ScaffoldMessenger.of(context);
-
-    try {
-      // 1. إنشاء حساب جديد في auth
-      final authResponse = await Supabase.instance.client.auth.signUp(
-        email: email,
-        password: password,
-      );
-
-      final user = authResponse.user;
-      if (user == null) {
-        scaffoldMessenger.showSnackBar(const SnackBar(
-          content: Text("Sign up failed: user is null"),
-          backgroundColor: Colors.red,
-        ));
-        return;
-      }
-
-      final userId = user.id;
-
-      // 2. إنشاء سجل في user_profiles
-      await Supabase.instance.client.from('user_profiles').insert({
-        'id': userId,
-        'email': email,
-        'name': name,
-        'phone_number': phoneNumber,
-      });
-
-      scaffoldMessenger.showSnackBar(const SnackBar(
-        content: Text("Account created successfully!"),
-        backgroundColor: Colors.green,
-      ));
-    } catch (e) {
-      scaffoldMessenger.showSnackBar(SnackBar(
-        content: Text("Sign up error: $e"),
-        backgroundColor: Colors.red,
-      ));
-    }
-  }
-
   void sendOtp() async {
     FirebaseAuth auth = FirebaseAuth.instance;
     appTools.showLoading();
@@ -113,7 +67,8 @@ class SignupUserController extends GetxController {
             emailController.text,
             phoneNumberController.text,
             passwordController.text,
-            verificationId);
+            verificationId,
+            role);
         Get.toNamed(
           RoutesString.otp,
           arguments: [

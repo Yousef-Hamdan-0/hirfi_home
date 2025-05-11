@@ -60,7 +60,6 @@ class WelcomeView extends GetView<WelcomeController> {
                     title: TranslationData.welcome.tr,
                     fontSize: Get.locale!.languageCode == 'ar' ? 20 : 18,
                     fontWeight: FontWeight.bold,
-                    
                   ),
                   SizedBox(
                     height: 12,
@@ -85,7 +84,9 @@ class WelcomeView extends GetView<WelcomeController> {
                   ),
                   PrimaryButton(
                     onTap: () {
-                      Get.toNamed(RoutesString.signUpUser);
+                      controller.selectedRole = 'user';
+                      Get.toNamed(RoutesString.signUpUser,
+                          arguments: controller.selectedRole);
                     },
                     title: TranslationData.iDontHaveAnAccount.tr,
                   ),
@@ -104,7 +105,9 @@ class WelcomeView extends GetView<WelcomeController> {
                       ),
                       InkWell(
                         onTap: () {
-                          Get.toNamed(RoutesString.signUpCraftman);
+                          controller.selectedRole = 'craftsman';
+                          Get.toNamed(RoutesString.signUpUser,
+                              arguments: controller.selectedRole);
                         },
                         child: BodyText2(
                           title: TranslationData.iAmACraftsman.tr,

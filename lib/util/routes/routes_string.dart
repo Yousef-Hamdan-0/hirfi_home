@@ -5,7 +5,7 @@ class RoutesString {
   static const String login = "/login";
   static const String changePassword = "/changePassword";
   static const String signUpUser = "/signUpUser";
-  static const String signUpCraftman = "/signUpCraftman";
+  static const String createCraftsmanProfileView = "/createCraftsmanProfileView";
   static const String otp = "/otp";
   static const String createProfile = "/createProfile";
   static const String homeScreen = "/home";
