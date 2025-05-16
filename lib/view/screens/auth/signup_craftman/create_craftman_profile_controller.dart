@@ -25,10 +25,7 @@ class createCraftsmanProfileController extends GetxController {
   final RxString endTime = ''.obs;
   RxList<String> selectedDays = <String>[].obs;
   Rx<LatLng?> selectedLocation = Rx<LatLng?>(null);
-
-  void setLocation(LatLng location) {
-    selectedLocation.value = location;
-  }
+  
 
   Future<void> fetchAndStoreUserInfo() async {
     try {

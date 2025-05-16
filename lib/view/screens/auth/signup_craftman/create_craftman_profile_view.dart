@@ -8,13 +8,13 @@ import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
 import 'package:hirfi_home/util/fonts.dart';
 import 'package:hirfi_home/view/screens/auth/signup_craftman/create_craftman_profile_controller.dart';
-import 'package:hirfi_home/view/screens/auth/signup_craftman/map/select_location_screen.dart';
+
 import 'package:hirfi_home/view/widget/main_dropdown_field.dart';
-import 'package:hirfi_home/view/widget/main_dropdown_search.dart';
+
 import 'package:hirfi_home/view/widget/main_select.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
-import 'package:hirfi_home/view/widget/setting_widgets/logout_widget.dart';
+
 import 'package:hirfi_home/view/widget/text/body_text1.dart';
 import 'package:hirfi_home/view/widget/text/headline5.dart';
 import 'package:hirfi_home/view/widget/text_field.dart';

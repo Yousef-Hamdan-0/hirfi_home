@@ -12,11 +12,10 @@ class createCraftsmanProfileBinding extends Bindings {
     Get.lazyPut(() => SupabaseFetchService());
     Get.lazyPut(() => SupabaseSendService());
     Get.lazyPut(() => AuthUserRepository());
-    Get.lazyPut(() => CraftsmanRepository(
+    Get.lazyPut(() => UserProfileRepository(
           Get.find<SupabaseFetchService>(),
           Get.find<SupabaseSendService>(),
         ));
-
     Get.lazyPut<createCraftsmanProfileController>(() =>
         createCraftsmanProfileController(Get.find<CraftsmanRepository>()));
   }
