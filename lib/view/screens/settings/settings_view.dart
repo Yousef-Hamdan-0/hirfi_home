@@ -9,9 +9,12 @@ import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/settings/settings_controller.dart';
 import 'package:hirfi_home/view/widget/line/line.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
+import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/primary_button/setting_primary_button.dart';
 import 'package:hirfi_home/view/widget/setting_widgets/change_language.dart';
 import 'package:hirfi_home/view/widget/setting_widgets/logout_widget.dart';
+import 'package:hirfi_home/view/widget/text/body_text1.dart';
+import 'package:hirfi_home/view/widget/text/headline4.dart';
 
 class SettingsView extends GetView<SettingsController> {
   const SettingsView({super.key});
@@ -89,7 +92,42 @@ class SettingsView extends GetView<SettingsController> {
                   onTap: () {
                     appTools.showCustomBottomSheet(
                       context,
-                      const LogoutWidget(),
+                      LogoutWidget(
+                        child: Center(
+                          child: Column(
+                            children: [
+                              Headline4(
+                                title: TranslationData.logOut.tr,
+                                fontSize:
+                                    Get.locale!.languageCode == 'ar' ? 22 : 20,
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              const Line(),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              BodyText1(
+                                title: TranslationData.sureLogOut.tr,
+                                fontSize:
+                                    Get.locale!.languageCode == 'ar' ? 16 : 18,
+                                color: AppColors.lightGrey,
+                              ),
+                              const SizedBox(
+                                height: 24,
+                              ),
+                              PrimaryButton(
+                                onTap: () {
+                                  controller.signOutUser();
+                                },
+                                title: TranslationData.YesLogout.tr,
+                                backgroundColor: AppColors.red,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                       true,
                     );
                   },

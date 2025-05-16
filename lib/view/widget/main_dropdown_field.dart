@@ -41,6 +41,7 @@ class MainDropdownField<T> extends StatelessWidget {
               : const EdgeInsets.only(left: 16, right: 8),
           child: prefixIcon,
         ),
+        
         prefixIconConstraints: const BoxConstraints(minWidth: 10),
         hintText: hint,
         hintStyle: TextStyle(
@@ -67,7 +68,7 @@ class MainDropdownField<T> extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.red, width: 1.6),
         ),
       ),
-      icon: const Icon(Icons.arrow_drop_down),
+      icon: const Icon(Icons.keyboard_arrow_down),
       isExpanded: true,
       items: items.map((item) {
         return DropdownMenuItem<T>(

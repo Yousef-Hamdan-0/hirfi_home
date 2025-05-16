@@ -2,7 +2,9 @@ class TranslationData {
   static String changeLanguage = 'changeLanguage';
 
   static String createYourAccount = 'createYourAccount';
-
+  static String cansel = 'cansel';
+  static String ok = 'ok';
+  static String selectDay = 'selectDay';
   static String signInYourAccount = "signInYourAccount";
   static String send = "send";
   static String dontHaveAccount = 'dontHaveAccount';
@@ -42,7 +44,8 @@ class TranslationData {
   static String signIn = 'signIn';
   static String forgotPassword = "forgotPassword";
   //Forgot Password
-  static String enterYourPhoneNumberWeWillSendYouAVerificationCode = "enterYourPhoneNumberWeWillSendYouAVerificationCode";
+  static String enterYourPhoneNumberWeWillSendYouAVerificationCode =
+      "enterYourPhoneNumberWeWillSendYouAVerificationCode";
   //End Forgot Password
   static String signUp = 'signUp';
   static String hiWelcomeBack = "hiWelcomeBack";
@@ -69,6 +72,7 @@ class TranslationData {
   static String congratulations = "congratulations";
   static String congratulationsExplanation = "congratulationsExplanation";
   //End Otp
+  //profile
   //create Profile
   static String fillYourProfile = "fillYourProfile";
   static String dateOfBirth = "Date of Birth";
@@ -77,11 +81,36 @@ class TranslationData {
   static String female = "female";
   static String createProfile = "createProfile";
   //create Profile end
-  //End auth
-  //profile
+  //Create craftsman Profile
+  static String ocupationType = "ocupationType";
+  static String workingTime = "workingTime";
+  static String days = "days";
+  static String hours = "hours";
+  static String aboutMe = "aboutMe";
+  static String exApoutMe = "exApoutMe";
+  static String addLocation = "addLocation";
+  static String allDays = "allDays";
+  static String sunday = "sunday";
+  static String monday = "monday";
+  static String tuesday = "tuesday";
+  static String wednesday = "wednesday";
+  static String thursday = "thursday";
+  static String friday = "friday";
+  static String saturday = "saturday";
+  static String pleaseSelectAtLeastOneDay = "pleaseSelectAtLeastOneDay";
+  //Create craftsman Profile End
   static String profile = "prfile";
   //End Profile
-
+  //End auth
+  //Occupation
+  static String custom = "custom";
+  static String mechanic = "mechanic";
+  static String plumber = "plumber";
+  static String electrician = "electrician";
+  static String blacksmith = "blacksmith";
+  static String carpenter = "carpenter";
+  static String builder = "builder";
+  //Occupation End
   //Settings
   //LogOut
   static String logOut = "logOut";

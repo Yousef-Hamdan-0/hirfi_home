@@ -13,12 +13,12 @@ import 'package:hirfi_home/view/screens/auth/login/login_binding.dart';
 import 'package:hirfi_home/view/screens/auth/login/login_view.dart';
 import 'package:hirfi_home/view/screens/auth/otp/otp_binding.dart';
 import 'package:hirfi_home/view/screens/auth/otp/otp_view.dart';
-import 'package:hirfi_home/view/screens/auth/signup_craftman/signup_craftman_Binding.dart';
-import 'package:hirfi_home/view/screens/auth/signup_craftman/signup_craftman_view.dart';
+import 'package:hirfi_home/view/screens/auth/signup_craftman/create_craftman_profile_binding.dart';
+import 'package:hirfi_home/view/screens/auth/signup_craftman/create_craftman_profile_view.dart';
 import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_binding.dart';
 import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_view.dart';
-import 'package:hirfi_home/view/screens/create_profile/create_profile_binding.dart';
-import 'package:hirfi_home/view/screens/create_profile/create_profile_view.dart';
+import 'package:hirfi_home/view/screens/create_profile/create_user_profile_binding.dart';
+import 'package:hirfi_home/view/screens/create_profile/create_user_profile_view.dart';
 import 'package:hirfi_home/view/screens/home/home_binding.dart';
 import 'package:hirfi_home/view/screens/home/home_view.dart';
 import 'package:hirfi_home/view/screens/map/maps_binding.dart';
@@ -40,8 +40,8 @@ import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 List<GetPage<dynamic>>? getPage = [
   GetPage(
       name: RoutesString.splash,
-      page: () => const SplashView(),
-      binding: SplashBinding()),
+      page: () => const createCraftsmanProfileView(),
+      binding: createCraftsmanProfileBinding()),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingView(),
@@ -77,8 +77,8 @@ List<GetPage<dynamic>>? getPage = [
   ),
   GetPage(
       name: RoutesString.createProfile,
-      page: () => CreateProfileView(),
-      binding: CreateProfileBinding()),
+      page: () => CreateUserProfileView(),
+      binding: CreateUserProfileBinding()),
   GetPage(
     name: RoutesString.homeScreen,
     page: () => HomeView(),

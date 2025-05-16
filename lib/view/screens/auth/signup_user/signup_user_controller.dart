@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hirfi_home/helper/src/supabase.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:firebase_auth/firebase_auth.dart';

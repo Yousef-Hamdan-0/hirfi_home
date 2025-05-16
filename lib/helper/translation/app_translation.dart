@@ -6,6 +6,9 @@ class AppTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         "ar": {
+          TranslationData.cansel: "إلغاء",
+          TranslationData.ok: "موافق",
+          TranslationData.selectDay: "إختر يوم",
           //Onboarding
           TranslationData.meetCraftsmanOnline: "قابل الحرفي عبر الإنترنت",
           TranslationData.meetCraftsmanOnlineExplanation:
@@ -76,9 +79,15 @@ class AppTranslation extends Translations {
               "تم تجهيز حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية خلال ثوانٍ قليلة...",
           //End Otp
           //End Auth
-          //Profile
-          TranslationData.profile: "الملف الشخصي",
-          //End Profile
+          //Occupation
+          TranslationData.custom: "مخصص",
+          TranslationData.mechanic: "ميكانيكي",
+          TranslationData.plumber: "موسرجي",
+          TranslationData.electrician: "كهربجي",
+          TranslationData.blacksmith: "حداد",
+          TranslationData.carpenter: "نجّار",
+          TranslationData.builder: "عامل بناء",
+          //End Occupation
           //Settings
           //LogOut
           TranslationData.logOut: "تسجيل الخروج",
@@ -86,15 +95,37 @@ class AppTranslation extends Translations {
           TranslationData.YesLogout: "نعم، سجل الخروج",
           //End LogOut
           //End Settings
-          //Create Profile
+          //Profile
+          //Create user Profile
           TranslationData.fillYourProfile: "املأ ملفك الشخصي",
           TranslationData.gender: " الجنس",
           TranslationData.male: "ّذكر",
           TranslationData.female: "أنثى",
           TranslationData.dateOfBirth: "تاريخ الميلاد",
           TranslationData.createProfile: "إنشاء ملف شخصي",
-          //Create Profile End
-
+          //Create user Profile End
+          //Create craftsman Profile
+          TranslationData.ocupationType: "نوع المهنة",
+          TranslationData.workingTime: "وقت العمل",
+          TranslationData.days: "الأيام",
+          TranslationData.hours: "الساعات",
+          TranslationData.aboutMe: "نبذة عني",
+          TranslationData.exApoutMe:
+              "مثال: أنا ميكانيكي متخصص في السيارات اليابانية",
+          TranslationData.addLocation: "أضف الموقع",
+          TranslationData.allDays: "كل الأيام",
+          TranslationData.sunday: "الأحد",
+          TranslationData.monday: "الإثنين",
+          TranslationData.tuesday: "الثلاثاء",
+          TranslationData.wednesday: "الأربعاء",
+          TranslationData.thursday: "الخميس",
+          TranslationData.friday: "الجمعة",
+          TranslationData.saturday: "السبت",
+          TranslationData.pleaseSelectAtLeastOneDay:
+              "الرجاء اختيار يوم واحد على الأقل",
+          //Create craftsman Profile End
+          TranslationData.profile: "الملف الشخصي",
+          //End Profile
           //Static Pages
           TranslationData.termsAndConditionsText:
               "مرحبًا بك في Hirfi Home! قبل استخدام تطبيقنا، يرجى قراءة هذه الشروط والأحكام بعناية. باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط.",
@@ -230,6 +261,9 @@ class AppTranslation extends Translations {
           //End Settings
         },
         "en": {
+          TranslationData.cansel: "Cansel",
+          TranslationData.ok: "Ok",
+          TranslationData.selectDay: "Select Day",
           //Onboarding
           TranslationData.meetCraftsmanOnline: "Meet Craftsman Online",
           TranslationData.meetCraftsmanOnlineExplanation:
@@ -301,18 +335,48 @@ class AppTranslation extends Translations {
               "Your account is ready to use. You will be redirected to the Home Page in a few seconds...",
           //End Otp
           //End Auth
-          //Create Profile
+          //Profile
+          //Create user Profile
           TranslationData.fillYourProfile: "Fill Your Profile",
           TranslationData.gender: "Gender",
           TranslationData.male: "Male",
           TranslationData.female: "Female",
           TranslationData.dateOfBirth: "Date of Birth",
           TranslationData.createProfile: "Create Profile",
-          //Create Profile End
-          //End Auth
-          //Profile
+          //Create user Profile End
+          //Create craftsman Profile
+          TranslationData.ocupationType: "Occupation Type",
+          TranslationData.workingTime: "Working Time",
+          TranslationData.days: "Days",
+          TranslationData.hours: "Hours",
+          TranslationData.aboutMe: "About me",
+          TranslationData.exApoutMe:
+              "Ex: I am a mechanic specialized in Japanese cars",
+          TranslationData.addLocation: "Add Location",
+          TranslationData.allDays: "All days",
+          TranslationData.sunday: "Sunday",
+          TranslationData.monday: "Monday",
+          TranslationData.tuesday: "Tuesday",
+          TranslationData.wednesday: "Wednesday",
+          TranslationData.thursday: "Thursday",
+          TranslationData.friday: "Friday",
+          TranslationData.saturday: "Saturday",
+          TranslationData.pleaseSelectAtLeastOneDay:
+              "Please select at least one day.",
+          //Create craftsman Profile End
           TranslationData.profile: "Prfile",
           //End Profile
+          //End Auth
+          //Occupation
+          TranslationData.custom: "Custom",
+          TranslationData.mechanic: "Mechanic",
+          TranslationData.plumber: "Plumber",
+          TranslationData.electrician: "Electrician",
+          TranslationData.blacksmith: "Blacksmith",
+          TranslationData.carpenter: "Carpenter",
+          TranslationData.builder: "Builder",
+
+          //End Occupation
           //Settings
           //LogOut
           TranslationData.logOut: "Log out",

@@ -29,7 +29,7 @@ dependencies:
   get: ^4.7.2
   geocoding: ^3.0.0
   geolocator: ^14.0.0
-  google_maps_flutter: ^2.11.0
+  google_maps_flutter: ^2.12.2
   google_api_headers: ^4.4.3
 
 #H
@@ -41,6 +41,8 @@ dependencies:
   json_annotation: ^4.9.0
 #L
   location: ^8.0.0
+#M
+  multi_select_flutter: ^4.1.3
 #O
   outline_gradient_button: ^2.0.1+1
 #P
@@ -55,6 +57,10 @@ dependencies:
   toasty_box: ^1.0.4
   text_gradiate: ^1.0.1
   pin_code_fields: ^8.0.1
+  dropdown_search: ^6.0.2
+  dropdown_model_list: ^2.1.5
+  dropdown_button2: ^2.3.9
+  
   
   
   

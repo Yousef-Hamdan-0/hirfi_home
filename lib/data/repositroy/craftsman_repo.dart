@@ -112,4 +112,24 @@ class CraftsmanRepository {
       rethrow;
     }
   }
+
+  Future<Craftsman?> getCraftsman() async {
+    try {
+      final uid = _fetchService.userIdOrThrow;
+
+      final result = await _fetchService.fetchSingle(
+        'craftsman',
+        Craftsman.columns,
+        'craftman_id',
+        uid,
+      );
+
+      return result != null
+          ? Craftsman.fromMap({...result, 'craftman_id': uid})
+          : null;
+    } catch (e) {
+      debugPrint('Error fetching craftsman: $e');
+      throw Exception('Failed to load craftsman');
+    }
+  }
 }

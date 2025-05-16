@@ -116,14 +116,7 @@ class OtpController extends GetxController {
       await _profileRepo.insertProfile(profile);
     }
 
-    await client.from('app_users').insert({
-      'id': userId,
-      'name': name,
-      'email': email,
-      'phone_number': phone,
-      'picture': null,
-      'role': role,
-    });
+    
   }
 
   Future<void> signUp() async {

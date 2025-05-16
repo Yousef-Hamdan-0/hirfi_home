@@ -12,9 +12,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 File? selectedImage;
 
-class CreateProfileController extends GetxController {
+class CreateUserProfileController extends GetxController {
   final UserProfileRepository repository; // ✅ استخدم final هنا
-  CreateProfileController(this.repository);
+  CreateUserProfileController(this.repository);
   final GlobalKey<FormState> signUpForm = GlobalKey<FormState>();
   final Rx<File?> selectedImage = Rx<File?>(null);
   RxString uploadedImageUrl = ''.obs;
