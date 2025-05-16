@@ -95,7 +95,7 @@ class LoginView extends GetView<LoginController> {
                   ),
                   SizedBox(height: 24),
                   PrimaryButton(
-                      onTap: () => controller.login(),
+                      onTap: () => controller.loginUser(),
                       title: TranslationData.signIn.tr),
                   SizedBox(height: 24),
                   OrLine(),

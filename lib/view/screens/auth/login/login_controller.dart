@@ -18,7 +18,7 @@ class LoginController extends GetxController {
     update();
   }
 
-  Future<void> login() async {
+  Future<void> loginUser() async {
     final email = emailController.text.trim();
     final password = passwordController.text;
     if (email.isEmpty || password.isEmpty) {
