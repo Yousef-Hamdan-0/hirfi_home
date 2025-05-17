@@ -9,6 +9,7 @@ import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/ent
 import 'package:hirfi_home/view/screens/chat/chat_binding.dart';
 import 'package:hirfi_home/view/screens/chat/chat_view.dart';
 import 'package:hirfi_home/main_shell_view.dart';
+import 'package:hirfi_home/view/screens/home/page/home_view.dart';
 import 'package:hirfi_home/view/screens/profile/profile_binding.dart';
 import 'package:hirfi_home/view/screens/profile/profile_view.dart';
 import 'package:hirfi_home/view/screens/auth/login/login_binding.dart';
@@ -23,19 +24,19 @@ import 'package:hirfi_home/view/screens/create_profile/create_user_profile_bindi
 import 'package:hirfi_home/view/screens/create_profile/create_user_profile_view.dart';
 import 'package:hirfi_home/view/screens/home/home_binding.dart';
 import 'package:hirfi_home/view/screens/home/home_view.dart';
+import 'package:hirfi_home/view/screens/create_profile/create_profile_binding.dart';
+import 'package:hirfi_home/view/screens/create_profile/create_profile_view.dart';
+import 'package:hirfi_home/view/screens/home/controller/home_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_view.dart';
 import 'package:hirfi_home/view/screens/onbording/onbording_binding.dart';
-
 import 'package:hirfi_home/view/screens/onbording/onbording_view.dart';
 import 'package:hirfi_home/view/screens/settings/setting_binfing.dart';
 import 'package:hirfi_home/view/screens/settings/settings_view.dart';
 import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
 import 'package:hirfi_home/view/screens/splash/splash_view.dart';
-
 import 'package:hirfi_home/view/screens/settings/change_password/change_password_bindings.dart';
 import 'package:hirfi_home/view/screens/settings/change_password/change_password_view.dart';
-
 import 'package:hirfi_home/view/screens/welcome/welcome_binding.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
+import 'package:hirfi_home/main_shell_view.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
 import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/auth/login/login_controller.dart';
+import 'package:hirfi_home/view/screens/home/controller/home_binding.dart';
 import 'package:hirfi_home/view/widget/line/or_line.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
@@ -121,7 +123,9 @@ class LoginView extends GetView<LoginController> {
                     height: 24,
                   ),
                   PrimaryTaxtButton(
-                      onTap: () {}, title: TranslationData.forgotPassword.tr),
+                      onTap: () {
+                        Get.offAll(MainShellView(),binding: HomeBinding());
+                      }, title: TranslationData.forgotPassword.tr),
                   SizedBox(
                     height: 24,
                   ),
