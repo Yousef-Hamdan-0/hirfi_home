@@ -9,6 +9,7 @@ import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/ent
 import 'package:hirfi_home/view/screens/chat/chat_binding.dart';
 import 'package:hirfi_home/view/screens/chat/chat_view.dart';
 import 'package:hirfi_home/main_shell_view.dart';
+
 import 'package:hirfi_home/view/screens/home/page/home_view.dart';
 import 'package:hirfi_home/view/screens/profile/profile_binding.dart';
 import 'package:hirfi_home/view/screens/profile/profile_view.dart';
@@ -22,10 +23,7 @@ import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_binding.dar
 import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_view.dart';
 import 'package:hirfi_home/view/screens/create_profile/create_user_profile_binding.dart';
 import 'package:hirfi_home/view/screens/create_profile/create_user_profile_view.dart';
-import 'package:hirfi_home/view/screens/home/home_binding.dart';
-import 'package:hirfi_home/view/screens/home/home_view.dart';
-import 'package:hirfi_home/view/screens/create_profile/create_profile_binding.dart';
-import 'package:hirfi_home/view/screens/create_profile/create_profile_view.dart';
+
 import 'package:hirfi_home/view/screens/home/controller/home_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_view.dart';
@@ -109,7 +107,7 @@ List<GetPage<dynamic>>? getPage = [
   GetPage(
     name: RoutesString.mainShell,
     page: () => MainShellView(),
-    binding: NavigationBinding(),
+    binding: HomeBinding(),
   ),
   GetPage(
     name: RoutesString.mapView,

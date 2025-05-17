@@ -123,9 +123,7 @@ class LoginView extends GetView<LoginController> {
                     height: 24,
                   ),
                   PrimaryTaxtButton(
-                      onTap: () {
-                        Get.offAll(MainShellView(),binding: HomeBinding());
-                      }, title: TranslationData.forgotPassword.tr),
+                      onTap: () {}, title: TranslationData.forgotPassword.tr),
                   SizedBox(
                     height: 24,
                   ),
