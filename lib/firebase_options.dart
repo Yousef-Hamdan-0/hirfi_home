@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'hirfi-home.firebasestorage.app',
     measurementId: 'G-02EQDMYQYT',
   );
+
 }

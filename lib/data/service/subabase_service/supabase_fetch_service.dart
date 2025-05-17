@@ -31,7 +31,7 @@ class SupabaseFetchService {
 
   Future<List<Map<String, dynamic>>> fetchList(
     String table,
-    List<String> columns, {
+    List<String> columns, String s, String craftsmanId, {
     Map<String, dynamic>? filters,
     Map<String, dynamic>? rangeFilters,
   }) async {

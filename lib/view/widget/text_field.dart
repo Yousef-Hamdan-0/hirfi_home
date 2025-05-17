@@ -33,6 +33,7 @@ class MainTextField extends StatelessWidget {
     this.iconSize,
     this.isDense,
     this.onFieldSubmitted,
+    this.expands,
   });
   final FocusNode? focusNode;
   final Function(String)? onChanged;
@@ -58,6 +59,7 @@ class MainTextField extends StatelessWidget {
   final bool? isDense;
   final Function(String)? onFieldSubmitted;
   final String? title;
+  final bool? expands;
   @override
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,6 +72,8 @@ class MainTextField extends StatelessWidget {
           //   height: 12,
           // ),
           TextFormField(
+            minLines: 1,
+            expands: enabled ?? false,
             enabled: enabled,
             scrollPadding: EdgeInsets.only(
               bottom: MediaQuery.of(context).viewInsets.bottom + 300,

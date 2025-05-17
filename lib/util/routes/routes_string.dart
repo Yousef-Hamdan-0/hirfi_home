@@ -5,7 +5,8 @@ class RoutesString {
   static const String login = "/login";
   static const String changePassword = "/changePassword";
   static const String signUpUser = "/signUpUser";
-  static const String createCraftsmanProfileView = "/createCraftsmanProfileView";
+  static const String createCraftsmanProfileView =
+      "/createCraftsmanProfileView";
   static const String otp = "/otp";
   static const String createProfile = "/createProfile";
   static const String homeScreen = "/home";
@@ -14,4 +15,5 @@ class RoutesString {
   static const String profileScreen = "/profile";
   static const String settings = "/settings";
   static const String mainShell = "/mainShell";
+  static const String mapView = "/mapView";
 }

@@ -122,4 +122,6 @@ class CreateUserProfileController extends GetxController {
     debugPrint("✅ تم استكمال بيانات البروفايل");
     Get.offAllNamed(RoutesString.mainShell);
   }
+
+  
 }

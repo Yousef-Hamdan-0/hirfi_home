@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:hirfi_home/controller/navigation_controller/navigation_binding.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
+import 'package:hirfi_home/view/screens/auth/signup_craftman/map/map_binding.dart';
+import 'package:hirfi_home/view/screens/auth/signup_craftman/map/map_view.dart';
 import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_binding.dart';
 import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_controller.dart';
 import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_view.dart';
@@ -40,8 +42,8 @@ import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 List<GetPage<dynamic>>? getPage = [
   GetPage(
       name: RoutesString.splash,
-      page: () => const createCraftsmanProfileView(),
-      binding: createCraftsmanProfileBinding()),
+      page: () => const SplashView(),
+      binding: SplashBinding()),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingView(),
@@ -108,4 +110,9 @@ List<GetPage<dynamic>>? getPage = [
     page: () => MainShellView(),
     binding: NavigationBinding(),
   ),
+  GetPage(
+    name: RoutesString.mapView,
+    page: () => GoogleMapScreen(),
+    binding: MapBinding(),
+  )
 ];

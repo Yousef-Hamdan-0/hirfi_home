@@ -22,6 +22,14 @@ class SupabaseSendService {
     return response.count ?? 0; // عدد الصفوف المحذوفة
   }
 
+  Future<void> upsert(
+    String table,
+    Map<String, dynamic> data,
+    List<String> conflictKeys,
+  ) async {
+    await _client.from(table).upsert(data, onConflict: conflictKeys.join(','));
+  }
+
   Future<String?> uploadFile(String bucket, String path, File file) async {
     try {
       await _client.storage.from(bucket).upload(path, file);

@@ -1,25 +1,18 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:dropdown_model_list/drop_down/select_drop_list.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
-import 'package:hirfi_home/util/fonts.dart';
+import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/view/screens/auth/signup_craftman/create_craftman_profile_controller.dart';
-
-import 'package:hirfi_home/view/widget/main_dropdown_field.dart';
-
 import 'package:hirfi_home/view/widget/main_select.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
-
 import 'package:hirfi_home/view/widget/text/body_text1.dart';
 import 'package:hirfi_home/view/widget/text/headline5.dart';
 import 'package:hirfi_home/view/widget/text_field.dart';
-import 'package:multi_select_flutter/chip_display/multi_select_chip_display.dart';
-import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 
 class createCraftsmanProfileView
     extends GetView<createCraftsmanProfileController> {
@@ -95,17 +88,23 @@ class createCraftsmanProfileView
                           height: 20,
                         ),
                         lable(text: TranslationData.ocupationType.tr),
-                        MainDropdownField<String>(
-                          items: controller.occupationLabels,
-                          selectedItem: controller.selected.value,
-                          hint: TranslationData.custom.tr,
-                          onChanged: (value) {
-                            controller.selected.value = value.toString();
-                          },
-                          validator: (value) {
-                            if (value == null) return 'الرجاء اختيار الجنس';
-                            return null;
-                          },
+                        DropdownButtonFormField2(
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xffD1D5DB)),
+                                borderRadius: BorderRadius.circular(8),
+                              )),
+                          hint: Text(""),
+                          items: controller.occupationLabels
+                              .map((item) => DropdownMenuItem(
+                                    value: item,
+                                    child: Text(item),
+                                  ))
+                              .toList(),
+                          onChanged: (value) => controller
+                              .selectedOccupation.value = value as String,
                         ),
                         SizedBox(
                           height: 20,
@@ -251,16 +250,24 @@ class createCraftsmanProfileView
                         ),
                         lable(text: TranslationData.aboutMe.tr),
                         MainTextField(
-                          controller: controller.apaaboutMe,
+                          controller: controller.aboutMe,
                           hint: TranslationData.exApoutMe.tr,
                           textInputType: TextInputType.text,
-                          maxLine: 5,
+                          // expands: true,
+                          maxLine: 3,
                         ),
                         SizedBox(
                           height: 16,
                         ),
                         ElevatedButton(
-                            onPressed: () async {},
+                            onPressed: () async {
+                              final result =
+                                  await Get.toNamed(RoutesString.mapView);
+                              if (result != null) {
+                                controller.selectedLocation.value = result;
+                                print("abc $result");
+                              }
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -282,7 +289,15 @@ class createCraftsmanProfileView
                           height: 32,
                         ),
                         PrimaryButton(
-                          onTap: () {},
+                          onTap: () async {
+                            try {
+                              await controller
+                                  .completeCraftsmanProfile(); // ← فقط نادِ الدالة
+                            } catch (e) {
+                              Get.snackbar(
+                                  "خطأ", "حدث خطأ أثناء حفظ البيانات: $e");
+                            }
+                          },
                           title: TranslationData.createAccount.tr,
                         ),
                         SizedBox(
