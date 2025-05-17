@@ -1,11 +1,16 @@
+
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hirfi_home/data/api/search_api.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/view/screens/home/controller/home_controller.dart';
 import 'package:hirfi_home/view/screens/home/widget/categoryitem_widget.dart';
 import 'package:hirfi_home/view/screens/home/widget/locationDropDown_widget.dart';
 import 'package:hirfi_home/view/screens/home/widget/storeItem_widget.dart';
+import 'package:hirfi_home/view/screens/search/page/search_view.dart';
 
 import 'package:hirfi_home/view/widget/text/body_text1.dart';
 
@@ -19,6 +24,7 @@ class HomeView extends  StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final HomeController controller=Get.find();
+
 
   @override
   Widget build(BuildContext context) {
@@ -92,24 +98,49 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 const SizedBox(height: 16),
                 // Search Bar
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.search, color: Colors.grey.shade600),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Search Craftsman...',
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                          fontSize: 16,
+                InkWell(
+                  onTap: () async{
+                     List<String> chaletNames = await SearchApp().getchaletName();
+                       showSearch(
+                        context: context,
+                         delegate: customersearch(username: chaletNames),
+                       );
+                    // if (chaletNames.isNotEmpty) {
+                    //   showSearch(
+                    //     context: context,
+                    //     delegate: customersearch(username: chaletNames),
+                    //   );
+                    // } else {
+                    //   ScaffoldMessenger.of(context).showSnackBar(
+                    //     SnackBar(
+                    //       content: const Text('No chalets found'),
+                    //       backgroundColor:
+                    //           Theme.of(context).brightness == Brightness.dark
+                    //               ? Colors.grey[400]
+                    //               : Colors.grey[900],
+                    //     ),
+                    //   );
+                    // }
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.search, color: Colors.grey.shade600),
+                        const SizedBox(width: 12),
+                        Text(
+                          'Search Craftsman...',
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
