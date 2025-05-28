@@ -1,6 +1,5 @@
-
 import 'package:get/get.dart';
-import 'package:hirfi_home/view/screens/chat/chat_view.dart';
+import 'package:hirfi_home/view/screens/chats/chat_view.dart';
 import 'package:hirfi_home/view/screens/home/page/home_view.dart';
 import 'package:hirfi_home/view/screens/profile/profile_view.dart';
 
@@ -13,10 +12,5 @@ class NavigationController extends GetxController {
     selectedIndex.value = index;
   }
 
-  final pages = [
-    HomeView(),
-    MapsView(),
-    ChatView(),
-    ProfileView()
-  ];
+  final pages = [HomeView(), ChatsView(), MapsView(), ProfileView()];
 }

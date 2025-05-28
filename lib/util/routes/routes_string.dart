@@ -16,4 +16,12 @@ class RoutesString {
   static const String settings = "/settings";
   static const String mainShell = "/mainShell";
   static const String mapView = "/mapView";
+  static const String waitView = "/waitView";
+  static const String craftsmanDetail = "/craftsmanDetail";
+  static const String filteredCraftsmen = "/filteredCraftsmen";
+  static const String cocis1 = "/cocis1";
+  static const String cocis2 = "/cocis2";
+  static const String cocis3 = "/cocis3";
+  static const String cocis4 = "/cocis4";
+  static const String notificationView = "/notificationView";
 }

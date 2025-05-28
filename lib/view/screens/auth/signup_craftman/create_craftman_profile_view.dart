@@ -1,7 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
@@ -90,21 +89,30 @@ class createCraftsmanProfileView
                         lable(text: TranslationData.ocupationType.tr),
                         DropdownButtonFormField2(
                           decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(8),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 1, color: Color(0xffD1D5DB)),
-                                borderRadius: BorderRadius.circular(8),
-                              )),
-                          hint: Text(""),
-                          items: controller.occupationLabels
-                              .map((item) => DropdownMenuItem(
-                                    value: item,
-                                    child: Text(item),
-                                  ))
-                              .toList(),
-                          onChanged: (value) => controller
-                              .selectedOccupation.value = value as String,
+                            contentPadding: const EdgeInsets.all(8),
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  width: 1, color: Color(0xffD1D5DB)),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          hint: const Text("اختر مهنتك"),
+                          value:
+                              controller.selectedOccupationKey.value.isNotEmpty
+                                  ? controller.selectedOccupationKey.value
+                                  : null,
+                          items: controller.occupationOptions.map((entry) {
+                            return DropdownMenuItem<String>(
+                              value: entry
+                                  .key, // المفتاح الإنجليزي الذي يُرسل لـ Supabase
+                              child: Text(entry.value), // النص المترجم للمستخدم
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            if (value != null) {
+                              controller.selectedOccupationKey.value = value;
+                            }
+                          },
                         ),
                         SizedBox(
                           height: 20,

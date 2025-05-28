@@ -10,17 +10,21 @@ import 'package:hirfi_home/util/routes/get_page.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-GetStorage box = GetStorage();
+
+late GetStorage box;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
     url: "https://uacgfcwkaeomzwllqyin.supabase.co",
     anonKey:
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhY2dmY3drYWVvbXp3bGxxeWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYyMDExMTAsImV4cCI6MjA2MTc3NzExMH0.jAO1S4OSUzgY_2m94OF_Lo_lYgMjmMDsgBgFLlFaKPA",
+    debug: true,
   );
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await GetStorage.init();
+  box = GetStorage();
   runApp(const MainApp());
 }
 

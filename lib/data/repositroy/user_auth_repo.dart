@@ -32,8 +32,8 @@ class AuthUserRepository {
 
     // ✅ حفظ التوكن في GetStorage
     final box = GetStorage();
-    box.write('access_token', session.accessToken);
-    box.write('refresh_token', session.refreshToken);
+    await box.write('access_token', session.accessToken);
+    await box.write('refresh_token', session.refreshToken);
 
     return UserAuthModel.fromSupabaseUser(user);
   }
@@ -59,8 +59,8 @@ class AuthUserRepository {
 
     // ✅ حفظ التوكنات
     final box = GetStorage();
-    box.write('access_token', session.accessToken);
-    box.write('refresh_token', session.refreshToken);
+    await box.write('access_token', session.accessToken);
+    await box.write('refresh_token', session.refreshToken);
 
     return UserAuthModel.fromSupabaseUser(user);
   }

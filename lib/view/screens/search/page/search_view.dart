@@ -1,9 +1,8 @@
 // ignore_for_file: camel_case_types
 
-
 import 'package:flutter/material.dart';
 import 'package:hirfi_home/data/api/search_api.dart';
-import 'package:hirfi_home/data/model/place_model.dart';
+import 'package:hirfi_home/data/model/auth/craftsman_model.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/view/screens/search/widget/list_search_result.dart';
 
@@ -45,8 +44,8 @@ class customersearch extends SearchDelegate {
         .toList();
 
     return Scaffold(
-        body: FutureBuilder<List<PlaceModel>?>(
-      future: SearchApp().getdatafromSerach(selectedCarftsName),
+        body: FutureBuilder<List<Craftsman>?>(
+      future: SearchApp().getCraftsmenByName(selectedCarftsName),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
@@ -68,7 +67,6 @@ class customersearch extends SearchDelegate {
               elevation: 0,
               title: Text(
                 "Search",
-
               ),
               centerTitle: true,
             ),
@@ -78,7 +76,7 @@ class customersearch extends SearchDelegate {
           );
         } else if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasData && snapshot.data != null) {
-            List<PlaceModel> data = snapshot.data!;
+            List<Craftsman> data = snapshot.data!;
             if (data.isEmpty) {
               return Center(
                   child: Text("There is no Carftsman with this name",
@@ -95,8 +93,8 @@ class customersearch extends SearchDelegate {
           }
         } else {
           return Center(
-              child: Text("Something went wrong",
-                  style: TextStyle(fontSize: 13)));
+              child:
+                  Text("Something went wrong", style: TextStyle(fontSize: 13)));
         }
       },
     ));

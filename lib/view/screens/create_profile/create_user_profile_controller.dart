@@ -25,7 +25,7 @@ class CreateUserProfileController extends GetxController {
   RxString dateOfBirth = TranslationData.dateOfBirth.tr.obs;
   Rx<DateTime> selectedDate = DateTime.now().obs;
   RxString selected = ''.obs;
-  final gender = [TranslationData.male.tr, TranslationData.female.tr].obs;
+  final genderOptions = TranslationData.genderMap.entries.toList().obs;
   @override
   void onInit() {
     super.onInit();
@@ -65,7 +65,7 @@ class CreateUserProfileController extends GetxController {
       context: context,
       initialDate: now,
       firstDate: DateTime(1945),
-      lastDate: DateTime(now.year, 12, 31), // ✅ نهاية السنة الحالية
+      lastDate: DateTime(now.year, 12, 31),
     );
 
     if (selectedDate != null) {
@@ -86,7 +86,6 @@ class CreateUserProfileController extends GetxController {
 
     final sendService = SupabaseSendService();
 
-    // 🔹 رفع الصورة إذا كانت موجودة، وإلا استخدام صورة افتراضية
     String imageUrl;
 
     if (selectedImage.value != null) {
@@ -107,7 +106,6 @@ class CreateUserProfileController extends GetxController {
           .getPublicUrl('profiles/default.jpg');
     }
 
-    // 🔹 تحديث البيانات
     await sendService.update(
       'user_profile',
       {
@@ -122,6 +120,4 @@ class CreateUserProfileController extends GetxController {
     debugPrint("✅ تم استكمال بيانات البروفايل");
     Get.offAllNamed(RoutesString.mainShell);
   }
-
-  
 }

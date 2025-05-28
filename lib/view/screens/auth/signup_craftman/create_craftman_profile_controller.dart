@@ -3,11 +3,13 @@ import 'dart:io';
 import 'package:dropdown_model_list/drop_down/model.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hirfi_home/data/model/workinghours_model.dart';
 import 'package:hirfi_home/data/repositroy/craftsman_repo.dart';
-import 'package:hirfi_home/data/repositroy/workinghours_repo.dart';
+
 import 'package:hirfi_home/data/service/subabase_service/supabase_fetch_service.dart';
 import 'package:hirfi_home/data/service/subabase_service/supabase_send_service.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
@@ -18,7 +20,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class createCraftsmanProfileController extends GetxController {
   late final CraftsmanRepository _craftsmanRepository;
-  late final WorkingHoursRepository _workingHoursRepository;
+
   final SupabaseFetchService _fetchService = SupabaseFetchService();
   final SupabaseSendService _sendService = SupabaseSendService();
   final GlobalKey<FormState> CreateCraftmanProfileForm = GlobalKey<FormState>();
@@ -31,32 +33,38 @@ class createCraftsmanProfileController extends GetxController {
   RxString name = ''.obs;
 
   Rx<LatLng?> selectedLocation = Rx<LatLng?>(null);
+  RxString city = ''.obs;
+  RxString street = ''.obs;
 
-  Future<void> fetchAndStoreUserInfo() async {
+  @override
+  void onInit() {
+    super.onInit();
+    fetchAndStoreCraftsmanInfo();
+
+    dayItems =
+        daysList.map((label) => MultiSelectItem<String>(label, label)).toList();
+    _craftsmanRepository = CraftsmanRepository(_fetchService, _sendService);
+  }
+
+  Future<void> fetchAndStoreCraftsmanInfo() async {
     try {
-      final profile = await repository.getCraftsman();
-      if (profile != null) {
-        print('Name: ${profile.name}');
-        name.value = profile.name;
+      final craftsman = await repository.getCraftsmanProfile();
+      if (craftsman != null) {
+        print('Name: ${craftsman.name}');
+        name.value = craftsman.name;
       } else {
-        print('No profile found.');
+        print('No craftsman profile found.');
       }
     } catch (e) {
-      print('Failed to fetch basic info: $e');
+      print('Failed to fetch craftsman info: $e');
     }
   }
 
 // occupation
-  RxString selectedOccupation = ''.obs;
+  final occupationOptions =
+      TranslationData.occupationTypesMap.entries.toList().obs;
 
-  final occupationLabels = [
-    TranslationData.mechanic.tr,
-    TranslationData.plumber.tr,
-    TranslationData.electrician.tr,
-    TranslationData.blacksmith.tr,
-    TranslationData.carpenter.tr,
-    TranslationData.builder.tr
-  ];
+  final RxString selectedOccupationKey = ''.obs;
 // Days
   RxList<String> selectedDays = <String>[].obs;
 
@@ -95,15 +103,6 @@ class createCraftsmanProfileController extends GetxController {
   late final List<MultiSelectItem<String>> dayItems;
 
   @override
-  void onInit() {
-    super.onInit();
-    dayItems =
-        daysList.map((label) => MultiSelectItem<String>(label, label)).toList();
-    _craftsmanRepository = CraftsmanRepository(_fetchService, _sendService);
-    _workingHoursRepository =
-        WorkingHoursRepository(_fetchService, _sendService);
-  }
-
   final Rx<File?> selectedImage = Rx<File?>(null);
   RxString uploadedImageUrl = ''.obs;
   Future<void> pickImageFromGallery() async {
@@ -115,6 +114,7 @@ class createCraftsmanProfileController extends GetxController {
     }
   }
 
+  RxString workingDaysText = ''.obs;
   String getWorkingTimeText({
     required List<String> selectedDays,
     required String startTime,
@@ -132,6 +132,7 @@ class createCraftsmanProfileController extends GetxController {
 
     // كل الأيام
     if (selectedDays.length == 7) {
+      workingDaysText.value = TranslationData.allDays.tr;
       return '${TranslationData.allDays.tr}, $startTime - $endTime';
     }
 
@@ -153,12 +154,32 @@ class createCraftsmanProfileController extends GetxController {
     if (isConsecutive && sortedDays.length > 1) {
       final firstDay = sortedDays.first.tr;
       final lastDay = sortedDays.last.tr;
+      workingDaysText.value = '$firstDay - $lastDay';
       return '$firstDay - $lastDay، $startTime - $endTime';
     }
 
     // لو مش متصلة
     final translatedDays = sortedDays.map((d) => d.tr).join(', ');
+    workingDaysText.value = translatedDays;
     return '$translatedDays، $startTime - $endTime';
+  }
+
+  Future<void> signOutUser() async {
+    try {
+      // 1. تسجيل خروج من Supabase
+      await Supabase.instance.client.auth.signOut();
+
+      // 2. حذف أي بيانات مخزنة محليًا (مثل access_token)
+      await GetStorage().erase();
+      // 3. الانتقال إلى صفحة تسجيل الدخول أو البداية
+      Get.offAllNamed(RoutesString
+          .welcomeScreen); // أو RoutesString.login إذا كنت تستخدم Route Manager
+
+      print('✅ تم تسجيل الخروج بنجاح');
+    } catch (e) {
+      print('❌ فشل تسجيل الخروج: $e');
+      Get.snackbar('خطأ', 'حدث خطأ أثناء تسجيل الخروج');
+    }
   }
 
   Future<void> completeCraftsmanProfile() async {
@@ -166,8 +187,8 @@ class createCraftsmanProfileController extends GetxController {
     final imageUrl = await _getProfileImageUrl(userId);
     final location = _getLocationOrThrow();
 
+    await fetchCityAndStreetFromCoordinates(location);
     await _updateCraftsmanData(userId, imageUrl, location);
-    await _insertWorkingHours(userId);
 
     debugPrint("✅ تم استكمال بيانات الحرفي");
     final craftsman = await _craftsmanRepository.getCurrentCraftsman();
@@ -177,6 +198,27 @@ class createCraftsmanProfileController extends GetxController {
     } else {
       Get.snackbar("بانتظار الموافقة", "سيتم تفعيل حسابك من قبل الإدارة قريبًا",
           snackPosition: SnackPosition.BOTTOM);
+      signOutUser();
+    }
+  }
+
+  Future<void> fetchCityAndStreetFromCoordinates(LatLng location) async {
+    try {
+      final placemarks = await placemarkFromCoordinates(
+        location.latitude,
+        location.longitude,
+      );
+      if (placemarks.isNotEmpty) {
+        final place = placemarks.first;
+        street.value = place.street ?? '';
+        city.value = place.locality ??
+            place.administrativeArea ??
+            place.subAdministrativeArea ??
+            '';
+      }
+    } catch (e) {
+      street.value = '';
+      city.value = '';
     }
   }
 
@@ -217,31 +259,16 @@ class createCraftsmanProfileController extends GetxController {
   Future<void> _updateCraftsmanData(
       String userId, String imageUrl, LatLng location) async {
     await _craftsmanRepository.updateAdditionalInfo(
-      craftmanId: userId,
-      picture: imageUrl,
-      aboutMe: aboutMe.text,
-      occupationType: selectedOccupation.value,
-      address: "${location.latitude},${location.longitude}",
-      isApproved: false,
-    );
-  }
-
-  Future<void> _insertWorkingHours(String userId) async {
-    if (selectedDays.isEmpty ||
-        startTime.value.isEmpty ||
-        endTime.value.isEmpty) {
-      throw Exception("❌ تأكد من اختيار الأيام وأوقات العمل");
-    }
-
-    final workingHoursList = selectedDays.map((day) {
-      return WorkingHoursModel(
         craftmanId: userId,
-        dayOfWeek: day,
+        picture: imageUrl,
+        aboutMe: aboutMe.text,
+        occupationType: selectedOccupationKey.value,
+        address: "${location.latitude},${location.longitude}",
+        city: city.value,
+        street: street.value,
+        isApproved: false,
+        dayOfWeek: workingDaysText.value,
         startTime: startTime.value,
-        endTime: endTime.value,
-      );
-    }).toList();
-
-    await _workingHoursRepository.insertOrUpdate(workingHoursList);
+        endTime: endTime.value);
   }
 }

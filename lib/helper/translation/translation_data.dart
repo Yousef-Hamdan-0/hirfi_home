@@ -1,6 +1,10 @@
-class TranslationData {
-  static String changeLanguage = 'changeLanguage';
+import 'package:get/get.dart';
 
+class TranslationData {
+  static String goToMap = "goToMap" ;
+  static String goToMapQuestion = "هل تريد الإنتقال إلى الخريطة؟";
+  static String changeLanguage = 'changeLanguage';
+  static String today = "today";
   static String createYourAccount = 'createYourAccount';
   static String cansel = 'cansel';
   static String ok = 'ok';
@@ -14,7 +18,14 @@ class TranslationData {
   static String iDontHaveAnAccount = 'iDontHaveAnAccount';
   static String areYouACraftsman = 'areYouACraftsman';
   static String iAmACraftsman = 'iAmACraftsman';
-
+  static String map = "map";
+  static String notification2 = "Notification";
+  static String oneNew = "1 New";
+  static String markAllAsRead = "Mark all as read";
+  static String newCraftsman = "New craftsman";
+  static String thanksForJoining =
+      "Thanks for joining us — enjoy your experience!";
+  static String yesterday = "YESTERDAY";
   //Onboarding
   static String meetCraftsmanOnline = "meetCraftsmanOnline";
   static String meetCraftsmanOnlineExplanation =
@@ -98,6 +109,19 @@ class TranslationData {
   static String friday = "friday";
   static String saturday = "saturday";
   static String pleaseSelectAtLeastOneDay = "pleaseSelectAtLeastOneDay";
+  static Map<String, String> get occupationTypesMap => {
+        mechanic: mechanic.tr,
+        plumber: plumber.tr,
+        electrician: electrician.tr,
+        blacksmith: blacksmith.tr,
+        carpenter: carpenter.tr,
+        builder: builder.tr,
+        custom: custom.tr,
+      };
+  static Map<String, String> get genderMap => {
+        male: male.tr,
+        female: female.tr,
+      };
   //Create craftsman Profile End
   static String profile = "prfile";
   //End Profile
@@ -214,4 +238,30 @@ class TranslationData {
   static String yourNewPassword = "yourNewPassword";
   static String confirmPassword = "confirmPassword";
   //End Settings
+
+  //wait
+  static String pleaseWait =
+      "pleaseWaitUntilYourAccountIsApprovedByTheAdministration.";
+  //End Wait
+
+  //home
+  static String reviews = "reviews";
+  static String categories = "categories";
+  static String seeAll = "seeAll";
+  static String centersAndStores = "centersAndStores";
+  //end home
+
+  //Search
+  static String searchCraftsman = "searchCraftsman";
+  //End Search
+
+  //Craftsmen Details
+  static String craftsmenDetails = "craftsmenDetails";
+  static const String patients = "patients";
+  static const String experience = "experience";
+  static const String rating = "rating";
+  static const String location = "location";
+  static String rateCraftsman = "rateCraftsman";
+  static String message = "message";
+  //end Craftsmen Details
 }

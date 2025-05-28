@@ -3,14 +3,17 @@ import 'package:hirfi_home/controller/navigation_controller/navigation_binding.d
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/view/screens/auth/signup_craftman/map/map_binding.dart';
 import 'package:hirfi_home/view/screens/auth/signup_craftman/map/map_view.dart';
-import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_binding.dart';
-import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_controller.dart';
-import 'package:hirfi_home/view/screens/change_password/phone_number_for_otp/enter_phone_number_view.dart';
-import 'package:hirfi_home/view/screens/chat/chat_binding.dart';
-import 'package:hirfi_home/view/screens/chat/chat_view.dart';
+import 'package:hirfi_home/view/screens/chats/chat_binding.dart';
+import 'package:hirfi_home/view/screens/chats/chat_view.dart';
 import 'package:hirfi_home/main_shell_view.dart';
+import 'package:hirfi_home/view/screens/craftsman_detail/craftsman_detail_binding.dart';
+import 'package:hirfi_home/view/screens/craftsman_detail/craftsman_detail_view.dart';
+
+import 'package:hirfi_home/view/screens/filtered_craftsmen_view/filtered_craftsmen_binding.dart';
+import 'package:hirfi_home/view/screens/filtered_craftsmen_view/filtered_craftsmen_view.dart';
 
 import 'package:hirfi_home/view/screens/home/page/home_view.dart';
+import 'package:hirfi_home/view/screens/note/notification_view.dart';
 import 'package:hirfi_home/view/screens/profile/profile_binding.dart';
 import 'package:hirfi_home/view/screens/profile/profile_view.dart';
 import 'package:hirfi_home/view/screens/auth/login/login_binding.dart';
@@ -23,7 +26,6 @@ import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_binding.dar
 import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_view.dart';
 import 'package:hirfi_home/view/screens/create_profile/create_user_profile_binding.dart';
 import 'package:hirfi_home/view/screens/create_profile/create_user_profile_view.dart';
-
 import 'package:hirfi_home/view/screens/home/controller/home_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_binding.dart';
 import 'package:hirfi_home/view/screens/map/maps_view.dart';
@@ -35,14 +37,20 @@ import 'package:hirfi_home/view/screens/splash/splash_binding.dart';
 import 'package:hirfi_home/view/screens/splash/splash_view.dart';
 import 'package:hirfi_home/view/screens/settings/change_password/change_password_bindings.dart';
 import 'package:hirfi_home/view/screens/settings/change_password/change_password_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/about/about_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/cookiesPolicy/cookies_policy_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/helpAndSupport/help_and_support_view.dart';
+import 'package:hirfi_home/view/screens/staticPages/termsAndConditions/terms_and_conditions_view.dart';
+import 'package:hirfi_home/view/screens/wait/wait_view.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_binding.dart';
 import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 
 List<GetPage<dynamic>>? getPage = [
   GetPage(
-      name: RoutesString.splash,
-      page: () => const SplashView(),
-      binding: SplashBinding()),
+    name: RoutesString.splash,
+    page: () => MainShellView(),
+    binding: NavigationBinding(),
+  ),
   GetPage(
       name: RoutesString.onbording,
       page: () => OnbordingView(),
@@ -92,13 +100,13 @@ List<GetPage<dynamic>>? getPage = [
   ),
   GetPage(
     name: RoutesString.chatScreen,
-    page: () => ChatView(),
-    binding: ChatBinding(),
+    page: () => ChatsView(),
+    binding: ChatsBinding(),
   ),
   GetPage(
     name: RoutesString.profileScreen,
     page: () => ProfileView(),
-    binding: ProfileBinding(),
+    binding: NavigationBinding(),
   ),
   GetPage(
       name: RoutesString.settings,
@@ -107,11 +115,47 @@ List<GetPage<dynamic>>? getPage = [
   GetPage(
     name: RoutesString.mainShell,
     page: () => MainShellView(),
-    binding: HomeBinding(),
+    binding: NavigationBinding(),
   ),
   GetPage(
     name: RoutesString.mapView,
     page: () => GoogleMapScreen(),
     binding: MapBinding(),
+  ),
+  GetPage(
+    name: RoutesString.waitView,
+    page: () => WaitView(),
+  ),
+  GetPage(
+      name: RoutesString.craftsmanDetail,
+      page: () => CraftsmanDetailView(),
+      binding: CraftsmanDetailBinding()),
+  GetPage(
+      name: RoutesString.filteredCraftsmen,
+      page: () => FilteredCraftsmenView(),
+      binding: FilteredCraftsmenBinding()),
+  GetPage(
+    name: RoutesString.cocis1,
+    page: () => CookiesPolicyView(),
+  ),
+  GetPage(
+    name: RoutesString.cocis1,
+    page: () => CookiesPolicyView(),
+  ),
+  GetPage(
+    name: RoutesString.cocis2,
+    page: () => AboutView(),
+  ),
+  GetPage(
+    name: RoutesString.cocis3,
+    page: () => HelpAndSupportView(),
+  ),
+  GetPage(
+    name: RoutesString.cocis4,
+    page: () => TermsAndConditionsView(),
+  ),
+  GetPage(
+    name: RoutesString.notificationView,
+    page: () => NotificationView(),
   )
 ];

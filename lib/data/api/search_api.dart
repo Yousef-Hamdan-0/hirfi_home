@@ -1,67 +1,38 @@
-// ignore_for_file: avoid_print
-import 'dart:convert'; 
-import 'dart:convert' as convert;
-
-import 'package:hirfi_home/data/model/place_model.dart';
-import 'package:http/http.dart' as http;
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:hirfi_home/data/model/auth/craftsman_model.dart';
 
 class SearchApp {
- 
-Future<List<String>> getchaletName() async {
+  final SupabaseClient _client = Supabase.instance.client;
+
+  Future<List<String>> getCraftsmanNames() async {
     try {
-      final response = await http.get(
-          Uri.parse('http://reziox.somee.com/api/SearchPlace/SuggestSearch'));
+      final response = await _client.from('craftsman').select('name');
 
-      List<String> data = [];
-
-      print(response.statusCode);
-
-      if (response.statusCode == 200) {
-        var decodedResponse = json.decode(response.body);
-
-        if (decodedResponse is List) {
-          data = List<String>.from(decodedResponse);
-          print(data);
-        } else {
-          print(' response not list ');
-        }
-      } else {
-        print('falied to get all chalet anme');
-      }
-      return data;
+      final names = List<String>.from(response.map((e) => e['name']));
+      return names;
     } catch (e) {
-      print('Exepation in get chalet name $e');
+      print('❌ Exception in getCraftsmanNames: $e');
       return [];
     }
   }
 
-  Future<List<PlaceModel>?> getdatafromSerach(String? chaletname) async {
-    print(chaletname);
-    Uri uri =
-        Uri.parse("http://reziox.somee.com/api/SearchPlace/Search/$chaletname");
+  Future<List<Craftsman>> getCraftsmenByName(String? name) async {
+    if (name == null || name.isEmpty) return [];
+
     try {
-      var req = await http.get(
-        uri,
-        headers: <String, String>{
-          'Content-Type': 'application/json',
-        },
-      );
-      List<PlaceModel> data = [];
-      print(req.statusCode);
-      if (req.statusCode == 200) {
-        var json = convert.jsonDecode(req.body);
-        if (json is List) {
-          data = json.map((item) => PlaceModel.fromJson(item)).toList();
-        } else {
-          print("Failed api search");
-        }
-      } else {
-        print("Failed to search");
-      }
+      final response = await _client
+          .from('craftsman')
+          .select()
+          .ilike('name', '%$name%'); // ← بحث جزئي غير حساس لحالة الأحرف
+      print('📦 نتائج البحث: ${response.length}');
+      print('📦 البيانات: $response');
+      final data =
+          (response as List).map((item) => Craftsman.fromMap(item)).toList();
+
       return data;
-    } catch (error) {
-      print('Exception in getdatafromSerach: $error');
-      return null;
+    } catch (e) {
+      print('❌ Exception in getCraftsmenByName: $e');
+      return [];
     }
   }
 }

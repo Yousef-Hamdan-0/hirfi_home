@@ -8,6 +8,7 @@ import 'package:hirfi_home/util/exptions.dart';
 import 'package:hirfi_home/util/images.dart';
 import 'package:hirfi_home/util/tools/tools.dart';
 import 'package:hirfi_home/view/screens/auth/otp/otp_controller.dart';
+import 'package:hirfi_home/view/screens/auth/signup_user/signup_user_controller.dart';
 import 'package:hirfi_home/view/widget/otp/pin_code_fields.dart';
 import 'package:hirfi_home/view/widget/primary_appbar/primary_appbar.dart';
 import 'package:hirfi_home/view/widget/text/body_text2.dart';
@@ -102,7 +103,7 @@ class OtpView extends GetView<OtpController> {
                       height: 32,
                     ),
                     ElevatedButton(
-                      onPressed: () => controller.signUp(),
+                      onPressed: () => controller.verifyAndContinue(),
                       style: ButtonStyle(
                           backgroundColor: WidgetStatePropertyAll(
                               AppColors.buttonsBackground)),
@@ -128,42 +129,48 @@ class OtpView extends GetView<OtpController> {
                       height: 26,
                     ),
                     InkWell(
-                      onTap: () async {
-                        if (controller.counter.value == 0 &&
-                            controller.start.value == 0) {
-                          // appTools.warningUser(
-                          //   'otpError',
-                          // );
-                        }
-                        if (controller.start.value == 0 &&
-                            controller.counter.value > 0) {
+                        onTap: () async {
+                          if (controller.start.value > 0) return;
+
+                          if (controller.counter.value == 0) {
+                            appTools.showWarningMessage('otpError', context);
+                            return;
+                          }
+
                           controller.counter.value -= 1;
-                          controller.start.value =
-                              controller.oldStart.value * 2;
-                          controller.oldStart.value = controller.start.value;
-                          controller.timer.value.cancel();
+
+                          // مضاعفة مدة المؤقت
+                          controller.oldStart.value *= 2;
+                          controller.start.value = controller.oldStart.value;
+
+                          controller.timer.value?.cancel();
                           controller.startTimer();
-                        }
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Headline5(
-                            title: '${TranslationData.resendCodeAfter.tr} ',
-                            style: TextThemeStyle().headline5.copyWith(
-                                  color: AppColors.black.withOpacity(0.6),
-                                ),
-                          ),
-                          Headline5(
-                            title: appTools.timeFormatter(
-                                controller.start.value.toDouble()),
-                            style: TextThemeStyle().headline5.copyWith(
-                                  fontWeight: FontWeight.w700,
-                                ),
-                          ),
-                        ],
-                      ),
-                    ),
+
+                          // إعادة إرسال OTP
+                          Get.find<SignupUserController>().sendOtp();
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Obx(() => Headline5(
+                                  title: controller.start.value == 0
+                                      ? "TranslationData.resendCode.tr"
+                                      : '${TranslationData.resendCodeAfter.tr} ',
+                                  style: TextThemeStyle().headline5.copyWith(
+                                        color: AppColors.black.withOpacity(0.6),
+                                      ),
+                                )),
+                            Obx(() => controller.start.value != 0
+                                ? Headline5(
+                                    title: appTools.timeFormatter(
+                                        controller.start.value.toDouble()),
+                                    style: TextThemeStyle().headline5.copyWith(
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                  )
+                                : const SizedBox.shrink()),
+                          ],
+                        ))
                   ],
                 ),
               ),

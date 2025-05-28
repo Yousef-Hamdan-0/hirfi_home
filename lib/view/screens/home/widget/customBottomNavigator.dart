@@ -83,15 +83,12 @@ class CustomBottomNavigationBar extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? AppColors.buttonsBackground.withValues(alpha:  0.15)
+                        ? AppColors.buttonsBackground.withValues(alpha: 0.15)
                         : Colors.transparent,
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    isSelected ? filledIcon : outlinedIcon,
-                    color:AppColors.buttonsBackground
-                       
-                  ),
+                  child: Icon(isSelected ? filledIcon : outlinedIcon,
+                      color: AppColors.buttonsBackground),
                 ),
                 label: '',
               );

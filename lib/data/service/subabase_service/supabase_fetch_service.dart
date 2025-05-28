@@ -3,6 +3,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseFetchService {
   final _client = Supabase.instance.client;
+  SupabaseClient get client => _client;
   String get userIdOrThrow {
     final id = _client.auth.currentUser?.id;
     if (id == null) throw Exception('User not logged in');
@@ -31,7 +32,9 @@ class SupabaseFetchService {
 
   Future<List<Map<String, dynamic>>> fetchList(
     String table,
-    List<String> columns, String s, String craftsmanId, {
+    List<String> columns,
+    String s,
+    String craftsmanId, {
     Map<String, dynamic>? filters,
     Map<String, dynamic>? rangeFilters,
   }) async {
@@ -58,5 +61,23 @@ class SupabaseFetchService {
 
     final response = await query;
     return response;
+  }
+
+  Future<String> fetchUserRole(String userId) async {
+    final response = await Supabase.instance.client
+        .from('app_users')
+        .select('role')
+        .eq('id', userId)
+        .single();
+
+    return response['role'];
+  }
+
+  Future<Map<String, dynamic>> getAppUser(String userId) async {
+    return await Supabase.instance.client
+        .from('app_users')
+        .select()
+        .eq('id', userId)
+        .single();
   }
 }

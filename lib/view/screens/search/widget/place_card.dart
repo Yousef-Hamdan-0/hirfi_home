@@ -12,7 +12,7 @@ class PlaceCard extends StatelessWidget {
   final String category; 
 
   const PlaceCard({
-    Key? key,
+    super.key,
     required this.placeID,
     required this.image,
     required this.text,
@@ -21,7 +21,7 @@ class PlaceCard extends StatelessWidget {
     required this.price,
     required this.rating,
     required this.category, 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

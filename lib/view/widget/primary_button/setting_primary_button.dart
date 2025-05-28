@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/view/widget/text/headline5.dart';

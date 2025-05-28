@@ -6,15 +6,13 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class SettingsController extends GetxController {
   Future<void> signOutUser() async {
     try {
-      // 1. تسجيل خروج من Supabase
       await Supabase.instance.client.auth.signOut();
 
-      // 2. حذف أي بيانات مخزنة محليًا (مثل access_token)
-      await GetStorage().erase();
-      // 3. الانتقال إلى صفحة تسجيل الدخول أو البداية
-      Get.offAllNamed(RoutesString
-          .welcomeScreen); // أو RoutesString.login إذا كنت تستخدم Route Manager
-
+      final box = GetStorage();
+      await Future.delayed(const Duration(milliseconds: 300));
+      await box.erase();
+      
+      Get.offAllNamed(RoutesString.welcomeScreen);
       print('✅ تم تسجيل الخروج بنجاح');
     } catch (e) {
       print('❌ فشل تسجيل الخروج: $e');

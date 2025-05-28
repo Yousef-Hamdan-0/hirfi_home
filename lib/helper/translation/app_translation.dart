@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 
@@ -6,6 +5,7 @@ class AppTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         "ar": {
+          TranslationData.map: "الخريطة",
           TranslationData.cansel: "إلغاء",
           TranslationData.ok: "موافق",
           TranslationData.selectDay: "إختر يوم",
@@ -259,8 +259,56 @@ class AppTranslation extends Translations {
               "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور التي استخدمتها سابقًا.",
           TranslationData.confirmPassword: "تأكيد كلمة المرور",
           //End Settings
+
+          //wait
+          TranslationData.pleaseWait:
+              "يرجى الانتظار لحين اعتماد حسابك من قِبل الإدارة.",
+          //End Wait
+
+          //home
+          TranslationData.reviews: "التقييمات",
+          TranslationData.categories: "الفئات",
+          TranslationData.seeAll: "عرض الكل",
+          TranslationData.centersAndStores: "المراكز والمتاجر",
+          //end home
+
+          //Search
+          TranslationData.searchCraftsman: "إبحث عن حرفي...",
+          //End Search
+
+          //Craftsmen Details
+          TranslationData.craftsmenDetails: "معلومات الحرفي",
+          TranslationData.patients: "العملاء",
+          TranslationData.experience: "الخبرة",
+          TranslationData.rating: "التقييم",
+          TranslationData.location: "الموقع",
+          TranslationData.rateCraftsman: "قييم الحرفي",
+          TranslationData.message: "رسالة",
+          TranslationData.today: "اليوم",
+          //end Craftsmen Details
+          TranslationData.notification: "الإشعارات",
+          TranslationData.oneNew: "إشعار جديد",
+          TranslationData.markAllAsRead: "تمييز الكل كمقروء",
+          TranslationData.newCraftsman: "حرفي جديد",
+          TranslationData.thanksForJoining:
+              "شكرًا لانضمامك إلينا – نتمنى لك تجربة ممتعة!",
+          TranslationData.yesterday: "أمس",
+          TranslationData.goToMapQuestion: "هل تريد الإنتقال إلى الخريطة؟",
+          TranslationData.goToMap: "إنتقل إلى الخريطة",
         },
         "en": {
+          TranslationData.goToMapQuestion: "Do you want to go to the map?",
+          TranslationData.goToMap: "Go to the map",
+
+          TranslationData.yesterday: "Yesterday",
+          TranslationData.notification: "Notification",
+          TranslationData.oneNew: "1 New",
+          TranslationData.markAllAsRead: "Mark all as read",
+          TranslationData.newCraftsman: "New craftsman",
+          TranslationData.thanksForJoining:
+              "Thanks for joining us — enjoy your experience!",
+          TranslationData.today: "Today",
+          TranslationData.map: "Map",
           TranslationData.cansel: "Cansel",
           TranslationData.ok: "Ok",
           TranslationData.selectDay: "Select Day",
@@ -518,6 +566,32 @@ class AppTranslation extends Translations {
               "Your new password must be different form previously used password",
           TranslationData.confirmPassword: "Confirm Password",
           //End Settings
+
+          //wait
+          TranslationData.pleaseWait:
+              "Please wait until your account is approved by the administration.",
+          //End Wait
+
+          //home
+          TranslationData.reviews: "Reviews",
+          TranslationData.categories: "Categories",
+          TranslationData.seeAll: "See All",
+          //end home
+
+          //Search
+          TranslationData.searchCraftsman: "Search Craftsman...",
+          //End Search
+
+          //Craftsmen Details
+          TranslationData.craftsmenDetails: "Craftsmen Details",
+          TranslationData.patients: "patients",
+          TranslationData.experience: "experience",
+          TranslationData.rating: "rating",
+          TranslationData.location: "Location",
+          TranslationData.rateCraftsman: "Rate the craftsman",
+          TranslationData.message: "Message",
+          TranslationData.centersAndStores: "Centers and Stores",
+          //end Craftsmen Details
         }
       };
 }

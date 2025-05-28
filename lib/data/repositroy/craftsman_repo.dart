@@ -65,15 +65,20 @@ class CraftsmanRepository {
         uid,
       );
 
+      final data = craftsman.toMap();
+
       if (existing != null) {
         await _sendService.update(
           'craftsman',
-          craftsman.toMap(),
+          data,
           'craftman_id',
           uid,
         );
       } else {
-        await _sendService.insert('craftsman', craftsman.toMap());
+        await _sendService.insert(
+          'craftsman',
+          data,
+        );
       }
     } catch (e) {
       debugPrint('Insert/Update Craftsman Error: $e');
@@ -93,6 +98,11 @@ class CraftsmanRepository {
     String? aboutMe,
     String? occupationType,
     String? address,
+    String? city,
+    String? street,
+    String? dayOfWeek,
+    String? startTime,
+    String? endTime,
     bool? isApproved,
   }) async {
     final data = <String, dynamic>{};
@@ -101,6 +111,11 @@ class CraftsmanRepository {
     if (aboutMe != null) data['about_me'] = aboutMe;
     if (occupationType != null) data['occupation_type'] = occupationType;
     if (address != null) data['address'] = address;
+    if (city != null) data['city'] = city;
+    if (street != null) data['street'] = street;
+    if (dayOfWeek != null) data['day_of_week'] = dayOfWeek;
+    if (startTime != null) data['start_time'] = startTime;
+    if (endTime != null) data['end_time'] = endTime;
     if (isApproved != null) data['is_approved'] = isApproved;
 
     if (data.isEmpty) return;
@@ -113,7 +128,7 @@ class CraftsmanRepository {
     }
   }
 
-  Future<Craftsman?> getCraftsman() async {
+  Future<Craftsman?> getCraftsmanProfile() async {
     try {
       final uid = _fetchService.userIdOrThrow;
 
@@ -128,7 +143,7 @@ class CraftsmanRepository {
           ? Craftsman.fromMap({...result, 'craftman_id': uid})
           : null;
     } catch (e) {
-      debugPrint('Error fetching craftsman: $e');
+      print('Error fetching craftsman: $e');
       throw Exception('Failed to load craftsman');
     }
   }

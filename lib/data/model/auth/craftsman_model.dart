@@ -13,6 +13,11 @@ class Craftsman {
   final String? address;
   final String? createdAt;
   final bool? isApproved;
+  final String? city;
+  final String? street;
+  final String? dayOfWeek;
+  final String? startTime;
+  final String? endTime;
 
   Craftsman({
     required this.id,
@@ -29,6 +34,11 @@ class Craftsman {
     this.address,
     this.createdAt,
     this.isApproved,
+    this.city,
+    this.street,
+    this.dayOfWeek,
+    this.startTime,
+    this.endTime,
   });
 
   factory Craftsman.fromMap(Map<String, dynamic> map) {
@@ -55,6 +65,11 @@ class Craftsman {
       address: map['address']?.toString(),
       createdAt: map['created_at']?.toString(),
       isApproved: map['is_approved'] == true,
+      city: map['city']?.toString(),
+      street: map['street']?.toString(),
+      dayOfWeek: map['day_of_week']?.toString(),
+      startTime: map['start_time']?.toString(),
+      endTime: map['end_time'].toString(),
     );
   }
 
@@ -74,6 +89,11 @@ class Craftsman {
       'address': address,
       'created_at': createdAt,
       'is_approved': isApproved,
+      'city': city,
+      'street': street,
+      'day_of_week': dayOfWeek,
+      'start_time': startTime,
+      'end_time': endTime,
     };
   }
 
@@ -92,5 +112,10 @@ class Craftsman {
         'address',
         'created_at',
         'is_approved',
+        'city',
+        'street',
+        'day_of_week',
+        'start_time',
+        'end_time',
       ];
 }

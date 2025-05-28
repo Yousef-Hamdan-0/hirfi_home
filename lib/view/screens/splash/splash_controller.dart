@@ -8,11 +8,13 @@ class SplashController extends GetxController {
   RxBool showIrfi = false.obs;
   RxBool showHome = false.obs;
   RxBool moveHomeDown = false.obs;
+  final RxBool hasInternet = true.obs;
 
   @override
   void onInit() async {
     super.onInit();
     _startAnimation();
+    _checkInternetLoop();
   }
 
   void _startAnimation() async {
@@ -41,7 +43,46 @@ class SplashController extends GetxController {
 
     if (isLoggedIn) {
       print('✅ Logged in session found');
-      Get.offAllNamed(RoutesString.mainShell);
+
+      final userId = Supabase.instance.client.auth.currentUser?.id;
+
+      if (userId != null) {
+        try {
+          // جلب الدور من جدول المستخدمين
+          final userInfo = await Supabase.instance.client
+              .from('app_users')
+              .select('role')
+              .eq('id', userId)
+              .single();
+
+          final role = userInfo['role'];
+
+          if (role == 'craftsman') {
+            // تحقق من is_approved
+            final response = await Supabase.instance.client
+                .from('craftsman')
+                .select('is_approved')
+                .eq('craftman_id', userId)
+                .maybeSingle();
+
+            final isApproved = response?['is_approved'] == true;
+
+            if (isApproved) {
+              Get.offAllNamed(RoutesString.mainShell);
+            } else {
+              Get.offAllNamed(RoutesString.waitView);
+            }
+          } else {
+            // مستخدم عادي يدخل مباشرة
+            Get.offAllNamed(RoutesString.mainShell);
+          }
+        } catch (e) {
+          print('❌ Error during role check: $e');
+          Get.offAllNamed(RoutesString.mainShell); // افتراضيًا يدخل
+        }
+      } else {
+        Get.offAllNamed(RoutesString.mainShell);
+      }
     } else {
       print('👤 No valid session, go to onboarding/login');
       Get.offAllNamed(RoutesString.onbording);
@@ -86,7 +127,32 @@ class SplashController extends GetxController {
       }
     } catch (e) {
       print('No real internet (exception): $e');
+      print('🔥 Exception: $e');
       return false;
+    }
+  }
+
+  Future<void> checkInternet() async {
+    try {
+      final result = await Supabase.instance.client
+          .from('craftsman')
+          .select()
+          .limit(1)
+          .maybeSingle();
+
+      hasInternet.value = result != null;
+    } catch (e) {
+      hasInternet.value = false;
+    }
+  }
+
+  void _checkInternetLoop() async {
+    // يفحص كل 10 ثواني
+    while (true) {
+      await checkInternet();
+      print("1");
+      await Future.delayed(const Duration(seconds: 10));
+      print("1");
     }
   }
 }
