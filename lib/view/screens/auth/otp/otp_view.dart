@@ -128,47 +128,18 @@ class OtpView extends GetView<OtpController> {
                     const SizedBox(
                       height: 26,
                     ),
-                    InkWell(
-                        onTap: () async {
-                          if (controller.start.value > 0) return;
-
-                          if (controller.counter.value == 0) {
-                            appTools.showWarningMessage('otpError', context);
-                            return;
-                          }
-
-                          controller.counter.value -= 1;
-
-                          // مضاعفة مدة المؤقت
-                          controller.oldStart.value *= 2;
-                          controller.start.value = controller.oldStart.value;
-
-                          controller.timer.value?.cancel();
-                          controller.startTimer();
-
-                          // إعادة إرسال OTP
-                          Get.find<SignupUserController>().sendOtp();
-                        },
-                        child: Row(
+                    Obx(() => Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Obx(() => Headline5(
-                                  title: controller.start.value == 0
-                                      ? "TranslationData.resendCode.tr"
-                                      : '${TranslationData.resendCodeAfter.tr} ',
-                                  style: TextThemeStyle().headline5.copyWith(
-                                        color: AppColors.black.withOpacity(0.6),
-                                      ),
-                                )),
-                            Obx(() => controller.start.value != 0
-                                ? Headline5(
-                                    title: appTools.timeFormatter(
-                                        controller.start.value.toDouble()),
-                                    style: TextThemeStyle().headline5.copyWith(
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                  )
-                                : const SizedBox.shrink()),
+                            TextButton(
+                              onPressed: controller.start.value == 0
+                                  ? controller.resendOtp
+                                  : null,
+                              child: controller.start.value == 0
+                                  ? Text('إعادة إرسال الرمز')
+                                  : Text(
+                                      'يمكنك الإرسال خلال ${controller.start.value} ثانية'),
+                            ),
                           ],
                         ))
                   ],

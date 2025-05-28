@@ -18,17 +18,18 @@ class OtpController extends GetxController {
 
   final AuthUserRepository _authRepo;
   final UserProfileRepository _profileRepo;
-  RxInt counter = 0.obs;
-  RxInt oldStart = 30.obs;
+  //Timer
+  RxInt start = 30.obs;
+  Rx<Timer?> timer = Rx<Timer?>(null);
+  RxInt resendAttempts = 3.obs;
+  RxInt baseDuration = 30.obs;
+  //End Timer
   RxString verificationId = ''.obs;
   RxString saveName = ''.obs;
   RxString saveEmail = ''.obs;
   RxString savePhonenumber = ''.obs;
   RxString savePassword = ''.obs;
   RxString selectedRole = 'user'.obs;
-
-  RxInt start = 30.obs;
-  Rx<Timer?> timer = (null as Timer?).obs;
 
   RxBool isLoading = false.obs;
 
@@ -41,17 +42,37 @@ class OtpController extends GetxController {
   }
 
   void startTimer() {
-    start.value = 30;
     timer.value?.cancel(); // أوقف المؤقت السابق إن وجد
+    start.value = baseDuration.value;
 
-    const oneSec = Duration(seconds: 1);
-    timer.value = Timer.periodic(oneSec, (Timer t) {
-      if (start.value == 0) {
-        t.cancel();
-      } else {
-        start.value--;
-      }
-    });
+    timer.value = Timer.periodic(
+      Duration(seconds: 1),
+      (t) {
+        if (start.value == 0) {
+          t.cancel();
+        } else {
+          start.value--;
+        }
+      },
+    );
+  }
+
+  void resendOtp() {
+    if (start.value > 0) return; // المؤقت ما زال يعمل
+
+    if (resendAttempts.value <= 0) {
+      Get.snackbar('انتهت المحاولات', 'لا يمكنك إعادة إرسال الرمز أكثر من مرة');
+      return;
+    }
+
+    resendAttempts.value -= 1;
+
+    // مضاعفة مدة الانتظار لكل محاولة
+    baseDuration.value *= 2;
+    startTimer();
+
+    // إعادة إرسال الرمز
+    Get.find<SignupUserController>().sendOtp();
   }
 
   void sendOtpAgain() {
