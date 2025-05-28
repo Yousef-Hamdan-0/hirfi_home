@@ -42,7 +42,7 @@ class OtpController extends GetxController {
   }
 
   void startTimer() {
-    timer.value?.cancel(); // أوقف المؤقت السابق إن وجد
+    timer.value?.cancel(); 
     start.value = baseDuration.value;
 
     timer.value = Timer.periodic(
@@ -58,7 +58,7 @@ class OtpController extends GetxController {
   }
 
   void resendOtp() {
-    if (start.value > 0) return; // المؤقت ما زال يعمل
+    if (start.value > 0) return; 
 
     if (resendAttempts.value <= 0) {
       Get.snackbar('انتهت المحاولات', 'لا يمكنك إعادة إرسال الرمز أكثر من مرة');
@@ -67,17 +67,15 @@ class OtpController extends GetxController {
 
     resendAttempts.value -= 1;
 
-    // مضاعفة مدة الانتظار لكل محاولة
     baseDuration.value *= 2;
     startTimer();
 
-    // إعادة إرسال الرمز
     Get.find<SignupUserController>().sendOtp();
   }
 
   void sendOtpAgain() {
-    startTimer(); // أعد تشغيل المؤقت
-    Get.find<SignupUserController>().sendOtp(); // أعد إرسال الرمز
+    startTimer(); 
+    Get.find<SignupUserController>().sendOtp();
   }
 
   void saveData(
