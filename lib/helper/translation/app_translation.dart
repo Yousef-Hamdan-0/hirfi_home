@@ -295,8 +295,16 @@ class AppTranslation extends Translations {
           TranslationData.yesterday: "أمس",
           TranslationData.goToMapQuestion: "هل تريد الإنتقال إلى الخريطة؟",
           TranslationData.goToMap: "إنتقل إلى الخريطة",
+          TranslationData.editProfile: "تعديل الملف الشخصي",
+          TranslationData.favorites: "المفضلة",
+          TranslationData.supportAndHelp: "الدعم والمشاعدة",
+          TranslationData.chats: "المحادثات",
         },
         "en": {
+          TranslationData.chats: "Chats",
+          TranslationData.editProfile: "Edit Profile",
+          TranslationData.favorites: "Favorites",
+          TranslationData.supportAndHelp: "Support & Help",
           TranslationData.goToMapQuestion: "Do you want to go to the map?",
           TranslationData.goToMap: "Go to the map",
 

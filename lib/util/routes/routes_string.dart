@@ -11,6 +11,7 @@ class RoutesString {
   static const String createProfile = "/createProfile";
   static const String homeScreen = "/home";
   static const String mapScreen = "/map";
+  static const String chatsScreen = "/chats";
   static const String chatScreen = "/chat";
   static const String profileScreen = "/profile";
   static const String settings = "/settings";
@@ -19,9 +20,9 @@ class RoutesString {
   static const String waitView = "/waitView";
   static const String craftsmanDetail = "/craftsmanDetail";
   static const String filteredCraftsmen = "/filteredCraftsmen";
-  static const String cocis1 = "/cocis1";
-  static const String cocis2 = "/cocis2";
-  static const String cocis3 = "/cocis3";
-  static const String cocis4 = "/cocis4";
+  static const String cookiesPolicyView = "/cookiesPolicyView";
+  static const String about = "/about";
+  static const String helpAndSupportView = "/helpAndSupportView";
+  static const String termsAndConditionsView = "/termsAndConditionsView";
   static const String notificationView = "/notificationView";
 }

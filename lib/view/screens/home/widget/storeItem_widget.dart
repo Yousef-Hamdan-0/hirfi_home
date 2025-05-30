@@ -27,7 +27,7 @@ Widget buildStoreItem({
       },
       child: Container(
         width: Get.width * 0.6,
-        margin: const EdgeInsetsGeometry.fromSTEB(0, 0, 16, 0),
+        margin: const EdgeInsets.only(right: 16),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),

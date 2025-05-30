@@ -1,13 +1,14 @@
 class Message {
-  final String id;
+  final String? id; // ❗️Nullable because Supabase generates it
   final String chatRoomId;
   final String senderId;
   final String content;
-  final String messageType;
+  final String messageType; // 'text', 'image', 'video', 'location'
   final DateTime createdAt;
+  
 
   Message({
-    required this.id,
+    this.id,
     required this.chatRoomId,
     required this.senderId,
     required this.content,
@@ -28,12 +29,12 @@ class Message {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       'chat_room_id': chatRoomId,
       'sender_id': senderId,
       'content': content,
       'message_type': messageType,
       'created_at': createdAt.toIso8601String(),
+      // 🔥 لا نرسل id، لأن Supabase يتكفل بذلك
     };
   }
 }

@@ -41,25 +41,25 @@ class SettingsView extends GetView<SettingsController> {
                 SettingPrimaryButton(
                   onTap: () {},
                   title: TranslationData.personalDetails.tr,
-                  image: Image.asset(AppIcon.personalDetails),
+                  leading: Image.asset(AppIcon.personalDetails),
                 ),
                 Line(),
                 SettingPrimaryButton(
                   onTap: () {},
                   title: TranslationData.changePassword.tr,
-                  image: Image.asset(AppIcon.changePassword),
+                  leading: Image.asset(AppIcon.changePassword),
                 ),
                 Line(),
                 SettingPrimaryButton(
                   onTap: () {},
                   title: TranslationData.notification.tr,
-                  image: Image.asset(AppIcon.notification),
+                  leading: Image.asset(AppIcon.notification),
                 ),
                 Line(),
                 SettingPrimaryButton(
                   onTap: () {},
                   title: TranslationData.darkMode.tr,
-                  image: Image.asset(AppIcon.darkMode),
+                  leading: Image.asset(AppIcon.darkMode),
                 ),
                 Line(),
                 SettingPrimaryButton(
@@ -71,19 +71,19 @@ class SettingsView extends GetView<SettingsController> {
                     );
                   },
                   title: TranslationData.languages.tr,
-                  image: Image.asset(AppIcon.languages),
+                  leading: Image.asset(AppIcon.languages),
                 ),
                 Line(),
                 SettingPrimaryButton(
                   onTap: () {},
                   title: TranslationData.rateApp.tr,
-                  image: Image.asset(AppIcon.rateApp),
+                  leading: Image.asset(AppIcon.rateApp),
                 ),
                 Line(),
                 SettingPrimaryButton(
                   onTap: () {},
                   title: TranslationData.feedback.tr,
-                  image: Image.asset(AppIcon.feedback),
+                  leading: Image.asset(AppIcon.feedback),
                 ),
                 Line(),
                 SettingPrimaryButton(
@@ -132,7 +132,7 @@ class SettingsView extends GetView<SettingsController> {
                   title: TranslationData.logout.tr,
                   titleColor: AppColors.red,
                   color: AppColors.red,
-                  image: Image.asset(AppIcon.logout),
+                  leading: Image.asset(AppIcon.logout),
                 ),
               ],
             );

@@ -34,14 +34,11 @@ class UserProfileRepository {
   }
 
   Future<void> insertProfile(UserProfile profile) async {
-    final uid = _sendService.userId;
-    if (uid == null) throw Exception("User not authenticated");
-
     try {
       final inserted = await Supabase.instance.client
           .from('user_profile')
           .insert({
-            'id': uid,
+            'id': profile.id, // استخدم id القادم من كائن UserProfile
             'name': profile.name,
             'email': profile.email,
             'phone_number': profile.phoneNumber,
@@ -54,9 +51,11 @@ class UserProfileRepository {
 
       if (inserted == null) {
         throw Exception('فشل في إدخال بيانات البروفايل');
+      } else {
+        print("✅ تم إدراج user_profile بنجاح: ${profile.id}");
       }
     } catch (e) {
-      print('Insert Profile Error: $e');
+      print('❌ Insert Profile Error: $e');
       rethrow;
     }
   }

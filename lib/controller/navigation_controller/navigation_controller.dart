@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:hirfi_home/view/screens/chats/chat_view.dart';
+import 'package:hirfi_home/view/screens/chats/chats_view.dart';
 import 'package:hirfi_home/view/screens/home/page/home_view.dart';
 import 'package:hirfi_home/view/screens/profile/profile_view.dart';
 

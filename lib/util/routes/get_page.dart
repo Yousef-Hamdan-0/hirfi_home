@@ -3,8 +3,10 @@ import 'package:hirfi_home/controller/navigation_controller/navigation_binding.d
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:hirfi_home/view/screens/auth/signup_craftman/map/map_binding.dart';
 import 'package:hirfi_home/view/screens/auth/signup_craftman/map/map_view.dart';
+import 'package:hirfi_home/view/screens/chat/chat_binding.dart';
+import 'package:hirfi_home/view/screens/chat/chat_view.dart';
 import 'package:hirfi_home/view/screens/chats/chat_binding.dart';
-import 'package:hirfi_home/view/screens/chats/chat_view.dart';
+import 'package:hirfi_home/view/screens/chats/chats_view.dart';
 import 'package:hirfi_home/main_shell_view.dart';
 import 'package:hirfi_home/view/screens/craftsman_detail/craftsman_detail_binding.dart';
 import 'package:hirfi_home/view/screens/craftsman_detail/craftsman_detail_view.dart';
@@ -48,8 +50,8 @@ import 'package:hirfi_home/view/screens/welcome/welcome_view.dart';
 List<GetPage<dynamic>>? getPage = [
   GetPage(
     name: RoutesString.splash,
-    page: () => MainShellView(),
-    binding: NavigationBinding(),
+    page: () => SplashView(),
+    binding: SplashBinding(),
   ),
   GetPage(
       name: RoutesString.onbording,
@@ -99,9 +101,14 @@ List<GetPage<dynamic>>? getPage = [
     binding: MapsBinding(),
   ),
   GetPage(
-    name: RoutesString.chatScreen,
+    name: RoutesString.chatsScreen,
     page: () => ChatsView(),
     binding: ChatsBinding(),
+  ),
+  GetPage(
+    name: RoutesString.chatScreen,
+    page: () => ChatView(),
+    binding: ChatBinding(),
   ),
   GetPage(
     name: RoutesString.profileScreen,
@@ -135,23 +142,19 @@ List<GetPage<dynamic>>? getPage = [
       page: () => FilteredCraftsmenView(),
       binding: FilteredCraftsmenBinding()),
   GetPage(
-    name: RoutesString.cocis1,
+    name: RoutesString.cookiesPolicyView,
     page: () => CookiesPolicyView(),
   ),
   GetPage(
-    name: RoutesString.cocis1,
-    page: () => CookiesPolicyView(),
-  ),
-  GetPage(
-    name: RoutesString.cocis2,
+    name: RoutesString.about,
     page: () => AboutView(),
   ),
   GetPage(
-    name: RoutesString.cocis3,
+    name: RoutesString.helpAndSupportView,
     page: () => HelpAndSupportView(),
   ),
   GetPage(
-    name: RoutesString.cocis4,
+    name: RoutesString.termsAndConditionsView,
     page: () => TermsAndConditionsView(),
   ),
   GetPage(

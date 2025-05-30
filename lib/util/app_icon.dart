@@ -38,4 +38,5 @@ class AppIcon {
   static const String messages = 'assets/images/icon/messages.png';
   static const String medal = 'assets/images/icon/medal.png';
   static const String star = 'assets/images/icon/star.png';
+  static const String about = 'assets/images/icon/about.png';
 }

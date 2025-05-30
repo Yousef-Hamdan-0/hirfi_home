@@ -10,21 +10,17 @@ import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-File? selectedImage;
-
 class CreateUserProfileController extends GetxController {
-  final UserProfileRepository repository; // ✅ استخدم final هنا
+  final UserProfileRepository repository;
   CreateUserProfileController(this.repository);
   final GlobalKey<FormState> signUpForm = GlobalKey<FormState>();
   final Rx<File?> selectedImage = Rx<File?>(null);
   RxString uploadedImageUrl = ''.obs;
   TextEditingController nameController = TextEditingController();
-  RxString name = ''.obs;
-  RxString email = ''.obs;
-  RxString phoneNumber = ''.obs;
+
   RxString dateOfBirth = TranslationData.dateOfBirth.tr.obs;
   Rx<DateTime> selectedDate = DateTime.now().obs;
-  RxString selected = ''.obs;
+  RxString selecteGender = ''.obs;
   final genderOptions = TranslationData.genderMap.entries.toList().obs;
   @override
   void onInit() {
@@ -41,6 +37,10 @@ class CreateUserProfileController extends GetxController {
     }
   }
 
+  // تحديث البيانات
+  RxString name = ''.obs;
+  RxString email = ''.obs;
+  RxString phoneNumber = ''.obs;
   Future<void> fetchAndStoreUserInfo() async {
     try {
       final profile = await repository.getProfile();
@@ -79,13 +79,23 @@ class CreateUserProfileController extends GetxController {
     required String dateOfBirth,
     required String gender,
   }) async {
+    // تحقق من البيانات المطلوبة
+    if (dateOfBirth == TranslationData.dateOfBirth.tr || dateOfBirth.isEmpty) {
+      Get.snackbar('تاريخ الميلاد مطلوب', 'يرجى تحديد تاريخ الميلاد');
+      return;
+    }
+
+    if (gender.isEmpty) {
+      Get.snackbar('الجنس مطلوب', 'يرجى اختيار الجنس');
+      return;
+    }
+
     final userId = Supabase.instance.client.auth.currentUser?.id;
     if (userId == null) {
       throw Exception("User not logged in");
     }
 
     final sendService = SupabaseSendService();
-
     String imageUrl;
 
     if (selectedImage.value != null) {
@@ -96,14 +106,14 @@ class CreateUserProfileController extends GetxController {
       );
 
       if (uploadedUrl == null) {
-        throw Exception("❌ Failed to upload profile picture");
+        throw Exception("❌ فشل في رفع صورة البروفايل");
       }
 
       imageUrl = uploadedUrl;
     } else {
       imageUrl = Supabase.instance.client.storage
           .from('user-profile')
-          .getPublicUrl('profiles/default.jpg');
+          .getPublicUrl('profiles/default.png');
     }
 
     await sendService.update(

@@ -72,6 +72,15 @@ class Craftsman {
       endTime: map['end_time'].toString(),
     );
   }
+  factory Craftsman.minimal(Map<String, dynamic> map, String id) {
+    return Craftsman(
+      id: id,
+      name: map['name'].toString(),
+      email: '',
+      phoneNumber: map['phone_number'].toString(),
+      picture: map['picture']?.toString(),
+    );
+  }
 
   Map<String, dynamic> toMap() {
     return {

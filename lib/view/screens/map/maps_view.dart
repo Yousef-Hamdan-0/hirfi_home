@@ -39,63 +39,54 @@ class MapsView extends GetView<MapsController> {
       body: Padding(
         padding: const EdgeInsets.only(right: 24, left: 24, top: 16),
         child: Obx(() {
-          return Expanded(
-            child: ListView.builder(
-              itemCount: controller.craftsman.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                final craftsman = controller.craftsman[index];
-                return craftsmanCard3(
-                    onTap: () {
-                      appTools.showCustomBottomSheet(
-                        context,
-                        LogoutWidget(
-                          child: Center(
-                            child: Column(
-                              children: [
-                                Headline4(
-                                  title: TranslationData.map.tr,
-                                  fontSize: Get.locale!.languageCode == 'ar'
-                                      ? 22
-                                      : 20,
-                                ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Line(),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                BodyText1(
-                                  title: TranslationData.goToMapQuestion.tr,
-                                  fontSize: Get.locale!.languageCode == 'ar'
-                                      ? 16
-                                      : 18,
-                                  color: AppColors.lightGrey,
-                                ),
-                                const SizedBox(
-                                  height: 24,
-                                ),
-                                PrimaryButton(
-                                  onTap: () {},
-                                  title: TranslationData.goToMap.tr,
-                                )
-                              ],
+          return ListView.builder(
+            itemCount: controller.craftsman.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              final craftsman = controller.craftsman[index];
+              return craftsmanCard3(
+                onTap: () {
+                  appTools.showCustomBottomSheet(
+                    context,
+                    LogoutWidget(
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Headline4(
+                              title: TranslationData.map.tr,
+                              fontSize:
+                                  Get.locale!.languageCode == 'ar' ? 22 : 20,
                             ),
-                          ),
+                            const SizedBox(height: 8),
+                            const Line(),
+                            const SizedBox(height: 8),
+                            BodyText1(
+                              title: TranslationData.goToMapQuestion.tr,
+                              fontSize:
+                                  Get.locale!.languageCode == 'ar' ? 16 : 18,
+                              color: AppColors.lightGrey,
+                            ),
+                            const SizedBox(height: 24),
+                            PrimaryButton(
+                              onTap: () {},
+                              title: TranslationData.goToMap.tr,
+                            )
+                          ],
                         ),
-                        true,
-                      );
-                    },
-                    imageUrl: craftsman.picture!,
-                    name: craftsman.name,
-                    city: craftsman.city!,
-                    street: craftsman.street!,
-                    occupation: craftsman.occupationType!,
-                    rating: craftsman.rating!,
-                    craftsman: craftsman);
-              },
-            ),
+                      ),
+                    ),
+                    true,
+                  );
+                },
+                imageUrl: craftsman.picture!,
+                name: craftsman.name,
+                city: craftsman.city!,
+                street: craftsman.street!,
+                occupation: craftsman.occupationType!,
+                rating: craftsman.rating!,
+                craftsman: craftsman,
+              );
+            },
           );
         }),
       ),

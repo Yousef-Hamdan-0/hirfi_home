@@ -113,9 +113,9 @@ class CreateUserProfileView extends GetView<CreateUserProfileController> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                        hint: const Text("اختر مهنتك"),
-                        value: controller.selected.value.isNotEmpty
-                            ? controller.selected.value
+                        hint: const Text("اختر جنسك]"),
+                        value: controller.selecteGender.value.isNotEmpty
+                            ? controller.selecteGender.value
                             : null,
                         items: controller.genderOptions.map((entry) {
                           return DropdownMenuItem<String>(
@@ -126,7 +126,7 @@ class CreateUserProfileView extends GetView<CreateUserProfileController> {
                         }).toList(),
                         onChanged: (value) {
                           if (value != null) {
-                            controller.selected.value = value;
+                            controller.selecteGender.value = value;
                           }
                         },
                       ),
@@ -136,7 +136,7 @@ class CreateUserProfileView extends GetView<CreateUserProfileController> {
                       PrimaryButton(
                           onTap: () => controller.completeUserProfile(
                               dateOfBirth: controller.dateOfBirth.value,
-                              gender: controller.selected.value),
+                              gender: controller.selecteGender.value),
                           title: TranslationData.createProfile.tr)
                     ],
                   )),

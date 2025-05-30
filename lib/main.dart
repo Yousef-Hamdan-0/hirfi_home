@@ -25,6 +25,7 @@ void main() async {
   );
   await GetStorage.init();
   box = GetStorage();
+  
   runApp(const MainApp());
 }
 

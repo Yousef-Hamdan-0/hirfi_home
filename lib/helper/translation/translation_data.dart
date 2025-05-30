@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
 
 class TranslationData {
-  static String goToMap = "goToMap" ;
+  static const String chats = "chats";
+  static const String editProfile = "editProfile";
+  static const String favorites = "favorites";
+  static const String supportAndHelp = "supportAndHelp";
+  static String goToMap = "goToMap";
   static String goToMapQuestion = "هل تريد الإنتقال إلى الخريطة؟";
   static String changeLanguage = 'changeLanguage';
   static String today = "today";

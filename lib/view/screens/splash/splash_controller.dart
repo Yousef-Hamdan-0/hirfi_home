@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
 import 'package:hirfi_home/util/routes/routes_string.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +15,6 @@ class SplashController extends GetxController {
   void onInit() async {
     super.onInit();
     _startAnimation();
-    _checkInternetLoop();
   }
 
   void _startAnimation() async {
@@ -33,7 +33,7 @@ class SplashController extends GetxController {
   }
 
   void startAppFlow() async {
-    final hasConnection = await checkConnection();
+    final hasConnection = await hasInternetConnection();
     if (!hasConnection) {
       print('📡 No Internet connection');
       return;
@@ -112,47 +112,25 @@ class SplashController extends GetxController {
     return true;
   }
 
-  Future<bool> checkConnection() async {
-    try {
-      final response = await http
-          .get(Uri.parse('https://jsonplaceholder.typicode.com/posts/1'))
-          .timeout(Duration(seconds: 5));
+  Future<bool> hasInternetConnection() async {
+    final connectivityResult = await Connectivity().checkConnectivity();
 
-      if (response.statusCode == 200) {
-        print('Internet is available');
-        return true;
-      } else {
-        print('No real internet (non-200 response)');
-        return false;
-      }
-    } catch (e) {
-      print('No real internet (exception): $e');
-      print('🔥 Exception: $e');
+    if (connectivityResult == ConnectivityResult.none) {
+      print('📴 لا يوجد اتصال بالشبكة');
       return false;
     }
-  }
 
-  Future<void> checkInternet() async {
     try {
-      final result = await Supabase.instance.client
-          .from('craftsman')
-          .select()
-          .limit(1)
-          .maybeSingle();
+      final result = await http
+          .get(Uri.parse('https://clients3.google.com/generate_204'))
+          .timeout(Duration(seconds: 5));
 
-      hasInternet.value = result != null;
+      final online = result.statusCode == 204;
+      print(online ? '✅ الاتصال فعّال' : '🌐 الشبكة بدون إنترنت');
+      return online;
     } catch (e) {
-      hasInternet.value = false;
-    }
-  }
-
-  void _checkInternetLoop() async {
-    // يفحص كل 10 ثواني
-    while (true) {
-      await checkInternet();
-      print("1");
-      await Future.delayed(const Duration(seconds: 10));
-      print("1");
+      print('❌ فشل اختبار الإنترنت: $e');
+      return false;
     }
   }
 }

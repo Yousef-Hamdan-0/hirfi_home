@@ -6,6 +6,8 @@ import 'package:hirfi_home/data/model/auth/craftsman_model.dart';
 import 'package:hirfi_home/helper/translation/translation_data.dart';
 import 'package:hirfi_home/theme/app_colors.dart';
 import 'package:hirfi_home/util/app_icon.dart';
+import 'package:hirfi_home/util/routes/routes_string.dart';
+import 'package:hirfi_home/view/screens/chat/chat_view.dart';
 import 'package:hirfi_home/view/screens/craftsman_detail/craftsman_detail_controller.dart';
 import 'package:hirfi_home/view/screens/home/widget/craftsman_card.dart';
 import 'package:hirfi_home/view/screens/home/widget/other_details.dart';
@@ -13,6 +15,7 @@ import 'package:hirfi_home/view/widget/expandable_text/expandable_text.dart';
 import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/text/body_text2.dart';
 import 'package:hirfi_home/view/widget/text/headline5.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class CraftsmanDetailView extends GetView<CraftsmanDetailController> {
   final Craftsman craftsman = Get.arguments as Craftsman;
@@ -150,10 +153,54 @@ class CraftsmanDetailView extends GetView<CraftsmanDetailController> {
                     titel: TranslationData.location.tr,
                   ),
                   CustomeElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final supabase = Supabase.instance.client;
+                      final currentUser = supabase.auth.currentUser!;
+                      final userId = currentUser.id;
+
+                      // 👇 نتحقق من الدور
+                      final response = await supabase
+                          .from('app_users')
+                          .select('role')
+                          .eq('id', userId)
+                          .maybeSingle();
+
+                      final role = response?['role'];
+
+                      if (role == 'user') {
+                        final chatRoom = await controller.createOrGetChatRoom(
+                          userId,
+                          craftsman.id,
+                        );
+                        Get.toNamed(RoutesString.chatScreen, arguments: {
+                          'chatRoomId': chatRoom.id,
+                        });
+                      } else {
+                        Get.snackbar(
+                          'تنبيه',
+                          'الحرفي لا يمكنه بدء المحادثة',
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
+                      }
+                    },
                     image: Image.asset(AppIcon.chatIconOn),
                     titel: TranslationData.message.tr,
                   ),
+                  // CustomeElevatedButton(
+                  //   onPressed: () async {
+                  //     final supabase = Supabase.instance.client;
+                  //     final currentUser = supabase.auth.currentUser!;
+                  //     final userId = currentUser.id;
+
+                  //     final chatRoom = await controller.createOrGetChatRoom(
+                  //         userId, craftsman.id);
+                  //     Get.toNamed(RoutesString.chatScreen, arguments: {
+                  //       'chatRoomId': chatRoom.id,
+                  //     });
+                  //   },
+                  //   image: Image.asset(AppIcon.chatIconOn),
+                  //   titel: TranslationData.message.tr,
+                  // ),
                 ],
               ),
               SizedBox(

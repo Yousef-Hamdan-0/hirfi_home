@@ -44,8 +44,8 @@ class WelcomeView extends GetView<WelcomeController> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).width * 0.75,
-              padding: EdgeInsets.only(top: 28, right: 24, left: 24),
+              padding:
+                  EdgeInsets.only(top: 24, right: 24, left: 24, bottom: 24),
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.only(
@@ -116,7 +116,7 @@ class WelcomeView extends GetView<WelcomeController> {
                         ),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

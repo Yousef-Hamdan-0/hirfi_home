@@ -8,31 +8,31 @@ class SettingPrimaryButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    required this.image,
+    this.leading,
     this.titleColor,
     this.color,
     this.backgroundColor,
-    this.icon,
     this.iconSize,
   });
+
   final VoidCallback onTap;
   final String title;
   final Color? titleColor;
   final Color? color;
   final Color? backgroundColor;
-  final IconData? icon;
-  final Image image;
+  final Widget? leading;
   final double? iconSize;
 
   @override
   Widget build(BuildContext context) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return ListTile(
-      leading: image,
-      contentPadding: EdgeInsetsDirectional.only(start: 0, end: 0),
+      leading: leading,
+      contentPadding: const EdgeInsetsDirectional.only(start: 0, end: 0),
       title: Headline5(
         title: title,
         fontSize: Get.locale!.languageCode == "ar" ? 20 : 18,
-        color: titleColor ?? Color(0xff6B7280),
+        color: titleColor ?? const Color(0xff6B7280),
       ),
       trailing: Icon(Icons.chevron_right, color: color ?? AppColors.appBarIcon),
       onTap: onTap,
