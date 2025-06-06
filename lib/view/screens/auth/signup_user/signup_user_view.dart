@@ -167,23 +167,6 @@ class SignupUserView extends GetView<SignupUserController> {
                     SizedBox(
                       height: 24,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SocialAuthButtons(
-                          onTab: () {},
-                          image: Image.asset(AppIcon.google),
-                        ),
-                        SocialAuthButtons(
-                          onTab: () {},
-                          image: Image.asset(AppIcon.facebook),
-                        ),
-                        SocialAuthButtons(
-                          onTab: () {},
-                          image: Image.asset(AppIcon.apple),
-                        ),
-                      ],
-                    ),
                     SizedBox(
                       height: 24,
                     ),

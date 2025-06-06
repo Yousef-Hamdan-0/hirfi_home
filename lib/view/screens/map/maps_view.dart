@@ -15,6 +15,7 @@ import 'package:hirfi_home/view/widget/primary_button/primary_button.dart';
 import 'package:hirfi_home/view/widget/setting_widgets/logout_widget.dart';
 import 'package:hirfi_home/view/widget/text/body_text1.dart';
 import 'package:hirfi_home/view/widget/text/headline4.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MapsView extends GetView<MapsController> {
   const MapsView({super.key});
@@ -68,7 +69,27 @@ class MapsView extends GetView<MapsController> {
                             ),
                             const SizedBox(height: 24),
                             PrimaryButton(
-                              onTap: () {},
+                              onTap: () async {
+                                if (controller
+                                        .extractLatLng(craftsman.address!) !=
+                                    null) {
+                                  controller.extractLatLng(craftsman.address!);
+                                  final googleMapsUrl =
+                                      'https://www.google.com/maps/search/?api=1&query=,${controller.latitude.value},${controller.longitude.value}';
+
+                                  if (await canLaunchUrl(
+                                      Uri.parse(googleMapsUrl))) {
+                                    await launchUrl(Uri.parse(googleMapsUrl),
+                                        mode: LaunchMode.externalApplication);
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                          content:
+                                              Text('تعذر فتح Google Maps')),
+                                    );
+                                  }
+                                }
+                              },
                               title: TranslationData.goToMap.tr,
                             )
                           ],

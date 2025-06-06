@@ -82,9 +82,11 @@ class ChatController extends GetxController {
     final fileName = file.uri.pathSegments.last;
     final bucket = 'chat-media';
 
-    await Supabase.instance.client.storage
-        .from(bucket)
-        .upload('media/$fileName', file);
+    await Supabase.instance.client.storage.from(bucket).upload(
+          'media/$fileName',
+          file,
+          fileOptions: const FileOptions(upsert: true), // ✅ السماح بالاستبدال
+        );
 
     final publicUrl = Supabase.instance.client.storage
         .from(bucket)
